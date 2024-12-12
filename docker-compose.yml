@@ -1,0 +1,14 @@
+name: plugins_prod
+services:
+  web:
+    build:
+      context: .
+      target: prod
+    ports:
+      - '3225:3000'
+    restart: unless-stopped
+    volumes:
+      - cache:/cache
+volumes:
+  app_node_modules:
+  cache:
