@@ -9,6 +9,8 @@ services:
     restart: unless-stopped
     volumes:
       - cache:/cache
+      - zips:/zip
 volumes:
   app_node_modules:
   cache:
+  zips:

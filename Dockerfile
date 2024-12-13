@@ -1,5 +1,6 @@
 FROM node:23 AS dev
 
+RUN mkdir /zip
 WORKDIR /app
 COPY package* .
 RUN npm ci
