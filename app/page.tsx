@@ -26,11 +26,11 @@ export default function Page() {
       output.push(<div key={category}>
         <div className="flex mb-2 mt-8">
           <h2 className="text-highlight2 grow">{category}</h2>
-          <div className="mt-2 mr-8">
+          <div className="mt-2 mr-4">
             <Link href={categoryZipPath(category)} className="text-background bg-highlight2 hover:bg-highlight p-2 rounded">Download .zip</Link>
           </div>
         </div>
-        <div className="flex flex-wrap ml-[-1rem]">{
+        <div className="flex flex-wrap ml-[-1rem] gap-4">{
           catObj[category].map((plugin) => <PluginTile key={plugin.key} plugin={plugin} className="max-w-[32rem] min-w-[24rem] flex-1" />)
         }
         </div>

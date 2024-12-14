@@ -15,6 +15,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         bghighlight: "var(--bghighlight)",
+        tilebg: "var(--tilebg)",
         highlight: "var(--highlight)",
         highlight2: "var(--highlight2)",
       },

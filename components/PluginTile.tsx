@@ -13,15 +13,15 @@ const PluginTile: FC<TileProps> = ({
   className = '',
 }) => {
   return (
-    <Link href={"/" + plugin.key} key={plugin.key} className={` rounded-lg hover:bg-bghighlight ${className}`}>
+    <Link href={"/" + plugin.key} key={plugin.key} className={` rounded-lg bg-tilebg hover:bg-bghighlight ${className}`}>
       <div className='p-4' key={plugin.link}>
         <div className='flex justify-between items-end'>
           <h3 className="text-highlight" id={plugin.key}>
             {plugin.title}
           </h3>
         </div>
-        <div>
-          <img alt={plugin.title} src={plugin.image} className="max-h-64" />
+        <div className="my-4">
+          <img alt={plugin.title} src={plugin.image} className="max-h-64 m-auto" />
         </div>
         <ReactMarkdown className="prose prose-invert">{plugin.description}</ReactMarkdown>
       </div>
