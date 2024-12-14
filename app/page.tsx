@@ -49,11 +49,10 @@ export default function Page() {
     <>
       <div className="flex-1 max-w-5xl">
         <div className="">
-          <h1 className="text-5xl text-highlight font-heading"><Link href='/'>Zack's Ableton Live Devices / Plugins</Link></h1>
-          <div className="prose lg:prose-xl prose-invert">
+          <h1 className="text-5xl text-highlight font-heading mb-8"><Link href='/'>Zack's Ableton Live Devices / Plugins</Link></h1>
+          <div className="prose lg:prose-xl prose-invert mb-16">
             <p>
-              Max For Live is a visual development environment that integrates seamlessly with Ableton Live. This allows people like me to make our own utilities, effects, sound generators, and automation within my digital audio workstation (DAW). This is an incredibly powerful capability of Ableton Live that sets it apart from other DAWs. We are no longer limited to the tools that come with the DAW or installable VSTs. We can make our own devices to explore their own creativity to an amazing level, and share those tools as our own art that helps other artists make their art. I really enjoy that part.
-            </p>
+              Max For Live is a visual development environment that integrates seamlessly with Ableton Live. This allows people like me to make our own utilities, effects, sound generators, and automation within my digital audio workstation (DAW). I've made many devices for myself in Max for Live, and offer them here for download and collaboratin.</p>
 
             <img src="https://github.com/zsteinkamp/m4l-Modulation-Lerp/raw/main/images/device.gif" alt="Modulation Lerp in action" />
 
