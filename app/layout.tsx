@@ -1,5 +1,9 @@
+import { getPluginData } from "@/lib/dataUtils";
+import { PluginMeta } from "@/types";
 import type { Metadata } from "next";
 import "./globals.css";
+import TableOfContents from "@/components/TableOfContents";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,13 +15,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pluginData: PluginMeta[] = getPluginData()
   return (
     <html lang='en'>
       <head>
         <link rel='stylesheet' href='https://use.typekit.net/tek5ypq.css' />
       </head>
-      <body>
-        {children}
+      <body className='p-8'>
+        <div className='flex'>
+          <div className="flex-1 max-w-5xl">
+            <h1 className="text-5xl font-heading"><Link href='/'>Music Tools / Plugins</Link></h1>
+            <div className="prose prose-invert">
+              <p>
+                I have made a handful of tools for electronic musicians who use Ableton
+                Live, mostly using Max for Live.
+              </p>
+              <p>
+                You can download .zip bundles of each category, or visit each device's project page to read more and download it there.
+              </p>
+            </div>
+            <div className="">
+              {children}
+            </div>
+          </div>
+          <div className='min-w-48 ml-8'>
+            <div className='fixed max-h-[calc(100vh-4rem)] overflow-y-auto'>
+              <TableOfContents pluginData={pluginData} className='max-h-screen overflow-y-auto' />
+            </div>
+          </div>
+        </div>
       </body>
     </html >
   );

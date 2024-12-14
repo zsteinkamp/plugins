@@ -1,11 +1,11 @@
-import yaml from 'js-yaml'
 import { categoryZipPath } from '@/lib/downloadUtils'
 import fs from 'fs'
-const { mkdir } = require('node:fs/promises');
-import { Octokit, RestEndpointMethodTypes } from '@octokit/rest'
+import { mkdir } from 'node:fs/promises'
+import { Octokit } from '@octokit/rest'
 import AdmZip from 'adm-zip'
 import path from 'path'
 import { loadEnvConfig } from '@next/env'
+import { getPluginData } from '@/lib/dataUtils'
 
 const CACHE_ROOT = '/cache'
 const owner = 'zsteinkamp'
@@ -63,9 +63,8 @@ const addToCategoryZip = async (plugin: any, release: any) => {
 }
 
 
-const main = async () => {
-  const plugins: any = yaml.load(fs.readFileSync('data/plugins.yaml', 'utf8'))
-  const catPromises: Promise<void>[] = []
+(async () => {
+  const plugins: any = getPluginData()
 
   for (const plugin of plugins) {
     const repo = plugin.link.split('/')[4]
@@ -86,6 +85,4 @@ const main = async () => {
     categoryZips[cat].writeZip(zipFilename)
     console.debug(`wrote ${zipFilename}`)
   }
-}
-
-main()
+})()
