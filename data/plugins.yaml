@@ -1,30 +1,38 @@
+- title: ScratchBacker
+  category: Instruments
+  key: m4l-ScratchBacker
+  image: https://github.com/zsteinkamp/m4l-ScratchBacker/raw/main/images/device.gif
+  link: https://github.com/zsteinkamp/m4l-ScratchBacker
+  description: |
+    This is a sample-playback device with a focus on scratching or turntablism. Define up to 12 scratch presets and trigger them with the keys C1-B1 while you use higher keys to trigger playing the sample.
+
 - title: Modulation Inertia
-  key: m4l-Modulation-Inertia
   category: Modulators
+  key: m4l-Modulation-Inertia
   image: https://github.com/zsteinkamp/m4l-Modulation-Inertia/raw/main/images/device.gif
   link: https://github.com/zsteinkamp/m4l-Modulation-Inertia
   description: |
     This is a modulation utility that allows you to smooth out a modulation signal and map it to up to 8 other parameters, with independent control over rise and fall time.
 
 - title: Quantize MIDI
-  key: m4l-Quantize-MIDI
   category: Note Effects
+  key: m4l-Quantize-MIDI
   image: https://github.com/zsteinkamp/m4l-Quantize-MIDI/raw/main/images/device.gif
   link: https://github.com/zsteinkamp/m4l-Quantize-MIDI
   description: |
     This device allows you to variably quantize a stream of MIDI notes. Sweep from random to locked in to the song tempo, and everything in between. In the screen recording above, the "Amount" knob in the lower-left is controlling the degree of quantization.
 
 - title: Knobbler4
-  key: m4l-Knobbler4
   category: Utilities
+  key: m4l-Knobbler4
   image: https://github.com/zsteinkamp/m4l-Knobbler4/raw/main/images/external-with-hand.jpg
   link: https://github.com/zsteinkamp/m4l-Knobbler4
   description: |
-    This is a combination of Max For Live device and TouchOSC layout that provides an auto-labeling, auto-coloring, multitouch control surface for Ableton Live. Control the most important parameters in your Live Set with your fingers! Map a slider on your iPad easier than mapping a MIDI controller. Game changer.
+    This is a combination of Max For Live device and TouchOSC layout that provides a wireless, OSC-based, auto-labeling, auto-coloring, multitouch control surface for Ableton Live. Control the most important parameters in your Live Set with your fingers! Map a slider on your iPad easier than mapping a MIDI controller. Game changer.
 
 - title: SimulScrub
-  key: m4l-SimulScrub
   category: Audio Effects
+  key: m4l-SimulScrub
   image: https://github.com/zsteinkamp/m4l-SimulScrub/raw/main/images/device.gif
   link: https://github.com/zsteinkamp/m4l-SimulScrub
   description: |
@@ -32,82 +40,82 @@
     This allows you to scrub through time of a longer sample, while always playing the sample at 1x speed.
 
 - title: Chiastic Slide
-  key: m4l-ChiasticSlide
   category: Audio Effects
+  key: m4l-ChiasticSlide
   image: https://github.com/zsteinkamp/m4l-ChiasticSlide/raw/main/images/device.gif
   link: https://github.com/zsteinkamp/m4l-ChiasticSlide
   description: |
     Smoothly crossfade between any number of child tracks in a group or chains in a preceeding Instrument Rack or Audio Effect Rack device. Allows for crazy tempo-locked layering.
 
-- title: TapPanVerb
-  key: m4l-TapPanVerb
+- title: TapPanZeit
   category: Audio Effects
-  image: https://github.com/zsteinkamp/m4l-TapPanVerb/raw/main/images/device.png
-  link: https://github.com/zsteinkamp/m4l-TapPanVerb
+  key: m4l-TapPanZeit
+  image: https://github.com/zsteinkamp/m4l-TapPanZeit/raw/main/images/device.png
+  link: https://github.com/zsteinkamp/m4l-TapPanZeit
   description: |
-    A reverb + bucket-brigade delay tap field with control over timing and stereo placement of each tap. Up to 128 taps + an insane feedback control.
+    A bucket-brigade delay tap field with control over timing and stereo placement of each tap. Up to 128 taps + an insane feedback control.
 
 - title: Modulation Math
-  key: m4l-Modulation-Math
   category: Modulators
+  key: m4l-Modulation-Math
   image: https://github.com/zsteinkamp/m4l-Modulation-Math/raw/main/images/device.gif
   link: https://github.com/zsteinkamp/m4l-Modulation-Math
   description: |
     This device combines two modulation signals using math, and outputs a signal you can then map to a parameter.
 
 - title: Fractal Note Echo
-  key: m4l-js-fractalNoteEcho
   category: Note Effects
-  image: https://github.com/zsteinkamp/m4l-js-fractalNoteEcho/raw/main/images/screenshot.gif
-  link: https://github.com/zsteinkamp/m4l-js-fractalNoteEcho
+  key: m4l-FractalNoteEcho
+  image: https://github.com/zsteinkamp/m4l-FractalNoteEcho/raw/main/images/screenshot.gif
+  link: https://github.com/zsteinkamp/m4l-FractalNoteEcho
   description: |
     This is a MIDI Effect device that will trigger notes in a fractal pattern. The base fractal shape (in terms of timing between echo taps) can be defined, then number of iterations and iteration scale can be controlled. The kinds of textures you can get out of it are really surprising, and have been inspiring to me. There is a natural beauty and harmony to fractals, which can contribute a more natural feel to your sounds.
 
     This device is mostly implemented in Javascript in Max For Live. Super fun to make.
 
 - title: Modulation Lerp
-  key: m4l-Modulation-Lerp
   category: Modulators
+  key: m4l-Modulation-Lerp
   image: https://github.com/zsteinkamp/m4l-Modulation-Lerp/raw/main/images/device.gif
   link: https://github.com/zsteinkamp/m4l-Modulation-Lerp
   description: |
     This device produces a value in between two input values.
 
 - title: Modulation Delay
-  key: m4l-Modulation-Delay
   category: Modulators
+  key: m4l-Modulation-Delay
   image: https://github.com/zsteinkamp/m4l-Modulation-Delay/raw/main/images/device.gif
   link: https://github.com/zsteinkamp/m4l-Modulation-Delay
   description: |
     It's a feedbacking echo effect for modulation data! Turn pulses into automated oceans!
 
 - title: Modulation Stepper
-  key: m4l-Modulation-Stepper
   category: Modulators
+  key: m4l-Modulation-Stepper
   image: https://github.com/zsteinkamp/m4l-Modulation-Stepper/raw/main/images/device.gif
   link: https://github.com/zsteinkamp/m4l-Modulation-Stepper
   description: |
     Turns continuous modulation input into stair-stepped output at your chosen frequency or note interval.
 
 - title: Correlation Modulation
-  key: m4l-CorrelationModulation
   category: Modulators
+  key: m4l-CorrelationModulation
   image: https://github.com/zsteinkamp/m4l-CorrelationModulation/raw/main/images/CorrelationModulation.gif
   link: https://github.com/zsteinkamp/m4l-CorrelationModulation
   description: |
     Use a stereo signal's left/right phase correlation as a modulation source.
 
 - title: Chiastic Solo
-  key: m4l-ChiasticSolo
   category: Audio Effects
+  key: m4l-ChiasticSolo
   image: https://github.com/zsteinkamp/m4l-ChiasticSolo/raw/main/images/device.gif
   link: https://github.com/zsteinkamp/m4l-ChiasticSolo
   description: |
-    Gives you a knob to control which track or chain is soloed in a group or rack. It makes some workflows in mastering or creating albums easier by letting you map a hardware knob to track selection.
+    Gives you a knob to control which track or chain is soloed in a group or rack. It makes some workflows in mastering or creating albums easier by letting you map a hardware knob to track selection. Requires an options.txt workaround with Live 12.
 
 - title: Len Stepper
-  key: m4l-LenStepper
   category: Note Effects
+  key: m4l-LenStepper
   image: https://github.com/zsteinkamp/m4l-LenStepper/raw/main/images/LenStepper.gif
   link: https://github.com/zsteinkamp/m4l-LenStepper
   description: |
@@ -116,8 +124,8 @@
     conjunction with Key Stepper to reliably create polyrythms and fugues.
 
 - title: Key Stepper
-  key: m4l-KeyStepper
   category: Note Effects
+  key: m4l-KeyStepper
   image: https://github.com/zsteinkamp/m4l-KeyStepper/raw/main/images/KeyStepper.gif
   link: https://github.com/zsteinkamp/m4l-KeyStepper
   description: |
@@ -127,19 +135,19 @@
     possible.
 
 - title: Chord Ripper
-  key: m4l-ChordRipper
   category: Note Effects
+  key: m4l-ChordRipper
   image: https://github.com/zsteinkamp/m4l-ChordRipper/raw/main/images/ChordRipper.png
   link: https://github.com/zsteinkamp/m4l-ChordRipper
   description: |
     Decompose chords across multiple tracks. Add the device to each track you
-    want to feed off the chord and set the desired voice/channel. Play a MIDI
+    want to feed off the chord and set the desired voice/group. Play a MIDI
     chord into any track containing this device, and its notes will be
-    distributed across the tracks sharing the same channel.
+    distributed across the tracks sharing the same group.
 
 - title: zs Faderboard3
-  key: m4l-zs-Faderboard3
   category: Instruments
+  key: m4l-zs-Faderboard3
   image: https://github.com/zsteinkamp/m4l-zs-Faderboard3/raw/main/images/device.gif
   link: https://github.com/zsteinkamp/m4l-zs-Faderboard3
   description: |
@@ -148,26 +156,26 @@
     You can also control voice left/right pan position, loop start and end (with the ability to go backwards!), and trigger all voices to restart playing. The device outputs a stereo mix, but all 10 stereo channels are available independently too.
 
 - title: Fibonacci Note Echo
-  key: m4l-js-fibonacciNoteEcho
   category: Note Effects
-  image: https://github.com/zsteinkamp/m4l-js-fibonacciNoteEcho/raw/main/images/screenshot.gif
-  link: https://github.com/zsteinkamp/m4l-js-fibonacciNoteEcho
+  key: m4l-FibonacciNoteEcho
+  image: https://github.com/zsteinkamp/m4l-FibonacciNoteEcho/raw/main/images/screenshot.gif
+  link: https://github.com/zsteinkamp/m4l-FibonacciNoteEcho
   description: |
     This is a MIDI Effect device that will repeat notes, with each repeat delay following the Fibonacci Sequence. You can control the number of repeats, time scale, pitch, and velocity change.
 
     This was my first Javascript-based M4L patch. It was a great learning experience to figure out how to code up both the logic and visualization in M4L's Javascript environment.
 
 - title: zs Send Duck Rack
-  key: zs-Send-Duck-Rack
   category: Audio Effects
+  key: zs-Send-Duck-Rack
   image: https://github.com/zsteinkamp/zs-Send-Duck-Rack/raw/main/images/device.png
   link: https://github.com/zsteinkamp/zs-Send-Duck-Rack
   description: |
     An audio effect rack that provides controls like an effects send, as well as a ducking feature for any effect.
 
 - title: zs Feedback Matrix
-  key: zs-Feedback-Matrix
   category: Audio Effects
+  key: zs-Feedback-Matrix
   image: https://github.com/zsteinkamp/zs-Feedback-Matrix/raw/main/images/device.png
   link: https://github.com/zsteinkamp/zs-Feedback-Matrix
   description: |
@@ -177,17 +185,25 @@
     cross-feedback.
 
 - title: KS-Synth
-  key: m4l-KS-Synth
   category: Instruments
+  key: m4l-KS-Synth
   image: https://github.com/zsteinkamp/m4l-KS-Synth/raw/main/images/device.png
   link: https://github.com/zsteinkamp/m4l-KS-Synth
   description: |
     A polyphonic Karplus-Strong synthesizer. This was my first foray into [poly~] and can create a surprisingly wide range of sounds.
 
 - title: Tempo To Ms
-  key: m4l-TempoToMs
   category: Utilities
+  key: m4l-TempoToMs
   image: https://github.com/zsteinkamp/m4l-TempoToMs/raw/main/images/device.png
   link: https://github.com/zsteinkamp/m4l-TempoToMs
   description: |
     Displays a grid of durations, in milliseconds, of various note lengths at the current song tempo.
+
+- title: WavScope
+  category: Utilities
+  key: m4l-WavScope
+  image: https://github.com/zsteinkamp/m4l-WavScope/raw/main/images/device.gif
+  link: https://github.com/zsteinkamp/m4l-WavScope
+  description: |
+    Visualize the audio waveform at that point in your audio chain. Can be useful if placed before and after an effect.
