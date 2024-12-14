@@ -42,7 +42,7 @@ const TableOfContents: FC<ToCProps> = ({
     }
     return (
       <div
-        className="pl-0 mt-0 whitespace-nowrap"
+        className={`pl-0 mt-0 whitespace-nowrap ${className}`}
         key={plugin.key}
       >
         <a

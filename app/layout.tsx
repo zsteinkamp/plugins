@@ -3,7 +3,6 @@ import { PluginMeta } from "@/types";
 import type { Metadata } from "next";
 import "./globals.css";
 import TableOfContents from "@/components/TableOfContents";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Create Next App",

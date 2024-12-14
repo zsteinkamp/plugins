@@ -10,19 +10,13 @@ export const dynamic = 'force-dynamic'
 export default function Page() {
   const pluginData: PluginMeta[] = getSortedPluginData()
 
-  let lastCategory: string | null = null
-
   const catObj: Record<string, PluginMeta[]> = {}
 
-  let key = pluginData[0].category
   for (const plugin of pluginData) {
-    if (lastCategory !== plugin.category) {
-      key = plugin.category
+    if (!catObj[plugin.category]) {
+      catObj[plugin.category] = []
     }
-    if (!catObj[key]) {
-      catObj[key] = []
-    }
-    catObj[key].push(plugin)
+    catObj[plugin.category].push(plugin)
   }
 
   const output = []
@@ -49,10 +43,10 @@ export default function Page() {
     <>
       <div className="flex-1 max-w-5xl">
         <div className="">
-          <h1 className="text-5xl text-highlight font-heading mb-8"><Link href='/'>Zack's Ableton Live Devices / Plugins</Link></h1>
+          <h1 className="text-5xl text-highlight font-heading mb-8"><Link href='/'>Zack&apos;s Ableton Live Devices / Plugins</Link></h1>
           <div className="prose lg:prose-xl prose-invert mb-16">
             <p>
-              Max For Live is a visual development environment that integrates seamlessly with Ableton Live. This allows people like me to make our own utilities, effects, sound generators, and automation within my digital audio workstation (DAW). I've made many devices for myself in Max for Live, and offer them here for download and collaboratin.</p>
+              Max For Live is a visual development environment that integrates seamlessly with Ableton Live. This allows people like me to make our own utilities, effects, sound generators, and automation within my digital audio workstation (DAW). I&apos;ve made many devices for myself in Max for Live, and offer them here for download and collaboratin.</p>
 
             <img src="https://github.com/zsteinkamp/m4l-Modulation-Lerp/raw/main/images/device.gif" alt="Modulation Lerp in action" />
 
@@ -61,7 +55,7 @@ export default function Page() {
             </p>
 
             <p>
-              You can download .zip bundles of each category, or visit each device's project page to read more and download it there.
+              You can download .zip bundles of each category, or visit each device&apos;s project page to read more and download it there.
             </p>
           </div>
           {output}

@@ -2,12 +2,8 @@ import { getDataForPlugin, getReadmePath, getReleases } from "@/lib/dataUtils"
 import fs from "node:fs"
 import fsp from "node:fs/promises"
 import { notFound } from "next/navigation"
-import Markdown from "react-markdown"
-import remarkGfm from 'remark-gfm'
-import { Octokit } from "@octokit/rest"
+import ReactMarkdown from "react-markdown"
 import Link from "next/link"
-
-const octokit = new Octokit({ auth: process.env['GH_TOKEN'] })
 
 export default async function Page(
   {
@@ -61,7 +57,7 @@ export default async function Page(
           <Link className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md" href={releaseData.assets[0].browser_download_url}>Download Latest ({releaseData.tag_name})</Link>
           <Link className="p-2" href={pluginData.link}>GitHub Repo</Link>
         </div>
-        <Markdown className="" children={readmeRaw} components={renderers} />
+        <ReactMarkdown className="" components={renderers}>{readmeRaw}</ReactMarkdown>
       </div>
     </>
   )
