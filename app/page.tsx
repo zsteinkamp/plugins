@@ -19,19 +19,19 @@ export default function Page() {
     catObj[plugin.category].push(plugin)
   }
 
-  const output = []
+  const tileSections = []
 
   for (const category of categorySortOrder) {
     if (catObj[category]) {
-      output.push(<div key={category}>
-        <div className="flex mb-2 mt-8">
+      tileSections.push(<div key={category}>
+        <div className="flex mb-4 mt-12">
           <h2 className="text-highlight2 grow">{category}</h2>
           <div className="mt-2">
             <Link href={categoryZipPath(category)} className="text-background bg-highlight2 hover:bg-highlight p-2 rounded">Download .zip</Link>
           </div>
         </div>
-        <div className="flex flex-wrap mx-[-1rem] gap-4">{
-          catObj[category].map((plugin) => <PluginTile key={plugin.key} plugin={plugin} className="max-w-[32rem] min-w-[20rem] flex-1" />)
+        <div className="flex flex-wrap mx-[-1rem] gap-8">{
+          catObj[category].map((plugin) => <PluginTile key={plugin.key} plugin={plugin} className="max-w-[32rem] min-w-80 sm:min-w-96 flex-1" />)
         }
         </div>
       </div>
@@ -56,7 +56,7 @@ export default function Page() {
           You can download .zip bundles of each category, or visit each device&apos;s project page to read more and download it there.
         </p>
       </div>
-      {output}
+      {tileSections}
     </>
   )
 }
