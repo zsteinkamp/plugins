@@ -35,9 +35,9 @@ const TableOfContents: FC<ToCProps> = ({
 
   const lines = headings.map((heading, i) => {
     if (heading.level === 1) {
-      return (<h3
+      return (<h4
         key={heading.title}
-        className={i > 1 ? "mt-2" : ""}>{heading.title}</h3>
+        className={`text-highlight2 ${i > 1 ? "mt-2" : ""}`}>{heading.title}</h4>
       )
     }
     return (
@@ -47,6 +47,7 @@ const TableOfContents: FC<ToCProps> = ({
       >
         <a
           href={`/${heading.key}`}
+          className="hover:text-highlight"
         >
           {heading.title}
         </a>

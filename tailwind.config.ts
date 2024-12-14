@@ -14,6 +14,9 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        bghighlight: "var(--bghighlight)",
+        highlight: "var(--highlight)",
+        highlight2: "var(--highlight2)",
       },
     },
   },

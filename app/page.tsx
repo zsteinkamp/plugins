@@ -1,53 +1,73 @@
-import { getPluginData } from "@/lib/dataUtils";
+import { categorySortOrder, getSortedPluginData } from "@/lib/dataUtils";
 import { categoryZipPath } from "@/lib/downloadUtils";
 import { PluginMeta } from "@/types";
+import PluginTile from "@/components/PluginTile";
 import Link from "next/link";
 import React from "react";
-import ReactMarkdown from "react-markdown";
 
 export const dynamic = 'force-dynamic'
 
 export default function Page() {
-  const pluginData: PluginMeta[] = getPluginData()
+  const pluginData: PluginMeta[] = getSortedPluginData()
 
   let lastCategory: string | null = null
 
-  return pluginData.map((plugin: PluginMeta) => {
-    let category = null
-    if (lastCategory !== plugin.category) {
-      category = <div>
-        <h2 className="mb-[-2rem]">{plugin.category}</h2>
-        <div className="text-right mt-2">
-          <Link href={categoryZipPath(plugin.category)} className="text-pagebg hover:text-pagebg hover:bg-link-hover bg-link-base p-2 rounded">Download .zip</Link>
-        </div>
-      </div>
+  const catObj: Record<string, PluginMeta[]> = {}
 
-      lastCategory = plugin.category
+  let key = pluginData[0].category
+  for (const plugin of pluginData) {
+    if (lastCategory !== plugin.category) {
+      key = plugin.category
     }
-    return (
-      <React.Fragment key={plugin.key}>
-        {category}
-        <div className="border-2">
-          <div className='pb-4' key={plugin.link}>
-            <div className='flex justify-between items-end'>
-              <h3 id={plugin.slug}>
-                <Link href={plugin.link} title={plugin.title}>
-                  {plugin.title}
-                </Link>
-              </h3>
-              <div>
-                <Link href={plugin.link}>More Info</Link>
-              </div>
-            </div>
-            <div>
-              <Link href={plugin.link} title={plugin.title}>
-                <img alt={plugin.title} src={plugin.image} />
-              </Link>
-            </div>
-            <ReactMarkdown>{plugin.description}</ReactMarkdown>
+    if (!catObj[key]) {
+      catObj[key] = []
+    }
+    catObj[key].push(plugin)
+  }
+
+  const output = []
+
+  for (const category of categorySortOrder) {
+    if (catObj[category]) {
+      output.push(<div key={category}>
+        <div className="flex mb-2 mt-8">
+          <h2 className="text-highlight2 grow">{category}</h2>
+          <div className="mt-2 mr-8">
+            <Link href={categoryZipPath(category)} className="text-background bg-highlight2 hover:bg-highlight p-2 rounded">Download .zip</Link>
           </div>
         </div>
-      </React.Fragment>
-    )
-  })
+        <div className="flex flex-wrap ml-[-1rem]">{
+          catObj[category].map((plugin) => <PluginTile key={plugin.key} plugin={plugin} className="max-w-[32rem] min-w-[24rem] flex-1" />)
+        }
+        </div>
+      </div>
+      )
+    }
+  }
+
+  return (
+    <>
+      <div className="flex-1 max-w-5xl">
+        <div className="">
+          <h1 className="text-5xl text-highlight font-heading"><Link href='/'>Zack's Ableton Live Devices / Plugins</Link></h1>
+          <div className="prose lg:prose-xl prose-invert">
+            <p>
+              Max For Live is a visual development environment that integrates seamlessly with Ableton Live. This allows people like me to make our own utilities, effects, sound generators, and automation within my digital audio workstation (DAW). This is an incredibly powerful capability of Ableton Live that sets it apart from other DAWs. We are no longer limited to the tools that come with the DAW or installable VSTs. We can make our own devices to explore their own creativity to an amazing level, and share those tools as our own art that helps other artists make their art. I really enjoy that part.
+            </p>
+
+            <img src="https://github.com/zsteinkamp/m4l-Modulation-Lerp/raw/main/images/device.gif" alt="Modulation Lerp in action" />
+
+            <p>
+              Check out my <Link href="https://www.youtube.com/playlist?list=PLqzTnRgmRId7rYvoVSoCvCWFgvfc8RcfW">YouTube playlist</Link> for demos and tutorials centered around these devices.
+            </p>
+
+            <p>
+              You can download .zip bundles of each category, or visit each device's project page to read more and download it there.
+            </p>
+          </div>
+          {output}
+        </div>
+      </div>
+    </>
+  )
 }

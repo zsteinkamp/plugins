@@ -5,7 +5,7 @@ import { Octokit } from '@octokit/rest'
 import AdmZip from 'adm-zip'
 import path from 'path'
 import { loadEnvConfig } from '@next/env'
-import { getPluginData } from '@/lib/dataUtils'
+import { getSortedPluginData } from '@/lib/dataUtils'
 
 const CACHE_ROOT = '/cache'
 const owner = 'zsteinkamp'
@@ -64,7 +64,7 @@ const addToCategoryZip = async (plugin: any, release: any) => {
 
 
 (async () => {
-  const plugins: any = getPluginData()
+  const plugins: any = getSortedPluginData()
 
   for (const plugin of plugins) {
     const repo = plugin.link.split('/')[4]
