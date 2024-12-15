@@ -44,7 +44,7 @@ export default function Page() {
     <>
       <h1 className="text-5xl text-highlight font-heading mb-8">
         <Link href='/' className="flex gap-4">
-          <Image width="60" height="60" src="/favicon-trans.svg" alt="live.dial" />
+          <Image width="60" height="60" src="/favicon-trans.svg" alt="live.dial" className="mt-[-0.5rem]" />
           Zack&apos;s Ableton Live Devices / Plugins
         </Link>
       </h1>
