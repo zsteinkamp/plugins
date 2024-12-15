@@ -25,7 +25,7 @@ export default function Page() {
   for (const category of categorySortOrder) {
     if (catObj[category]) {
       tileSections.push(<div key={category}>
-        <div className="flex mb-4 mt-12">
+        <div className="flex mb-8 mt-16">
           <h2 className="text-highlight2 grow">{category}</h2>
           <div className="mt-2">
             <Link href={categoryZipPath(category)} className="text-background bg-highlight2 hover:bg-highlight p-2 rounded">Download .zip</Link>
@@ -51,13 +51,11 @@ export default function Page() {
       <div className="prose lg:prose-xl prose-invert mb-16">
         <img src="https://github.com/zsteinkamp/m4l-Knobbler4/raw/main/images/external-with-hand.jpg" alt="Modulation Lerp in action" className="not-prose max-h-64 float-right pl-8" />
         <p>
-          Max For Live is a visual development environment that integrates seamlessly with Ableton Live. This allows people like me to make our own utilities, effects, sound generators, and automation within my digital audio workstation (DAW). I&apos;ve made many devices for myself in Max for Live, and offer them here for download and collaboration.</p>
-
-
+          Max For Live is a visual development environment that integrates seamlessly with Ableton Live. This allows people like me to make our own utilities, effects, sound generators, and automation within my digital audio workstation (DAW). I&apos;ve made many devices for myself in Max for Live, and offer them here for download and collaboration.
+        </p>
         <p>
           Check out my <Link href="https://www.youtube.com/playlist?list=PLqzTnRgmRId7rYvoVSoCvCWFgvfc8RcfW">YouTube playlist</Link> for demos and tutorials centered around these devices.
         </p>
-
         <p>
           You can download .zip bundles of each category, or visit each device&apos;s project page to read more and download it there.
         </p>
