@@ -3,6 +3,7 @@ import { categoryZipPath } from "@/lib/downloadUtils";
 import { PluginMeta } from "@/types";
 import PluginTile from "@/components/PluginTile";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 
 export const dynamic = 'force-dynamic'
@@ -41,7 +42,12 @@ export default function Page() {
 
   return (
     <>
-      <h1 className="text-5xl text-highlight font-heading mb-8"><Link href='/'>Zack&apos;s Ableton Live Devices / Plugins</Link></h1>
+      <h1 className="text-5xl text-highlight font-heading mb-8">
+        <Link href='/' className="flex gap-4">
+          <Image width="60" height="60" src="/favicon-trans.svg" alt="live.dial" />
+          Zack&apos;s Ableton Live Devices / Plugins
+        </Link>
+      </h1>
       <div className="prose lg:prose-xl prose-invert mb-16">
         <p>
           Max For Live is a visual development environment that integrates seamlessly with Ableton Live. This allows people like me to make our own utilities, effects, sound generators, and automation within my digital audio workstation (DAW). I&apos;ve made many devices for myself in Max for Live, and offer them here for download and collaboration.</p>

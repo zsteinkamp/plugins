@@ -4,7 +4,7 @@
   image: https://github.com/zsteinkamp/m4l-MoireArp/raw/main/images/device.png
   link: https://github.com/zsteinkamp/m4l-MoireArp
   description: |
-    An arpeggiator inspired by moire patterns. Set a base time interval, number of note layers, and an interval increment and hold a note. Amazing patterns result. [Video Overview](https://www.youtube.com/watch?v=vrz0NxyW4qs)
+    An arpeggiator inspired by moire patterns. Set a base time interval, number of note layers, and an interval increment and hold a note. Amazing patterns result.
 
 - title: ScratchBacker
   category: Instruments

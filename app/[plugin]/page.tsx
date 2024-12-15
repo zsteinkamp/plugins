@@ -4,6 +4,7 @@ import fsp from "node:fs/promises"
 import { notFound } from "next/navigation"
 import ReactMarkdown from "react-markdown"
 import Link from "next/link"
+import Image from "next/image"
 
 export default async function Page(
   {
@@ -52,12 +53,14 @@ export default async function Page(
     <>
       <div className="prose lg:prose-xl prose-invert m-auto">
         <div className="mb-8"><Link href="/">&lt; Home</Link></div>
-        <h1 className="text-highlight">{pluginData.title}</h1>
+        <h1 className="text-highlight">
+          {pluginData.title}
+        </h1>
         <div className="flex">
           <Link className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md" href={releaseData.assets[0].browser_download_url}>Download Latest ({releaseData.tag_name})</Link>
           <Link className="p-2" href={pluginData.link}>GitHub Repo</Link>
         </div>
-        <ReactMarkdown className="" components={renderers}>{readmeRaw}</ReactMarkdown>
+        <ReactMarkdown className="prose-headings:text-highlight" components={renderers}>{readmeRaw}</ReactMarkdown>
       </div>
     </>
   )
