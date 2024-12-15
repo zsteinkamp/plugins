@@ -14,7 +14,7 @@ const PluginTile: FC<TileProps> = ({
 }) => {
   return (
     <Link href={"/" + plugin.key} key={plugin.key} className={` rounded-lg bg-tilebg border-2 border-tilebg hover:border-bghighlight ${className}`}>
-      <div className='p-8' key={plugin.link}>
+      <div className='p-6' key={plugin.link}>
         <div className='flex justify-between items-end'>
           <h3 className="text-highlight" id={plugin.key}>
             {plugin.title}

@@ -3,6 +3,7 @@ import { PluginMeta } from "@/types";
 import type { Metadata } from "next";
 import "./globals.css";
 import TableOfContents from "@/components/TableOfContents";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Zack's Plugins",
@@ -21,9 +22,10 @@ export default function RootLayout({
         <link rel='stylesheet' href='https://use.typekit.net/tek5ypq.css' />
       </head>
       <body className='p-8'>
-        <div className="flex">
+        <div className="flex min-h-screen">
           <div className="flex-1 max-w-5xl">
             {children}
+            <Footer />
           </div>
           <div className='hidden sm:block min-w-48 ml-12'>
             <div className='fixed max-h-[calc(100vh-4rem)] overflow-y-auto'>

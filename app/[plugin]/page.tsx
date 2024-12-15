@@ -4,6 +4,7 @@ import fsp from "node:fs/promises"
 import { notFound } from "next/navigation"
 import ReactMarkdown from "react-markdown"
 import Link from "next/link"
+import Footer from "@/components/Footer"
 
 export default async function Page(
   {
