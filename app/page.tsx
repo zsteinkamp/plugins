@@ -32,7 +32,7 @@ export default function Page() {
           </div>
         </div>
         <div className="flex flex-wrap mx-[-1rem] gap-8">{
-          catObj[category].map((plugin) => <PluginTile key={plugin.key} plugin={plugin} className="max-w-[32rem] min-w-80 sm:min-w-96 flex-1" />)
+          catObj[category].map((plugin) => <PluginTile key={plugin.key} plugin={plugin} className="max-w-[48rem] min-w-[20rem] w-0 grow" />)
         }
         </div>
       </div>
