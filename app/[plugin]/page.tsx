@@ -4,7 +4,6 @@ import fsp from "node:fs/promises"
 import { notFound } from "next/navigation"
 import ReactMarkdown from "react-markdown"
 import Link from "next/link"
-import Image from "next/image"
 
 export default async function Page(
   {
