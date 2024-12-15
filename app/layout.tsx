@@ -20,12 +20,12 @@ export default function RootLayout({
       <head>
         <link rel='stylesheet' href='https://use.typekit.net/tek5ypq.css' />
       </head>
-      <body className='p-8'>
+      <body>
         <div className="flex min-h-screen">
-          <div className="flex-1 max-w-5xl">
+          <div className="flex-1 max-w-5xl p-8">
             {children}
           </div>
-          <div className='hidden sm:block min-w-48 ml-12'>
+          <div className='hidden sm:block min-w-[16rem] ml-8 bg-tilebg p-8'>
             <div className='fixed max-h-[calc(100vh-4rem)] overflow-y-auto'>
               <TableOfContents pluginData={pluginData} className='max-h-screen overflow-y-auto' />
             </div>
