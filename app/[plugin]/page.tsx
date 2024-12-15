@@ -61,6 +61,8 @@ export default async function Page(
           <Link className="p-2" href={pluginData.link}>GitHub Repo</Link>
         </div>
         <ReactMarkdown className="prose-headings:text-highlight" components={renderers}>{readmeRaw}</ReactMarkdown>
+      </div>
+      <div className="max-w-[52rem] m-auto">
         <Footer />
       </div>
     </>
