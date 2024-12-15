@@ -49,10 +49,10 @@ export default function Page() {
         </Link>
       </h1>
       <div className="prose lg:prose-xl prose-invert mb-16">
+        <img src="https://github.com/zsteinkamp/m4l-Knobbler4/raw/main/images/external-with-hand.jpg" alt="Modulation Lerp in action" className="not-prose max-h-64 float-right pl-8" />
         <p>
           Max For Live is a visual development environment that integrates seamlessly with Ableton Live. This allows people like me to make our own utilities, effects, sound generators, and automation within my digital audio workstation (DAW). I&apos;ve made many devices for myself in Max for Live, and offer them here for download and collaboration.</p>
 
-        <img src="https://github.com/zsteinkamp/m4l-Modulation-Lerp/raw/main/images/device.gif" alt="Modulation Lerp in action" />
 
         <p>
           Check out my <Link href="https://www.youtube.com/playlist?list=PLqzTnRgmRId7rYvoVSoCvCWFgvfc8RcfW">YouTube playlist</Link> for demos and tutorials centered around these devices.
