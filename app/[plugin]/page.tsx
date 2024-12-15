@@ -4,7 +4,7 @@ import fsp from "node:fs/promises"
 import { notFound } from "next/navigation"
 import ReactMarkdown from "react-markdown"
 import Link from "next/link"
-import Footer from "@/components/Footer"
+import Footer from "@/components/Footer";
 
 export default async function Page(
   {
@@ -61,6 +61,7 @@ export default async function Page(
           <Link className="p-2" href={pluginData.link}>GitHub Repo</Link>
         </div>
         <ReactMarkdown className="prose-headings:text-highlight" components={renderers}>{readmeRaw}</ReactMarkdown>
+        <Footer />
       </div>
     </>
   )

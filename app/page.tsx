@@ -5,6 +5,7 @@ import PluginTile from "@/components/PluginTile";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import Footer from "@/components/Footer";
 
 export const dynamic = 'force-dynamic'
 
@@ -61,6 +62,7 @@ export default function Page() {
         </p>
       </div>
       {tileSections}
+      <Footer />
     </>
   )
 }
