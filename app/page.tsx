@@ -32,7 +32,7 @@ export default function Page() {
             <Link href={categoryZipPath(category)} className="text-background bg-highlight2 hover:bg-highlight p-2 rounded">Download .zip</Link>
           </div>
         </div>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(20rem,_1fr))] mx-[-1rem] gap-8">{
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(20rem,_1fr))] gap-8">{
           catObj[category].map((plugin) => <PluginTile key={plugin.key} plugin={plugin} className="min-w-[20rem] max-w-[40rem]" />)
         }
         </div>
