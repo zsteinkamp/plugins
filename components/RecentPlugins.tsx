@@ -6,8 +6,6 @@ import { FC } from "react";
 const RecentPlugins: FC<{ num: number }> = ({ num = 4 }) => {
   const pluginData: PluginMeta[] = getRecentPlugins(num)
 
-  const tileSections = []
-
   return (
     <div className="">
       <h2 className="text-highlight2 mb-8">Recent Updates</h2>

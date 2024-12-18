@@ -1,6 +1,5 @@
 import { PluginMeta } from "@/types"
 import Link from "next/link"
-import { release } from "os"
 import { FC } from "react"
 import ReactMarkdown from "react-markdown"
 import TimeAgo from "javascript-time-ago"
@@ -33,7 +32,10 @@ const PluginTile: FC<TileProps> = ({
             {plugin.title}
           </h3>
         </div>
-        <p className="mb-4"><span className="text-highlight2">{plugin.release.name}</span> <span className="whitespace-nowrap">({releaseDate})</span></p>
+        <p className="">
+          <span className="text-highlight2">{plugin.release.name} </span>
+          <span className="whitespace-nowrap">({releaseDate})</span>
+        </p>
         {mode === "full" ?
           <>
             <div className="my-4">
