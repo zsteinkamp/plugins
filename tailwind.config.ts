@@ -16,6 +16,7 @@ export default {
         foreground: "var(--foreground)",
         bghighlight: "var(--bghighlight)",
         tilebg: "var(--tilebg)",
+        lcdbg: "var(--lcdbg)",
         highlight: "var(--highlight)",
         highlight2: "var(--highlight2)",
       },

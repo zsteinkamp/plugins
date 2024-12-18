@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --lcdbg: #202020;
   --tilebg: #242424;
   --foreground: #b5b5b5;
   --bghighlight: #464646;

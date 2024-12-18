@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic'
 export default function Page() {
   return (
     <>
-      <h1 className="text-5xl text-highlight font-heading mb-8">
+      <h1 className="text-5xl text-highlight font-heading mb-12 ml-[-2rem] mt-[-2rem] bg-lcdbg p-8 mr-[-2rem] sm:mr-[-4rem]">
         <Link href='/' className="flex gap-4">
           <Image width="60" height="60" src="/favicon-trans.svg" alt="live.dial" className="mt-[-0.5rem]" />
           Zack&apos;s Ableton Live Devices / Plugins

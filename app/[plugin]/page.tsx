@@ -62,11 +62,15 @@ export default async function Page(
 
   return (
     <>
-      <div className="prose lg:prose-xl prose-invert m-auto">
-        <div className="mb-8"><Link href="/">&lt; Home</Link></div>
-        <h1 className="text-highlight">
-          {pluginData.title}
-        </h1>
+      <div className="m-auto">
+        <div className="flex mb-12 ml-[-2rem] mt-[-2rem] bg-lcdbg p-8 mr-[-2rem] sm:mr-[-4rem]">
+          <div className="text-xl mt-2 mr-8"><Link href="/">&lt; Home</Link></div>
+          <h1 className="text-5xl text-highlight">
+            {pluginData.title}
+          </h1>
+        </div>
+      </div>
+      <div className="m-auto prose lg:prose-xl prose-invert">
         <div className="flex">
           <Link className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md shadow-md" href={releaseData.assets[0].browser_download_url}>Download Latest ({pluginData.release.name})</Link>
           <Link className="p-2 whitespace-nowrap" href={pluginData.release.html_url}>Published {releaseDate}</Link>
