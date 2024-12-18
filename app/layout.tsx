@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import TableOfContents from "@/components/TableOfContents";
 
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: "Zack's Plugins",
   description: "Plugins / Devices for Ableton Live by Zack Steinkamp",
