@@ -1,17 +1,30 @@
 import { PluginMeta } from "@/types"
 import Link from "next/link"
+import { release } from "os"
 import { FC } from "react"
 import ReactMarkdown from "react-markdown"
+import TimeAgo from "javascript-time-ago"
+import en from 'javascript-time-ago/locale/en'
+TimeAgo.addDefaultLocale(en)
+const timeAgo = new TimeAgo('en-US')
 
 interface TileProps {
   plugin: PluginMeta
+  mode?: "full" | "mini"
   className?: string
 }
 
 const PluginTile: FC<TileProps> = ({
   plugin,
+  mode = "full",
   className = '',
 }) => {
+
+  let releaseDate = null
+  if (plugin.releaseDate) {
+    releaseDate = timeAgo.format(plugin.releaseDate)
+  }
+
   return (
     <Link href={"/" + plugin.key} key={plugin.key} className={` rounded-lg bg-tilebg border-2 border-tilebg hover:border-bghighlight ${className}`}>
       <div className='p-6' key={plugin.link}>
@@ -20,10 +33,15 @@ const PluginTile: FC<TileProps> = ({
             {plugin.title}
           </h3>
         </div>
-        <div className="my-4">
-          <img alt={plugin.title} src={plugin.image} className="max-h-64 m-auto" />
-        </div>
-        <ReactMarkdown className="prose prose-invert">{plugin.description}</ReactMarkdown>
+        <p className="mb-4"><span className="text-highlight2">{plugin.release.name}</span> <span className="whitespace-nowrap">({releaseDate})</span></p>
+        {mode === "full" ?
+          <>
+            <div className="my-4">
+              <img alt={plugin.title} src={plugin.image} className="max-h-64 m-auto" />
+            </div>
+            <ReactMarkdown className="prose prose-invert">{plugin.description}</ReactMarkdown>
+          </>
+          : null}
       </div>
     </Link>
   )

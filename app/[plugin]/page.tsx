@@ -5,6 +5,10 @@ import { notFound } from "next/navigation"
 import ReactMarkdown from "react-markdown"
 import Link from "next/link"
 import Footer from "@/components/Footer";
+import TimeAgo from "javascript-time-ago"
+import en from 'javascript-time-ago/locale/en'
+TimeAgo.addDefaultLocale(en)
+const timeAgo = new TimeAgo('en-US')
 
 export default async function Page(
   {
@@ -49,6 +53,11 @@ export default async function Page(
     }
   }
 
+  let releaseDate
+  if (pluginData.releaseDate) {
+    releaseDate = timeAgo.format(pluginData.releaseDate)
+  }
+
   return (
     <>
       <div className="prose lg:prose-xl prose-invert m-auto">
@@ -57,10 +66,12 @@ export default async function Page(
           {pluginData.title}
         </h1>
         <div className="flex">
-          <Link className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md" href={releaseData.assets[0].browser_download_url}>Download Latest ({releaseData.tag_name})</Link>
-          <Link className="p-2" href={pluginData.link}>GitHub Repo</Link>
+          <Link className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md shadow-md" href={releaseData.assets[0].browser_download_url}>Download Latest ({pluginData.release.name})</Link>
+          <Link className="p-2 whitespace-nowrap" href={pluginData.release.html_url}>Published {releaseDate}</Link>
         </div>
         <ReactMarkdown className="prose-headings:text-highlight" components={renderers}>{readmeRaw}</ReactMarkdown>
+        <h2 className="text-highlight">Source Code</h2>
+        <Link className="p-2" href={pluginData.link}>GitHub Repo</Link>
       </div>
       <div className="max-w-[52rem] m-auto">
         <Footer />

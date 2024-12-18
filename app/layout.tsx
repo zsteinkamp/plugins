@@ -25,7 +25,7 @@ export default function RootLayout({
           <div className="flex-1 max-w-5xl p-8">
             {children}
           </div>
-          <div className='hidden sm:block min-w-[16rem] ml-8 bg-tilebg p-8'>
+          <div className='hidden sm:block min-w-[16rem] ml-8 bg-tilebg p-8 shadow-md'>
             <div className='fixed max-h-[calc(100vh-4rem)] overflow-y-auto'>
               <TableOfContents pluginData={pluginData} className='max-h-screen overflow-y-auto' />
             </div>

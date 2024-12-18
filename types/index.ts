@@ -7,6 +7,8 @@ export type PluginMeta = {
   description: string
   slug?: string
   catSlug?: string
+  release?: any
+  releaseDate?: Date
 }
 
 export type HeadingType = {
