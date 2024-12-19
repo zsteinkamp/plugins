@@ -32,10 +32,10 @@ const PluginTile: FC<TileProps> = ({
             {plugin.title}
           </h3>
         </div>
-        <p className="">
-          <span className="text-highlight2">{plugin.release.name} </span>
-          <span className="whitespace-nowrap">({releaseDate})</span>
-        </p>
+        <div className="flex">
+          <div className="text-highlight2 grow">{plugin.release.name} </div>
+        </div>
+        <div className="whitespace-nowrap">{releaseDate}</div>
         {mode === "full" ?
           <>
             <div className="my-4">
