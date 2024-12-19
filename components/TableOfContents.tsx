@@ -1,6 +1,8 @@
 import { HeadingType, PluginMeta } from "@/types"
+import Link from "next/link"
 import { plugin } from "postcss"
 import { FC } from "react"
+import createHeadingSlug from "@/lib/createHeadingSlug"
 
 export const dynamic = 'force-dynamic'
 
@@ -37,7 +39,8 @@ const TableOfContents: FC<ToCProps> = ({
     if (heading.level === 1) {
       return (<h4
         key={heading.title}
-        className={`text-highlight2 ${i > 1 ? "mt-2" : ""}`}>{heading.title}</h4>
+        className={`text-highlight2 ${i > 1 ? "mt-2" : ""}`}>
+        <Link href={`/#${createHeadingSlug(heading.title)}`}>{heading.title}</Link></h4>
       )
     }
     return (

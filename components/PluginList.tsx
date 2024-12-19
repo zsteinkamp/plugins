@@ -3,6 +3,7 @@ import PluginTile from "@/components/PluginTile";
 import { PluginMeta } from "@/types";
 import { categoryZipPath } from "@/lib/downloadUtils";
 import Link from "next/link";
+import createHeadingSlug from "@/lib/createHeadingSlug";
 
 export default function PluginList() {
   const pluginData: PluginMeta[] = getSortedPluginData()
@@ -22,7 +23,7 @@ export default function PluginList() {
     if (catObj[category]) {
       tileSections.push(<div key={category}>
         <div className="flex mb-8 mt-16">
-          <h2 className="text-highlight2 grow">{category}</h2>
+          <h2 id={createHeadingSlug(category)} className="text-highlight2 grow">{category}</h2>
           <div className="mt-2">
             <Link href={categoryZipPath(category)} className="text-background bg-highlight2 hover:bg-highlight p-2 rounded shadow-md">Download .zip</Link>
           </div>

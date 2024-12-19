@@ -18,13 +18,13 @@ export default function RootLayout({
 }>) {
   const pluginData: PluginMeta[] = getSortedPluginData()
   return (
-    <html lang='en'>
+    <html lang='en' className='scroll-pt-6'>
       <head>
         <link rel='stylesheet' href='https://use.typekit.net/tek5ypq.css' />
       </head>
-      <body className="">
-        <div className="flex min-h-screen">
-          <div className="flex-1 max-w-5xl p-8">
+      <body>
+        <div className='flex min-h-screen'>
+          <div className='flex-1 max-w-5xl p-8'>
             {children}
           </div>
           <div className='hidden sm:block min-w-[16rem] ml-0 bg-tilebg p-8 shadow-2xl'>
