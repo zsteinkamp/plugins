@@ -15,4 +15,5 @@ export type HeadingType = {
   key: string
   title: string
   level: number
+  className?: string
 }

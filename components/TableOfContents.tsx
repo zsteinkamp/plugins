@@ -17,7 +17,14 @@ const TableOfContents: FC<ToCProps> = ({
   className = '',
 }) => {
   let lastCategory: string
-  const headings: HeadingType[] = []
+  const headings: HeadingType[] = [
+    {
+      key: 'recent',
+      title: 'Recent Updates',
+      level: 1,
+      className: 'mb-4'
+    }
+  ]
   pluginData.map((plugin: PluginMeta) => {
     if (plugin.category !== lastCategory) {
       headings.push({
@@ -39,7 +46,7 @@ const TableOfContents: FC<ToCProps> = ({
     if (heading.level === 1) {
       return (<h4
         key={heading.title}
-        className={`text-highlight2 ${i > 1 ? "mt-2" : ""}`}>
+        className={`text-highlight2 ${i > 1 ? "mt-2" : ""} ${heading.className}`}>
         <Link href={`/#${createHeadingSlug(heading.title)}`}>{heading.title}</Link></h4>
       )
     }
