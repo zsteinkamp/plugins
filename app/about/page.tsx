@@ -29,7 +29,7 @@ export default function Page() {
                 I made this site to provide a simple and useful way of learning about and downloading my software. I started out using GitHub for this, but for non-nerds the user experience of finding and reading the README.md content then finding a way to download the software was overwhelming and daunting.
               </p>
               <p>
-                This site runs from a Debian Linux machine in my house, via Cloudflare's CDN. You can have a look at the <Link href="https://github.com/zsteinkamp/plugins">source code here</Link>. It uses a .yaml file that specifies a list of GitHub repos that a script harvests README.md and release information from.
+                This site runs from a Debian Linux machine in my house, via Cloudflare&apos;s CDN. You can have a look at the <Link href="https://github.com/zsteinkamp/plugins">source code here</Link>. It uses a .yaml file that specifies a list of GitHub repos that a script harvests README.md and release information from.
               </p>
               <p>
                 So each repo is the source of truth not only for its source code files, but for its documentation presented on this site.
@@ -37,10 +37,10 @@ export default function Page() {
               <h2 className="text-highlight">About Me - Why?</h2>
               <Image src="/images/about_photo.jpg" className="float-right ml-8 mb-8" width="300" height="200" alt="About Me" />
               <p>
-                I started with Max For Live in 2021, mostly inspired by <Link href="https://www.youtube.com/watch?v=E1Kr0EJwZ-c">Hainbach's video on the Vestax Faderboard</Link>. I've been a programmer my whole life, and was initially confounded by Max, but stuck with it and really enjoy working with it now.
+                I started with Max For Live in 2021, mostly inspired by <Link href="https://www.youtube.com/watch?v=E1Kr0EJwZ-c">Hainbach&apos;s video on the Vestax Faderboard</Link>. I&apos;ve been a programmer my whole life, and was initially confounded by Max, but stuck with it and really enjoy working with it now.
               </p>
               <p>
-                Through the years since then, I've developed and released a lot of different devices. All of them stem from some desire for a capability or workflow in <Link href="https://zacksteinkamp.bandcamp.com/">my own music-making</Link> that either didn't exist or didn't exist in the way I wanted.
+                Through the years since then, I&apos;ve developed and released a lot of different devices. All of them stem from some desire for a capability or workflow in <Link href="https://zacksteinkamp.bandcamp.com/">my own music-making</Link> that either didn&apos;t exist or didn&apos;t exist in the way I wanted.
               </p>
               <p>
                 In 2024, I retired from full-time work and have been able to devote more time and energy into these projects. I was fortunate to be the right <Link href="https://steinkamp.us/posts/2021-05-22-computer-history">person</Link> with the right friends in the right place in the right time and had a great <Link href="https://steinkamp.us/resume">career</Link> as an engineer in the tech industry. Every company I worked for was totally reliant on open-source software. Some of them actively contributed back to the projects they relied on, but that was more the exception than the rule. Every Silicon Valley success story is built on the backs of countless dedicated project maintainers, powered solely by curiosity and the common good.
