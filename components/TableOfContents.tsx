@@ -42,12 +42,21 @@ const TableOfContents: FC<ToCProps> = ({
     })
   })
 
+  headings.push(
+    {
+      key: 'about',
+      href: '/about',
+      title: 'About',
+      level: 1,
+    }
+  )
+
   const lines = headings.map((heading, i) => {
     if (heading.level === 1) {
       return (<h4
         key={heading.title}
         className={`text-highlight2 ${i > 1 ? "mt-2" : ""} ${heading.className}`}>
-        <Link href={`/#${createHeadingSlug(heading.title)}`}>{heading.title}</Link></h4>
+        <Link href={heading.href || `/#${createHeadingSlug(heading.title)}`}>{heading.title}</Link></h4>
       )
     }
     return (

@@ -13,6 +13,7 @@ export type PluginMeta = {
 
 export type HeadingType = {
   key: string
+  href?: string
   title: string
   level: number
   className?: string
