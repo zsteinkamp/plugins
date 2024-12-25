@@ -35,6 +35,15 @@ export default async function Page(
 
   const renderers = {
     h1: () => null,
+    a: ({ href, title, children }: { href: string, title: string, children: string }) => {
+      if (href && href.indexOf('http') !== 0) {
+        href = 'https://github.com/zsteinkamp/' + plugin + '/blob/main/' + href
+      }
+      return (<a
+        href={href}
+        title={title}
+      >{children}</a>)
+    },
     img: ({
       alt,
       src,
