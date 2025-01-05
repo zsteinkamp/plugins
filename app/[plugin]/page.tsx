@@ -81,7 +81,7 @@ export default async function Page(
       </div>
       <div className="m-auto prose lg:prose-xl prose-invert">
         <div className="flex">
-          <Link className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md shadow-md" href={releaseData.assets[0].browser_download_url}>Download Latest ({pluginData.release.name})</Link>
+          <Link className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md shadow-md cursor-pointer" href={releaseData.assets[0].browser_download_url}>Download Latest ({pluginData.release.name})</Link>
           <Link className="p-2 whitespace-nowrap" href={pluginData.release.html_url}>Published {releaseDate}</Link>
         </div>
         <ReactMarkdown className="prose-headings:text-highlight" components={renderers}>{readmeRaw}</ReactMarkdown>
