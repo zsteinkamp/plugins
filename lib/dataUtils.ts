@@ -59,6 +59,9 @@ export const getReleasesPath = (deviceKey: string) => {
 }
 
 export const getReleases = (deviceKey: string) => {
+  if (!fs.existsSync(getReleasesPath(deviceKey))) {
+    return []
+  }
   return JSON.parse(fs.readFileSync(getReleasesPath(deviceKey), 'utf8'))
 }
 

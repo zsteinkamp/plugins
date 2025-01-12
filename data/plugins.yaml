@@ -1,3 +1,11 @@
+- title: Crisco Note Shortening
+  category: Note Effects
+  key: m4l-Crisco
+  image: https://github.com/zsteinkamp/m4l-Crisco/raw/main/images/device.png
+  link: https://github.com/zsteinkamp/m4l-Crisco
+  description: |
+    Gives precise real-time control of note length. Crisco Note Shortening trades latency for convenience in being able to micro-tune note lengths, e.g. if you have notes in your piano roll that are legato but you want to shorten them to avoid the note release from interacting with the following note. Suggested by *Marlon* who makes Psytrance, where precise control like this is important.
+
 - title: MoireArp
   category: Note Effects
   key: m4l-MoireArp
