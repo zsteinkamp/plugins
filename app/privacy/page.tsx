@@ -17,7 +17,7 @@ export default function Page() {
           <div className="prose lg:prose-2xl prose-invert grow">
             <div>
               <p>
-                This website and associated apps do not collect personal data. There is no login, no tracking pixels, no advertising. Downloaded Ableton Livew devices will "phone home" once per session for the purpose of tracking which devices are popular, so that I may invest my time more wisely. The "phone home" packet does not contain any personal data. The IP address of the packet is not retained, only a geo-ip lookup to get the country.
+                This website and associated apps do not collect personal data. There is no login, no tracking pixels, no advertising. Downloaded Ableton Livew devices will &quot;phone home&quot; once per session for the purpose of tracking which devices are popular, so that I may invest my time more wisely. The &quot;phone home&quot; packet does not contain any personal data. The IP address of the packet is not retained, only a geo-ip lookup to get the country.
               </p>
               <p>
                 Please email zack@steinkamp.us with any questions about this policy.
