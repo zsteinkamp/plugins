@@ -1,3 +1,11 @@
+- title: PitchPath
+  category: Note Effects
+  key: m4l-PitchPath
+  image: https://github.com/zsteinkamp/m4l-PitchPath/raw/main/images/device.gif
+  link: https://github.com/zsteinkamp/m4l-PitchPath
+  description: |
+    PitchPath is a visual note sequencer that lets you draw melodies. It works with Scale Awareness and can be toggled between relative and absolute note modes. Surprisingly useful!
+
 - title: Crisco Note Shortening
   category: Note Effects
   key: m4l-Crisco
