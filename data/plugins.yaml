@@ -74,7 +74,7 @@
 - title: TapPanZeit
   category: Audio Effects
   key: m4l-TapPanZeit
-  image: https://github.com/zsteinkamp/m4l-TapPanZeit/raw/main/images/device.png
+  image: https://github.com/zsteinkamp/m4l-TapPanZeit/raw/main/images/device.gif
   link: https://github.com/zsteinkamp/m4l-TapPanZeit
   description: |
     A bucket-brigade delay tap field with control over timing and stereo placement of each tap. Up to 128 taps + an insane feedback control.
