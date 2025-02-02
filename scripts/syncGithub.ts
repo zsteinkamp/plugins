@@ -26,7 +26,6 @@ const getReadme = async (repo: string) => {
     repo,
   })
 
-  fs.mkdirSync(path.join(CACHE_ROOT, repo), { recursive: true })
   const fname = path.join(CACHE_ROOT, repo, 'README.md')
   fs.writeFileSync(fname, Buffer.from(readme.data.content, 'base64'))
   console.info(`Wrote ${fname}`)
@@ -43,7 +42,6 @@ const getLatestRelease = async (repo: string) => {
 }
 
 const writeReleaseJSON = (plugin: any, repo: string, release: any) => {
-  fs.mkdirSync(path.join(CACHE_ROOT, repo), { recursive: true })
   const fname = path.join(CACHE_ROOT, repo, 'release.json')
   fs.writeFileSync(fname, JSON.stringify(release))
   console.info(`wrote ${fname}`)
