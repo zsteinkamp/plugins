@@ -30,3 +30,7 @@ devps: ## Stop development containers
 
 devdown: ## Stop development containers
 	cd dev && docker compose down
+
+devsync: ## Sync local metadata with GitHub and build .zip files
+	cd dev && docker compose exec web npm run sync
+

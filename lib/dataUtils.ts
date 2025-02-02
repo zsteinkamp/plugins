@@ -4,11 +4,11 @@ import { PluginMeta } from '@/types'
 import path from 'path'
 
 export const categorySortOrder = [
-  "Audio Effects",
-  "Modulators",
-  "Utilities",
-  "Note Effects",
-  "Instruments",
+  'Audio Effects',
+  'Modulators',
+  'Utilities',
+  'Note Effects',
+  'Instruments',
 ]
 
 const getPluginData = () => {
@@ -43,7 +43,10 @@ export const getSortedPluginData = () => {
     return a.title < b.title ? -1 : 1
   })
   pluginData.sort((a: PluginMeta, b: PluginMeta) => {
-    return categorySortOrder.indexOf(a.category) < categorySortOrder.indexOf(b.category) ? -1 : 1
+    return categorySortOrder.indexOf(a.category) <
+      categorySortOrder.indexOf(b.category)
+      ? -1
+      : 1
   })
 
   addReleases(pluginData)
@@ -73,11 +76,15 @@ export const getRecentPlugins = (num: number) => {
   const pluginData = getPluginData()
   for (const plugin of pluginData) {
     const release = getReleases(plugin.key)
-    plugin.releaseDate = new Date(release.created_at)
+    if (release) {
+      plugin.releaseDate = new Date(release.created_at)
+    }
   }
 
   pluginData.sort((a: PluginMeta, b: PluginMeta) => {
-    return (a.releaseDate && b.releaseDate && a.releaseDate > b.releaseDate) ? -1 : 1;
+    return a.releaseDate && b.releaseDate && a.releaseDate > b.releaseDate
+      ? -1
+      : 1
   })
 
   const sliced = pluginData.slice(0, num)

@@ -24,9 +24,10 @@ const getReadme = async (repo: string) => {
   const readme = await octokit.rest.repos.getReadme({
     owner,
     repo,
-  });
-  const fname = path.join(CACHE_ROOT, repo, 'README.md')
+  })
 
+  fs.mkdirSync(path.join(CACHE_ROOT, repo), { recursive: true })
+  const fname = path.join(CACHE_ROOT, repo, 'README.md')
   fs.writeFileSync(fname, Buffer.from(readme.data.content, 'base64'))
   console.info(`Wrote ${fname}`)
 }
@@ -42,6 +43,7 @@ const getLatestRelease = async (repo: string) => {
 }
 
 const writeReleaseJSON = (plugin: any, repo: string, release: any) => {
+  fs.mkdirSync(path.join(CACHE_ROOT, repo), { recursive: true })
   const fname = path.join(CACHE_ROOT, repo, 'release.json')
   fs.writeFileSync(fname, JSON.stringify(release))
   console.info(`wrote ${fname}`)
@@ -62,8 +64,7 @@ const addToCategoryZip = async (plugin: any, release: any) => {
   }
 }
 
-
-(async () => {
+;(async () => {
   const plugins: any = getSortedPluginData()
 
   for (const plugin of plugins) {
