@@ -90,7 +90,7 @@ export default async function Page({
             href={releaseData.assets[0].browser_download_url}
           >
             <div className="text-2xl font-bold">Download Latest</div>
-            <div className="text-sm">({pluginData.release.name})</div>
+            <div className="text-sm">{pluginData.release.name}</div>
           </Link>
           <Link
             className="p-2 whitespace-nowrap"
