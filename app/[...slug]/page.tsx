@@ -1,9 +1,4 @@
-import {
-  getDataForPlugin,
-  getDocsPath,
-  getReadmePath,
-  getReleases,
-} from '@/lib/dataUtils'
+import { getDataForPlugin, getDocsPath, getReadmePath } from '@/lib/dataUtils'
 import fs from 'node:fs'
 import fsp from 'node:fs/promises'
 import { notFound } from 'next/navigation'
