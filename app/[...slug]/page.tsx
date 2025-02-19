@@ -44,7 +44,7 @@ export default async function Page({
 
   let rawMarkdown = null
   let usedDocs = false
-  let markdownFiles: string[] = []
+  const markdownFiles: string[] = []
   if (fs.existsSync(docsPath)) {
     // lets just start with index
     rawMarkdown = await fsp.readFile(docsPath, 'utf-8')
