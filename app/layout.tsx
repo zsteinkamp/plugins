@@ -1,8 +1,5 @@
-import { getSortedPluginData } from '@/lib/dataUtils'
-import { PluginMeta } from '@/index'
 import type { Metadata } from 'next'
 import './globals.css'
-import TableOfContents from '@/components/TableOfContents'
 
 export const dynamic = 'force-dynamic'
 

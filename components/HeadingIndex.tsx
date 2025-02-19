@@ -1,8 +1,5 @@
-import { HeadingType, PluginMeta } from '@/index'
-import Link from 'next/link'
-import { plugin } from 'postcss'
+import { HeadingType } from '@/index'
 import { FC } from 'react'
-import createHeadingSlug from '@/lib/createHeadingSlug'
 
 export const dynamic = 'force-dynamic'
 

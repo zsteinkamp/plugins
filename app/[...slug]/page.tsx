@@ -14,7 +14,7 @@ import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 import HeadingIndex from '@/components/HeadingIndex'
 import { HeadingType } from '@/index'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import DocPages from '@/components/DocPages'
 TimeAgo.addDefaultLocale(en)
 const timeAgo = new TimeAgo('en-US')
@@ -70,7 +70,13 @@ export default async function Page({
   }
 
   const toc: HeadingType[] = []
-  const addToTOC = ({ children, ...props }: React.PropsWithChildren<any>) => {
+  const addToTOC = ({
+    children,
+    ...props
+  }: {
+    children: ReactNode
+    node: HTMLElement
+  }) => {
     const level = Number(props.node.tagName.match(/h(\d)/)?.slice(1))
     if (level && children) {
       const id = children
@@ -80,7 +86,7 @@ export default async function Page({
       toc.push({
         level,
         key: id,
-        title: children,
+        title: children.toString(),
       })
       return React.createElement(props.node.tagName, { id }, children)
     } else {
