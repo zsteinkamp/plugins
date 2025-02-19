@@ -4,6 +4,7 @@ import { PluginMeta } from '@/index'
 import path from 'path'
 
 export const categorySortOrder = [
+  'Knobbler',
   'Audio Effects',
   'Modulators',
   'Utilities',

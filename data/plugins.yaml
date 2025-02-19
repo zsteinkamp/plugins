@@ -47,12 +47,12 @@
     This device allows you to variably quantize a stream of MIDI notes. Sweep from random to locked in to the song tempo, and everything in between. In the screen recording above, the "Amount" knob in the lower-left is controlling the degree of quantization.
 
 - title: Knobbler4
-  category: Utilities
+  category: Knobbler
   key: m4l-Knobbler4
   image: https://github.com/zsteinkamp/m4l-Knobbler4/raw/main/images/external-with-hand.jpg
   repo: https://github.com/zsteinkamp/m4l-Knobbler4
   description: |
-    This is a combination of Max For Live device and TouchOSC layout that provides a wireless, OSC-based, auto-labeling, auto-coloring, multitouch control surface for Ableton Live. Control the most important parameters in your Live Set with your fingers! Map a slider on your iPad easier than mapping a MIDI controller. Game changer.
+    This is a combination of Max For Live device and iPad app that provides a wireless, OSC-based, auto-labeling, auto-coloring, multitouch control surface for Ableton Live. Control the most important parameters in your Live Set with your fingers! Map a slider on your iPad easier than mapping a MIDI controller. Navigate your whole set faster than ever. Game changer.
 
 - title: SimulScrub
   category: Audio Effects
