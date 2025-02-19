@@ -76,7 +76,7 @@ export default async function Page({
       toc.push({
         level,
         key: id,
-        title: children.toString(),
+        title: children as string,
       })
       return React.createElement(props.node.tagName, { id }, children)
     } else {
