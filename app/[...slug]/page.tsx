@@ -37,8 +37,6 @@ export default async function Page({
   if (!pluginData) {
     return notFound()
   }
-  const releaseData = getReleases(plugin)
-
   let rawMarkdown = null
   let usedDocs = false
   const markdownFiles: string[] = []
