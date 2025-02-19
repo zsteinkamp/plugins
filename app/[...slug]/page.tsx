@@ -15,7 +15,7 @@ import en from 'javascript-time-ago/locale/en'
 import HeadingIndex from '@/components/HeadingIndex'
 import { HeadingType } from '@/index'
 import React from 'react'
-import { execSync } from 'node:child_process'
+import DocPages from '@/components/DocPages'
 TimeAgo.addDefaultLocale(en)
 const timeAgo = new TimeAgo('en-US')
 
@@ -31,7 +31,6 @@ export default async function Page({
   const docsUri = slug.join('/')
   const readmePath = getReadmePath(plugin)
   const docsPath = getDocsPath(plugin, docsUri)
-  const headings: HeadingType[] = []
 
   if (!fs.existsSync(docsPath) && !fs.existsSync(readmePath)) {
     return notFound()
@@ -49,12 +48,22 @@ export default async function Page({
   if (fs.existsSync(docsPath)) {
     // lets just start with index
     rawMarkdown = await fsp.readFile(docsPath, 'utf-8')
+
     usedDocs = true
-    markdownFiles = (
-      await fs.promises.readdir('/cache/' + plugin + '/docs', {
-        recursive: true,
-      })
-    ).filter((e) => e.match(/\.md$/))
+
+    const entries = await fs.promises.readdir('/cache/' + plugin + '/docs', {
+      recursive: true,
+    })
+
+    entries.forEach((e) => {
+      if (e.match(/\.md$/)) {
+        if (e.match(/index\.md$/)) {
+          markdownFiles.unshift(e)
+        } else {
+          markdownFiles.push(e)
+        }
+      }
+    })
     console.log(markdownFiles)
   } else {
     rawMarkdown = await fsp.readFile(readmePath, 'utf-8')
@@ -64,7 +73,10 @@ export default async function Page({
   const addToTOC = ({ children, ...props }: React.PropsWithChildren<any>) => {
     const level = Number(props.node.tagName.match(/h(\d)/)?.slice(1))
     if (level && children) {
-      const id = children.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+      const id = children
+        .toString()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
       toc.push({
         level,
         key: id,
@@ -83,24 +95,24 @@ export default async function Page({
     h4: addToTOC,
     h5: addToTOC,
     h6: addToTOC,
-    //a: ({
-    //  href,
-    //  title,
-    //  children,
-    //}: {
-    //  href: string
-    //  title: string
-    //  children: string
-    //}) => {
-    //  if (href && href.indexOf('http') !== 0) {
-    //    href = plugin + '/' + href
-    //  }
-    //  return (
-    //    <a href={href} title={title}>
-    //      {children}
-    //    </a>
-    //  )
-    //},
+    a: ({
+      href,
+      title,
+      children,
+    }: {
+      href: string
+      title: string
+      children: string
+    }) => {
+      if (href && href.indexOf('http') !== 0) {
+        href = '/' + plugin + '/' + href
+      }
+      return (
+        <a href={href} title={title}>
+          {children}
+        </a>
+      )
+    },
     img: ({
       alt,
       src,
@@ -110,6 +122,9 @@ export default async function Page({
       src?: string
       title?: string
     }) => {
+      if (!src) {
+        return null
+      }
       if (src && src.indexOf('http') !== 0) {
         src = '/cache/' + plugin + (usedDocs ? '/docs/' : '/') + src
       }
@@ -136,38 +151,31 @@ export default async function Page({
           </div>
         </div>
         <div className="m-auto prose lg:prose-xl prose-invert">
-          {markdownFiles.map((fName) => {
-            return (
-              <Link key={fName} href={fName}>
-                {fName}
-              </Link>
-            )
-          })}
-          <div className="flex">
-            <Link
-              className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md shadow-md"
-              href={releaseData.assets[0].browser_download_url}
-            >
-              <div className="text-2xl font-bold">Download Latest</div>
-              <div className="text-sm">{pluginData.release.name}</div>
-            </Link>
-            <Link
-              className="p-2 whitespace-nowrap"
-              href={pluginData.release.html_url}
-            >
-              Published {releaseDate}
-            </Link>
+          <div className="flex flex-row">
+            <div className="flex-grow">
+              <div className="flex">
+                <Link
+                  className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md shadow-md"
+                  href={releaseData.assets[0].browser_download_url}
+                >
+                  <div className="text-2xl font-bold">Download Latest</div>
+                  <div className="text-sm">{pluginData.release.name}</div>
+                </Link>
+                <Link
+                  className="p-2 whitespace-nowrap"
+                  href={pluginData.release.html_url}
+                >
+                  Published {releaseDate}
+                </Link>
+              </div>
+              <ReactMarkdown
+                className="prose-headings:text-highlight"
+                components={renderers}
+              >
+                {rawMarkdown}
+              </ReactMarkdown>
+            </div>
           </div>
-          <ReactMarkdown
-            className="prose-headings:text-highlight"
-            components={renderers}
-          >
-            {rawMarkdown}
-          </ReactMarkdown>
-          <h2 className="text-highlight">Source Code</h2>
-          <Link className="p-2" href={pluginData.repo}>
-            GitHub Repo
-          </Link>
         </div>
         <div className="max-w-[52rem] m-auto">
           <Footer />
@@ -179,6 +187,14 @@ export default async function Page({
             'fixed max-h-[calc(100vh-4rem)] max-w-[13rem] overflow-y-auto overflow-x-hidden'
           }
         >
+          {usedDocs && (
+            <>
+              <h4 className="font-heading text-highlight">Pages</h4>
+              <div className="mb-8">
+                <DocPages plugin={plugin} />
+              </div>
+            </>
+          )}
           <HeadingIndex
             headings={toc}
             className="max-h-screen overflow-y-auto"
