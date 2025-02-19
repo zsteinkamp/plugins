@@ -1,11 +1,12 @@
 import { categoryZipPath } from '@/lib/downloadUtils'
 import fs from 'fs'
-import { mkdir } from 'node:fs/promises'
 import { Octokit } from '@octokit/rest'
 import AdmZip from 'adm-zip'
 import path from 'path'
 import { loadEnvConfig } from '@next/env'
+import { PluginMeta } from '@/types'
 import { getSortedPluginData } from '@/lib/dataUtils'
+import { execSync } from 'node:child_process'
 
 const CACHE_ROOT = '/cache'
 const owner = 'zsteinkamp'
@@ -16,19 +17,13 @@ loadEnvConfig(projectDir)
 const octokit = new Octokit({ auth: process.env['GH_TOKEN'] })
 const categoryZips: Record<string, AdmZip> = {}
 
-const createCacheDirIfNecessary = async (repo: string) => {
-  await mkdir(path.join(CACHE_ROOT, repo), { recursive: true })
-}
-
-const getReadme = async (repo: string) => {
-  const readme = await octokit.rest.repos.getReadme({
-    owner,
-    repo,
-  })
-
-  const fname = path.join(CACHE_ROOT, repo, 'README.md')
-  fs.writeFileSync(fname, Buffer.from(readme.data.content, 'base64'))
-  console.info(`Wrote ${fname}`)
+const cloneOrPullRepo = async (plugin: PluginMeta, repo: string) => {
+  const dirname = path.join(CACHE_ROOT, repo)
+  if (!fs.existsSync(dirname)) {
+    execSync(`git -C /cache clone --depth 1 "${plugin.repo}" ${repo}`)
+  } else {
+    execSync(`git -C /cache/${repo} pull`)
+  }
 }
 
 const getLatestRelease = async (repo: string) => {
@@ -66,13 +61,12 @@ const addToCategoryZip = async (plugin: any, release: any) => {
   const plugins: any = getSortedPluginData()
 
   for (const plugin of plugins) {
-    const repo = plugin.link.split('/')[4]
+    const repo = plugin.repo.split('/')[4]
     if (!repo) {
-      console.error(`repo not found for ${plugin.link}`)
+      console.error(`repo not found for ${plugin.repo}`)
       continue
     }
-    await createCacheDirIfNecessary(repo)
-    await getReadme(repo)
+    await cloneOrPullRepo(plugin, repo)
     const release = await getLatestRelease(repo)
     if (release) {
       writeReleaseJSON(plugin, repo, release)

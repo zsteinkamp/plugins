@@ -12,21 +12,29 @@
   --highlight2: #58c0d2;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   @apply font-heading;
 }
 
-h1 { 
+h1 {
   @apply text-5xl;
 }
-h2 { 
+h2 {
   @apply text-4xl;
 }
-h3 { 
+h3 {
   @apply text-3xl;
 }
-h4 { 
+h4 {
   @apply text-xl;
+}
+
+img.markdown-image {
+  @apply max-h-[25em];
 }
 
 body {

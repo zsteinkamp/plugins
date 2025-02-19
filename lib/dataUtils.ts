@@ -71,6 +71,12 @@ export const getReleases = (deviceKey: string) => {
 export const getReadmePath = (deviceKey: string) => {
   return path.join(cachePath(deviceKey), 'README.md')
 }
+export const getDocsPath = (deviceKey: string, docsUri: string) => {
+  if (!docsUri.match(/\.md$/)) {
+    docsUri = 'index.md'
+  }
+  return cachePath(path.join(deviceKey, 'docs', docsUri))
+}
 
 export const getRecentPlugins = (num: number) => {
   const pluginData = getPluginData()
