@@ -10,14 +10,11 @@ import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
-import TimeAgo from 'javascript-time-ago'
-import en from 'javascript-time-ago/locale/en'
 import HeadingIndex from '@/components/HeadingIndex'
 import { HeadingType } from '@/index'
 import React, { ReactNode } from 'react'
 import DocPages from '@/components/DocPages'
-TimeAgo.addDefaultLocale(en)
-const timeAgo = new TimeAgo('en-US')
+import DownloadButton from '@/components/DownloadButton'
 
 export const dynamic = 'force-dynamic'
 
@@ -140,11 +137,6 @@ export default async function Page({
     },
   }
 
-  let releaseDate
-  if (pluginData.releaseDate) {
-    releaseDate = timeAgo.format(pluginData.releaseDate)
-  }
-
   return (
     <>
       <div className="flex-1 max-w-5xl p-8">
@@ -159,27 +151,14 @@ export default async function Page({
         <div className="m-auto prose lg:prose-xl prose-invert">
           <div className="flex flex-row">
             <div className="flex-grow">
-              <div className="flex">
-                <Link
-                  className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md shadow-md"
-                  href={releaseData.assets[0].browser_download_url}
-                >
-                  <div className="text-2xl font-bold">Download Latest</div>
-                  <div className="text-sm">{pluginData.release.name}</div>
-                </Link>
-                <Link
-                  className="p-2 whitespace-nowrap"
-                  href={pluginData.release.html_url}
-                >
-                  Published {releaseDate}
-                </Link>
-              </div>
+              <DownloadButton plugin={plugin} />
               <ReactMarkdown
                 className="prose-headings:text-highlight"
                 components={renderers}
               >
                 {rawMarkdown}
               </ReactMarkdown>
+              <DownloadButton plugin={plugin} />
             </div>
           </div>
         </div>
