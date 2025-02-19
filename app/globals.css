@@ -33,8 +33,13 @@ h4 {
   @apply text-2xl;
 }
 
+.prose h3 {
+  @apply text-4xl;
+}
+
 .prose h4 {
   margin-bottom: 0;
+  @apply text-highlight2;
 }
 
 .prose a {
