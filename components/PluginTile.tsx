@@ -1,4 +1,4 @@
-import { PluginMeta } from '@/types'
+import { PluginMeta } from '@/index'
 import Link from 'next/link'
 import { FC } from 'react'
 import ReactMarkdown from 'react-markdown'

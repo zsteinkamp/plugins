@@ -1,9 +1,9 @@
-import { categorySortOrder, getSortedPluginData } from "@/lib/dataUtils";
-import PluginTile from "@/components/PluginTile";
-import { PluginMeta } from "@/types";
-import { categoryZipPath } from "@/lib/downloadUtils";
-import Link from "next/link";
-import createHeadingSlug from "@/lib/createHeadingSlug";
+import { categorySortOrder, getSortedPluginData } from '@/lib/dataUtils'
+import PluginTile from '@/components/PluginTile'
+import { PluginMeta } from '@/index'
+import { categoryZipPath } from '@/lib/downloadUtils'
+import Link from 'next/link'
+import createHeadingSlug from '@/lib/createHeadingSlug'
 
 export default function PluginList() {
   const pluginData: PluginMeta[] = getSortedPluginData()
@@ -21,20 +21,36 @@ export default function PluginList() {
 
   for (const category of categorySortOrder) {
     if (catObj[category]) {
-      tileSections.push(<div key={category}>
-        <div className="flex mb-8 mt-16">
-          <h2 id={createHeadingSlug(category)} className="text-highlight2 grow">{category}</h2>
-          <div className="mt-2">
-            <Link href={categoryZipPath(category)} className="text-background bg-highlight2 hover:bg-highlight p-2 rounded shadow-md">Download .zip</Link>
+      tileSections.push(
+        <div key={category}>
+          <div className="flex mb-8 mt-16">
+            <h2
+              id={createHeadingSlug(category)}
+              className="text-highlight2 grow"
+            >
+              {category}
+            </h2>
+            <div className="mt-2">
+              <Link
+                href={categoryZipPath(category)}
+                className="text-background bg-highlight2 hover:bg-highlight p-2 rounded shadow-md"
+              >
+                Download .zip
+              </Link>
+            </div>
+          </div>
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(20rem,_1fr))] gap-8">
+            {catObj[category].map((plugin) => {
+              return (
+                <PluginTile
+                  key={plugin.key}
+                  plugin={plugin}
+                  className="min-w-[20rem] max-w-[40rem] shadow-md"
+                />
+              )
+            })}
           </div>
         </div>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(20rem,_1fr))] gap-8">{
-          catObj[category].map((plugin) => {
-            return <PluginTile key={plugin.key} plugin={plugin} className="min-w-[20rem] max-w-[40rem] shadow-md" />
-          })
-        }
-        </div>
-      </div>
       )
     }
   }

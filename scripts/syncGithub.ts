@@ -4,7 +4,7 @@ import { Octokit } from '@octokit/rest'
 import AdmZip from 'adm-zip'
 import path from 'path'
 import { loadEnvConfig } from '@next/env'
-import { PluginMeta } from '@/types'
+import { PluginMeta } from '@/index'
 import { getSortedPluginData } from '@/lib/dataUtils'
 import { execSync } from 'node:child_process'
 

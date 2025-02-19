@@ -1,6 +1,6 @@
 import yaml from 'js-yaml'
 import fs from 'fs'
-import { PluginMeta } from '@/types'
+import { PluginMeta } from '@/index'
 import path from 'path'
 
 export const categorySortOrder = [
