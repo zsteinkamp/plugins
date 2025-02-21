@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sync": "tsx scripts/syncGithub.ts"
+    "sync": "tsx scripts/syncGithub.ts",
+    "docs": "tsx scripts/updateDocs.ts"
   },
   "dependencies": {
     "@octokit/rest": "^21.0.2",

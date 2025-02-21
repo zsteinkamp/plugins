@@ -16,8 +16,11 @@ prodshell: ## Open a shell in the running prod container
 prodlogs: ## Tail production container logs
 	docker compose logs -f
 
-sync: ## Sync local metadata with GitHub and build .zip files
+sync: ## Sync local metadata with GitHub and build .zip files + docs
 	docker compose exec web npm run sync
+
+docs: ## Updates plugin repos so that fresh docs happen
+	docker compose exec web npm run docs
 
 devup: ## Build and run in development mode
 	cd dev && docker compose build && docker compose up -d --force-recreate && docker compose logs -f
