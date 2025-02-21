@@ -29,7 +29,7 @@ export default async function DocPages({ plugin }: DocPagesProps) {
   entries.forEach((e) => {
     if (e.match(/\.md$/)) {
       if (e.match(/index\.md$/)) {
-        markdownFiles.unshift(e)
+        //markdownFiles.unshift(e)
       } else {
         markdownFiles.push(e)
       }

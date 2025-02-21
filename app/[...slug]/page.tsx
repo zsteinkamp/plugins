@@ -34,27 +34,10 @@ export default async function Page({
   }
   let rawMarkdown = null
   let usedDocs = false
-  const markdownFiles: string[] = []
   if (fs.existsSync(docsPath)) {
     // lets just start with index
     rawMarkdown = await fsp.readFile(docsPath, 'utf-8')
-
     usedDocs = true
-
-    const entries = await fs.promises.readdir('/cache/' + plugin + '/docs', {
-      recursive: true,
-    })
-
-    entries.forEach((e) => {
-      if (e.match(/\.md$/)) {
-        if (e.match(/index\.md$/)) {
-          markdownFiles.unshift(e)
-        } else {
-          markdownFiles.push(e)
-        }
-      }
-    })
-    console.log(markdownFiles)
   } else {
     rawMarkdown = await fsp.readFile(readmePath, 'utf-8')
   }
@@ -135,9 +118,6 @@ export default async function Page({
       <div className="flex-1 max-w-5xl p-8">
         <div className="m-auto">
           <div className="flex mb-12 ml-[-2rem] mt-[-2rem] bg-lcdbg p-8 mr-[-2rem] sm:mr-[-4rem]">
-            <div className="text-xl mt-2 mr-8">
-              <Link href="/">&lt; Home</Link>
-            </div>
             <h1 className="text-5xl text-highlight">{pluginData.title}</h1>
           </div>
         </div>
@@ -165,9 +145,14 @@ export default async function Page({
             'fixed max-h-[calc(100vh-4rem)] max-w-[13rem] overflow-y-auto overflow-x-hidden'
           }
         >
+          <h4 className="font-heading text-highlight mb-8">
+            <Link href="/">Home</Link>
+          </h4>
           {usedDocs && (
             <>
-              <h4 className="font-heading text-highlight">Pages</h4>
+              <h4 className="font-heading text-highlight">
+                <Link href={'/' + pluginData.key}>{pluginData.title}</Link>
+              </h4>
               <div className="mb-8">
                 <DocPages plugin={plugin} />
               </div>
