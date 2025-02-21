@@ -1,4 +1,5 @@
 import React from 'react'
+import yaml from 'js-yaml'
 import fs from 'fs'
 import Link from 'next/link'
 import path from 'path'
@@ -14,38 +15,56 @@ function toTitleCase(str: string) {
   )
 }
 
+type TocEntry = {
+  fname: string
+  title: string
+}
+
 export default async function DocPages({ plugin }: DocPagesProps) {
-  const markdownFiles: string[] = []
+  let tocEntries: TocEntry[] = []
 
-  const entries = await fs.promises.readdir('/cache/' + plugin + '/docs', {
-    recursive: true,
-  })
+  const tocYamlFname = path.join('/cache', plugin, 'docs', 'toc.yml')
+  if (fs.existsSync(tocYamlFname)) {
+    tocEntries = yaml.load(fs.readFileSync(tocYamlFname, 'utf8')) as TocEntry[]
+  } else {
+    const entries = await fs.promises.readdir('/cache/' + plugin + '/docs', {
+      recursive: true,
+    })
 
-  entries.sort((a, b) =>
-    a.toLocaleLowerCase() > b.toLocaleLowerCase() ? 1 : -1
-  )
+    entries.sort((a, b) =>
+      a.toLocaleLowerCase() > b.toLocaleLowerCase() ? 1 : -1
+    )
 
-  // put index on top
-  entries.forEach((e) => {
-    if (e.match(/\.md$/)) {
-      if (e.match(/index\.md$/)) {
-        //markdownFiles.unshift(e)
-      } else {
-        markdownFiles.push(e)
+    // put index on top
+    entries.forEach((e) => {
+      if (e.match(/\.md$/)) {
+        if (e.match(/index\.md$/)) {
+          //markdownFiles.unshift(e)
+        } else {
+          let dispname = e.replace(/\.md$/, '')
+          if (dispname === 'index') {
+            dispname = 'Main'
+          }
+          tocEntries.push({
+            fname: e,
+            title: toTitleCase(dispname),
+          })
+        }
       }
-    }
-  })
+    })
+  }
 
-  return markdownFiles.map((fName) => {
-    let dispname = fName.replace(/\.md$/, '')
-    if (dispname === 'index') {
-      dispname = 'Main'
+  return tocEntries.map((entry, i) => {
+    if (entry.fname === '__sep__') {
+      return (
+        <div key={i}>
+          <hr className="my-4 border-highlight2" />
+        </div>
+      )
     }
     return (
-      <div key={fName}>
-        <Link href={path.join('/', plugin, fName)}>
-          {toTitleCase(dispname)}
-        </Link>
+      <div key={entry.fname}>
+        <Link href={path.join('/', plugin, entry.fname)}>{entry.title}</Link>
       </div>
     )
   })
