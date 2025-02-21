@@ -21,6 +21,11 @@ export default async function DocPages({ plugin }: DocPagesProps) {
     recursive: true,
   })
 
+  entries.sort((a, b) =>
+    a.toLocaleLowerCase() > b.toLocaleLowerCase() ? 1 : -1
+  )
+
+  // put index on top
   entries.forEach((e) => {
     if (e.match(/\.md$/)) {
       if (e.match(/index\.md$/)) {
