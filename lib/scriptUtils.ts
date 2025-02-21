@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { Octokit } from '@octokit/rest'
+import { Octokit, RestEndpointMethodTypes } from '@octokit/rest'
 import AdmZip from 'adm-zip'
 import path from 'path'
 import { PluginMeta } from '@/index'
@@ -9,6 +9,13 @@ export type CategoryZipType = Record<string, AdmZip>
 const octokit = new Octokit({ auth: process.env['GH_TOKEN'] })
 
 const CACHE_ROOT = '/cache'
+
+export type ReleaseType = {
+  assets: Record<string, string>[]
+}
+export type PluginType = {
+  category: string
+}
 
 export const cloneOrPullRepo = async (plugin: PluginMeta, repo: string) => {
   const dirname = path.join(CACHE_ROOT, repo)
@@ -29,7 +36,7 @@ export const getLatestRelease = async (owner: string, repo: string) => {
   return release
 }
 
-export const writeReleaseJSON = (plugin: any, repo: string, release: any) => {
+export const writeReleaseJSON = (repo: string, release: unknown) => {
   const fname = path.join(CACHE_ROOT, repo, 'release.json')
   fs.writeFileSync(fname, JSON.stringify(release))
   console.info(`wrote ${fname}`)
@@ -37,8 +44,8 @@ export const writeReleaseJSON = (plugin: any, repo: string, release: any) => {
 
 export const addToCategoryZip = async (
   categoryZips: CategoryZipType,
-  plugin: any,
-  release: any
+  plugin: PluginType,
+  release: ReleaseType
 ) => {
   for (const asset of release.assets) {
     let zip = categoryZips[plugin.category]

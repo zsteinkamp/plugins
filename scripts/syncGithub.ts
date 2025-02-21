@@ -6,6 +6,7 @@ import {
   CategoryZipType,
   cloneOrPullRepo,
   getLatestRelease,
+  ReleaseType,
   writeReleaseJSON,
 } from '@/lib/scriptUtils'
 
@@ -28,8 +29,12 @@ const categoryZips: CategoryZipType = {}
     await cloneOrPullRepo(plugin, repo)
     const release = await getLatestRelease(owner, repo)
     if (release) {
-      writeReleaseJSON(plugin, repo, release)
-      await addToCategoryZip(categoryZips, plugin, release)
+      writeReleaseJSON(repo, release)
+      await addToCategoryZip(
+        categoryZips,
+        plugin,
+        release as unknown as ReleaseType
+      )
     }
   }
   for (const cat in categoryZips) {
