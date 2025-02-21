@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { Octokit, RestEndpointMethodTypes } from '@octokit/rest'
+import { Octokit } from '@octokit/rest'
 import AdmZip from 'adm-zip'
 import path from 'path'
 import { PluginMeta } from '@/index'
