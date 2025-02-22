@@ -14,11 +14,10 @@ const HeadingIndex: FC<HeadingIndexProps> = ({ headings, className = '' }) => {
     return (
       <div
         className={`pr-8 mb-2 ${className} ${
-          heading.level <= 3 ? 'text-highlight font-heading text-xl' : ''
+          heading.level <= 3 ? 'text-highlight font-heading text-xl mt-8' : ''
         }`}
         style={{
           fontWeight: heading.level <= 3 ? 'bold' : 'normal',
-          paddingLeft: Math.max(0, heading.level - 3) * 1 + 'rem',
         }}
         key={i + heading.key}
       >
