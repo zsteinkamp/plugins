@@ -10,6 +10,7 @@ import { HeadingType } from '@/index'
 import React, { ReactNode } from 'react'
 import DocPages from '@/components/DocPages'
 import DownloadButton from '@/components/DownloadButton'
+import rehypeRaw from 'rehype-raw'
 
 export const dynamic = 'force-dynamic'
 
@@ -128,6 +129,7 @@ export default async function Page({
               <ReactMarkdown
                 className="prose-headings:text-highlight"
                 components={renderers}
+                rehypePlugins={[rehypeRaw]}
               >
                 {rawMarkdown}
               </ReactMarkdown>
