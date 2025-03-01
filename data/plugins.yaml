@@ -103,7 +103,7 @@
   image: https://github.com/zsteinkamp/m4l-Modulation-Lerp/raw/main/images/device.gif
   repo: https://github.com/zsteinkamp/m4l-Modulation-Lerp
   description: |
-    This device produces a value in between two input values.
+    This device constrains a modulation input value between a high and low boundary that you can control in real time.
 
 - title: Modulation Delay
   category: Modulators
