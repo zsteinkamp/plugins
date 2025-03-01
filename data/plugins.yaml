@@ -77,7 +77,7 @@
   image: https://github.com/zsteinkamp/m4l-TapPanZeit/raw/main/images/device.gif
   repo: https://github.com/zsteinkamp/m4l-TapPanZeit
   description: |
-    A bucket-brigade delay tap field with control over timing and stereo placement of each tap. Up to 128 taps + an insane feedback control.
+    An innovative echo/delay effect that gives you visual control over inter-tap timing, pan, and volume. Up to 128 taps lets you make echo fields and reverb-like effects.
 
 - title: Modulation Math
   category: Modulators
