@@ -28,7 +28,7 @@
   image: https://github.com/zsteinkamp/m4l-ScratchBacker/raw/main/images/device.gif
   repo: https://github.com/zsteinkamp/m4l-ScratchBacker
   description: |
-    This is a sample-playback device with a focus on scratching or turntablism. Define up to 12 scratch presets and trigger them with the keys C1-B1 while you use higher keys to trigger playing the sample.
+    This is a sample-playback device with a focus on scratching or turntablism. Visually define up to 12 scratch gesture presets and trigger them with the keys C1-B1 while you use higher keys to trigger playing the sample. The scratch gestures affect the playback speed/direction of the sample that is playing.
 
 - title: Modulation Inertia
   category: Modulators
