@@ -69,7 +69,7 @@
   image: https://github.com/zsteinkamp/m4l-ChiasticSlide/raw/main/images/device.gif
   repo: https://github.com/zsteinkamp/m4l-ChiasticSlide
   description: |
-    Smoothly crossfade between any number of child tracks in a group or chains in a preceeding Instrument Rack or Audio Effect Rack device. Allows for crazy tempo-locked layering.
+    Smoothly crossfade between any number of child tracks in a group or chains in a preceeding Instrument Rack or Audio Effect Rack device. Adjust width and shape of the pickup pattern, with even-power presets.
 
 - title: TapPanZeit
   category: Audio Effects
