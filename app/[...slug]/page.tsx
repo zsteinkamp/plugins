@@ -148,7 +148,9 @@ export default async function Page({
           }
         >
           <h4 className="font-heading text-highlight mb-8">
-            <Link href="/">Home</Link>
+            <Link href="/" className="text-highlight2">
+              Home
+            </Link>
           </h4>
           {usedDocs && (
             <>
