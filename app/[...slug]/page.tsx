@@ -164,7 +164,7 @@ export default async function Page({
         </label>
         <div
           className={
-            'nav-content bg-tilebg p-8 top-16 sm:top-0 fixed max-h-[calc(100vh-4rem)] max-w-[13rem] overflow-y-auto overflow-x-hidden'
+            'nav-content bg-tilebg p-8 top-16 sm:top-0 fixed max-h-[calc(100vh-4rem)] max-w-[16rem] overflow-y-auto overflow-x-hidden'
           }
         >
           <h4 className="font-heading text-highlight mb-8">
