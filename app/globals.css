@@ -53,6 +53,16 @@ img.markdown-image {
   @apply max-h-[25em];
 }
 
+@media screen and (max-width: 640px) {
+  .nav-outer input ~ .nav-content {
+    clear: both;
+    display: none;
+  }
+  .nav-outer input:checked ~ .nav-content {
+    display: block;
+  }
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

@@ -116,13 +116,13 @@ export default async function Page({
 
   return (
     <>
-      <div className="flex-1 max-w-5xl p-8">
+      <div className="flex-1 max-w-5xl p-0">
         <div className="m-auto">
-          <div className="flex mb-12 ml-[-2rem] mt-[-2rem] bg-lcdbg p-8 mr-[-2rem] sm:mr-[-4rem]">
+          <div className="flex mb-12 bg-lcdbg p-8">
             <h1 className="text-5xl text-highlight">{pluginData.title}</h1>
           </div>
         </div>
-        <div className="m-auto prose lg:prose-xl prose-invert">
+        <div className="m-auto prose lg:prose-xl prose-invert px-8">
           <div className="flex flex-row">
             <div className="flex-grow">
               <DownloadButton plugin={plugin} />
@@ -141,10 +141,30 @@ export default async function Page({
           <Footer />
         </div>
       </div>
-      <div className="hidden sm:block min-w-[16rem] ml-0 bg-tilebg p-8 shadow-2xl">
+      <div className="nav-outer bg-tilebg top-0 right-0 min-w-[12rem] sm:min-w-[16rem] absolute sm:relative sm:block ml-0 shadow-2xl">
+        <input
+          type="checkbox"
+          id="nav-trigger"
+          className="nav-trigger hidden"
+        />
+        <label
+          htmlFor="nav-trigger"
+          className="absolute top-8 right-8 z-20 block cursor-pointer sm:hidden"
+        >
+          <span className="menu-icon border-1 center block h-11 w-11 rounded-lg border-2 border-highlight2 pl-2 pt-2">
+            <svg
+              viewBox="0 0 18 15"
+              width="1.5rem"
+              height="1.5rem"
+              className="fill-highlight2"
+            >
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+            </svg>
+          </span>
+        </label>
         <div
           className={
-            'fixed max-h-[calc(100vh-4rem)] max-w-[13rem] overflow-y-auto overflow-x-hidden'
+            'nav-content bg-tilebg p-8 top-16 sm:top-0 fixed max-h-[calc(100vh-4rem)] max-w-[13rem] overflow-y-auto overflow-x-hidden'
           }
         >
           <h4 className="font-heading text-highlight mb-8">
