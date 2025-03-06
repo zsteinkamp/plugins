@@ -20,7 +20,9 @@ const PluginTile: FC<TileProps> = ({
 }) => {
   let releaseDate = null
   if (plugin.releaseDate) {
-    releaseDate = timeAgo.format(plugin.releaseDate)
+    try {
+      releaseDate = timeAgo.format(plugin.releaseDate)
+    } catch (e) {}
   }
 
   return (
