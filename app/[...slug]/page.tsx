@@ -182,10 +182,7 @@ export default async function Page({
               </div>
             </>
           )}
-          <HeadingIndex
-            headings={toc}
-            className="max-h-screen overflow-y-auto"
-          />
+          <HeadingIndex headings={toc} />
         </div>
       </div>
     </>

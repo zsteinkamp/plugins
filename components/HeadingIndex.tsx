@@ -6,10 +6,9 @@ export const dynamic = 'force-dynamic'
 
 interface HeadingIndexProps {
   headings: HeadingType[]
-  className?: string
 }
 
-const HeadingIndex: FC<HeadingIndexProps> = ({ headings, className = '' }) => {
+const HeadingIndex: FC<HeadingIndexProps> = ({ headings }) => {
   //headings[0] = { key: 'top', level: 3, title: 'Back to top 👆' }
   const lines = headings.map((heading, i) => {
     return (
