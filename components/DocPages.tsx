@@ -64,7 +64,12 @@ export default async function DocPages({ plugin }: DocPagesProps) {
     }
     return (
       <div key={entry.fname}>
-        <Link href={path.join('/', plugin, entry.fname)}>{entry.title}</Link>
+        <Link
+          className="hover:text-highlight"
+          href={path.join('/', plugin, entry.fname)}
+        >
+          {entry.title}
+        </Link>
       </div>
     )
   })
