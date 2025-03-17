@@ -22,14 +22,6 @@
   description: |
     An arpeggiator inspired by moire patterns. Set a base time interval, number of note layers, and an interval increment and hold a note. Amazing patterns result.
 
-- title: zs-kick-2
-  category: Instruments
-  key: zs-kick-2
-  image: https://github.com/zsteinkamp/zs-kick-2/raw/main/images/device.png
-  repo: https://github.com/zsteinkamp/zs-kick-2
-  description: |
-    An instrument rack that is in my default template. It's a flexible kickdrum that wide ranging capabilities, including control over envelope curves.
-
 - title: ScratchBacker
   category: Instruments
   key: m4l-ScratchBacker
