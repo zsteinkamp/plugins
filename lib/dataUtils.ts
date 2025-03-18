@@ -8,7 +8,7 @@ export const categorySortOrder = [
   'Audio Effects',
   'Modulators',
   'Utilities',
-  'Note Effects',
+  'MIDI Effects',
   'Instruments',
 ]
 
