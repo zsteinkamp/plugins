@@ -1,7 +1,5 @@
 import { HeadingType, PluginMeta } from '@/index'
 import Link from 'next/link'
-import Image from 'next/image'
-import { plugin } from 'postcss'
 import { FC } from 'react'
 import createHeadingSlug from '@/lib/createHeadingSlug'
 
