@@ -1,5 +1,6 @@
 import { HeadingType, PluginMeta } from '@/index'
 import Link from 'next/link'
+import Image from 'next/image'
 import { plugin } from 'postcss'
 import { FC } from 'react'
 import createHeadingSlug from '@/lib/createHeadingSlug'
@@ -14,12 +15,12 @@ interface ToCProps {
 const TableOfContents: FC<ToCProps> = ({ pluginData, className = '' }) => {
   let lastCategory: string
   const headings: HeadingType[] = [
-    {
-      key: 'recent',
-      title: 'Recent Updates',
-      level: 1,
-      className: 'mb-4',
-    },
+    //{
+    //  key: 'recent',
+    //  title: 'Recent Updates',
+    //  level: 1,
+    //  className: 'mb-4',
+    //},
   ]
   pluginData.map((plugin: PluginMeta) => {
     if (plugin.category !== lastCategory) {
@@ -63,7 +64,7 @@ const TableOfContents: FC<ToCProps> = ({ pluginData, className = '' }) => {
     return (
       <div
         className={`pl-0 mt-0 whitespace-nowrap ${className}`}
-        key={plugin.key}
+        key={heading.key}
       >
         <a href={`/${heading.key}`} className="hover:text-highlight">
           {heading.title}

@@ -12,7 +12,7 @@ const HeadingIndex: FC<HeadingIndexProps> = ({ headings }) => {
   //headings[0] = { key: 'top', level: 3, title: 'Back to top 👆' }
   const lines = headings.map((heading, i) => {
     return (
-      <li className={`pr-0 ml-2 pl-2 mr-0 mb-2`} key={i + heading.key}>
+      <li className={`pr-0 ml-0 pl-0 mr-0 mb-1`} key={i + heading.key}>
         <Link className="hover:text-highlight" href={`#${heading.key}`}>
           {heading.title}
         </Link>
@@ -22,8 +22,8 @@ const HeadingIndex: FC<HeadingIndexProps> = ({ headings }) => {
   if (lines.length > 0) {
     return (
       <>
-        <h4 className="text-highlight mb-4">In this page...</h4>
-        <ul className="list-disc">{lines}</ul>
+        <h4 className="text-highlight mb-2">In this page...</h4>
+        <ul className="list-none">{lines}</ul>
       </>
     )
   }
