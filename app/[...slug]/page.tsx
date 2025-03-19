@@ -100,6 +100,9 @@ export default async function Page({
         </a>
       )
     },
+    code: ({ children }: { children: string }) => {
+      return <code className="not-prose bg-lcdbg p-2 rounded">{children}</code>
+    },
     img: ({
       alt,
       src,
