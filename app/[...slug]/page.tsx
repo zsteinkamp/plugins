@@ -18,8 +18,29 @@ import DocPages from '@/components/DocPages'
 import DownloadButton from '@/components/DownloadButton'
 import rehypeRaw from 'rehype-raw'
 import TableOfContents from '@/components/TableOfContents'
+import { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: any
+}): Promise<Metadata> {
+  const slug = (await params).slug
+  const plugin = slug.shift() || ''
+  const pluginData = getDataForPlugin(plugin)
+  if (pluginData) {
+    return {
+      title: pluginData.title,
+      description: pluginData.description,
+      openGraph: {
+        images: pluginData.image,
+      },
+    }
+  }
+  return {}
+}
 
 export default async function Page({
   params,
