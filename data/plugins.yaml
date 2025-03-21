@@ -1,3 +1,11 @@
+- title: TriggerSeq
+  category: MIDI Effects
+  key: m4l-TriggerSeq
+  image: https://github.com/zsteinkamp/m4l-TriggerSeq/raw/main/images/device.gif
+  repo: https://github.com/zsteinkamp/m4l-TriggerSeq
+  description: |
+    TriggerSeq is a performance-oriented sequencer. An incoming MIDI note triggers the sequence. The sequence can have 1-16 steps, and each step's duration is some multiple of a base duration. Pitch and Velocity can be absolute or relative, with optional scale awareness. Adjustable swing and note length percent. Toggle Thru or Choke mode to control how incoming notes interact with an already-playing sequence.
+
 - title: PitchPath
   category: MIDI Effects
   key: m4l-PitchPath
