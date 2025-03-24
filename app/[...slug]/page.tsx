@@ -19,6 +19,7 @@ import DownloadButton from '@/components/DownloadButton'
 import rehypeRaw from 'rehype-raw'
 import TableOfContents from '@/components/TableOfContents'
 import { Metadata } from 'next'
+import PatreonButton from '@/components/PatreonButton'
 
 export const dynamic = 'force-dynamic'
 
@@ -217,15 +218,6 @@ export default async function Page({
           <h4 className="font-heading text-highlight mt-8 mb-4">
             Other Plugins
           </h4>
-          <Link href="/m4l-Knobbler4">
-            <Image
-              src="/images/external-with-hand.jpg"
-              className="mb-4"
-              width="150"
-              height="100"
-              alt="Knobbler running on an iPad"
-            />
-          </Link>
           <TableOfContents
             pluginData={getSortedPluginData()}
             className="max-h-screen overflow-y-auto"
