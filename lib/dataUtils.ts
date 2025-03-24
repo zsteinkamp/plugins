@@ -6,10 +6,10 @@ import path from 'path'
 export const categorySortOrder = [
   'Knobbler',
   'Audio Effects',
-  'Modulators',
-  'Utilities',
   'MIDI Effects',
+  'Modulators',
   'Instruments',
+  'Utilities',
 ]
 
 const getPluginData = () => {
