@@ -1,17 +1,30 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Footer from '@/components/Footer'
+import TableOfContents from '@/components/TableOfContents'
+import { getSortedPluginData } from '@/lib/dataUtils'
+import { PluginMeta } from '@/index'
 
 export default function Page() {
+  const pluginData: PluginMeta[] = getSortedPluginData()
   return (
     <>
-      <div className="sm:mx-8">
-        <div className="lg:flex mb-16">
-          <div className="prose lg:prose-2xl prose-invert grow">
-            <div className="mb-12">
-              <Link href="/">&lt; Home</Link>
-            </div>
-            <div>
+      <div className="flex-1 max-w-5xl p-8">
+        <h1 className="text-5xl text-highlight font-heading mb-12 ml-[-2rem] mt-[-2rem] bg-lcdbg p-8 mr-[-2rem] sm:mr-[-4rem]">
+          <Link href="/" className="flex gap-4">
+            <Image
+              width="60"
+              height="60"
+              src="/favicon-trans.svg"
+              alt="live.dial"
+              className="mt-[-0.5rem]"
+            />
+            About
+          </Link>
+        </h1>
+        <div className="sm:mx-8">
+          <div className="lg:flex mb-16">
+            <div className="prose lg:prose-2xl prose-invert grow">
               <p>Hello, curious person.</p>
               <iframe
                 className="w-full aspect-video"
@@ -117,8 +130,19 @@ export default function Page() {
                 more info on more stuff.
               </p>
             </div>
-            <Footer />
           </div>
+          <Footer />
+        </div>
+      </div>
+      <div className="hidden sm:block min-w-[16rem] ml-0 bg-tilebg p-8 shadow-2xl">
+        <div className="fixed max-h-[calc(100vh-4rem)] overflow-y-auto max-w-48">
+          <h4 className="text-highlight2 mb-4">
+            <Link href="/">&lt; Home</Link>
+          </h4>
+          <TableOfContents
+            pluginData={pluginData}
+            className="max-h-screen overflow-y-auto"
+          />
         </div>
       </div>
     </>
