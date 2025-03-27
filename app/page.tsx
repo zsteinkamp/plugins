@@ -56,7 +56,7 @@ export default function Page() {
         </div>
       </div>
       <div className="hidden sm:block min-w-[16rem] ml-0 bg-tilebg p-8 shadow-2xl">
-        <div className="fixed max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div className="fixed max-h-[calc(100vh-4rem)] overflow-y-auto max-w-48">
           <TableOfContents
             pluginData={pluginData}
             className="max-h-screen overflow-y-auto"
