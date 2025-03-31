@@ -24,9 +24,9 @@ export const dynamic = 'force-dynamic'
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string[] }>
 }): Promise<Metadata> {
-  const plugin = (await params).slug
+  const plugin = (await params).slug[0]
   const pluginData = getDataForPlugin(plugin)
   if (pluginData) {
     return {
@@ -43,11 +43,14 @@ export async function generateMetadata({
 export default async function Page({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string[] }>
 }) {
   const slug = (await params).slug
-  const plugin = slug
-  const docsUri = slug
+  const plugin = slug.shift()
+  if (!plugin) {
+    return <h1>Error</h1>
+  }
+  const docsUri = slug.join('/')
   const readmePath = getReadmePath(plugin)
   const docsPath = getDocsPath(plugin, docsUri)
 
