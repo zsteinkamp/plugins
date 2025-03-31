@@ -1,3 +1,11 @@
+- title: CurrentParamKnob
+  category: Utilities
+  key: m4l-CurrentParamKnob
+  image: https://github.com/zsteinkamp/m4l-CurrentParamKnob/raw/main/images/device.png
+  repo: https://github.com/zsteinkamp/m4l-CurrentParamKnob
+  description: |
+    CurrentParamKnob lets you control the currently selected parameter in your Live Set with a MIDI CC and/or USB Human Interface controller.
+
 - title: TriggerSeq
   category: MIDI Effects
   key: m4l-TriggerSeq
