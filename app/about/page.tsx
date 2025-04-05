@@ -19,7 +19,7 @@ export default function Page() {
     >
       <div className="lg:flex mb-16">
         <div className="prose lg:prose-2xl prose-invert grow">
-          <p>Hello, curious person.</p>
+          <p>Hello!</p>
           <iframe
             className="w-full aspect-video"
             src="https://www.youtube.com/embed/videoseries?si=4Y_ms8DDTHQfIzdN&amp;list=PLqzTnRgmRId7rYvoVSoCvCWFgvfc8RcfW"
