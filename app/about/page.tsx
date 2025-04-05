@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Footer from '@/components/Footer'
 import TableOfContents from '@/components/TableOfContents'
 import { getSortedPluginData } from '@/lib/dataUtils'
 import { PluginMeta } from '@/index'
