@@ -14,8 +14,8 @@ export default function PageContents({
   children: ReactNode
 }) {
   return (
-    <>
-      <div className="flex-1 max-w-5xl p-8">
+    <div className="flex m-auto">
+      <div className="max-w-5xl p-8">
         <div
           className="fixed top-0 left-0 w-full max-w-4xl"
           style={{ zIndex: -1 }}
@@ -39,11 +39,11 @@ export default function PageContents({
           <Footer />
         </div>
       </div>
-      <div className="hidden sm:block min-w-[16rem] ml-0 bg-tilebg p-8 shadow-2xl">
+      <div className="hidden sm:block min-w-[16rem] bg-tilebg p-8 shadow-2xl">
         <div className="fixed max-h-[calc(100vh-4rem)] overflow-y-auto max-w-48">
           {sidebar}
         </div>
       </div>
-    </>
+    </div>
   )
 }
