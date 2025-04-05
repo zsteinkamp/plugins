@@ -1,3 +1,11 @@
+- title: VariationOctave
+  category: Utilities
+  key: m4l-VariationOctave
+  image: https://github.com/zsteinkamp/m4l-VariationOctave/raw/main/images/device.png
+  repo: https://github.com/zsteinkamp/m4l-VariationOctave
+  description: |
+    Lets you dedicate an octave of MIDI input notes to selecting Variations in an adjacent rack. Can optionally trigger randomizing the Macros in the rack with the last note in the octave.
+
 - title: CurrentParamKnob
   category: Utilities
   key: m4l-CurrentParamKnob
