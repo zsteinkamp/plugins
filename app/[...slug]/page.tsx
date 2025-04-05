@@ -9,7 +9,6 @@ import fsp from 'node:fs/promises'
 import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import Link from 'next/link'
-import Footer from '@/components/Footer'
 import HeadingIndex from '@/components/HeadingIndex'
 import { HeadingType } from '@/index'
 import React, { ReactNode } from 'react'
@@ -18,6 +17,7 @@ import DownloadButton from '@/components/DownloadButton'
 import rehypeRaw from 'rehype-raw'
 import TableOfContents from '@/components/TableOfContents'
 import { Metadata } from 'next'
+import PageContents from '@/components/PageContents'
 
 export const dynamic = 'force-dynamic'
 
@@ -147,32 +147,57 @@ export default async function Page({
   }
 
   return (
-    <>
-      <div className="flex-1 max-w-5xl p-0">
-        <div className="m-auto">
-          <div className="flex mb-12 bg-lcdbg p-8">
-            <h1 className="text-5xl text-highlight">{pluginData.title}</h1>
+    <PageContents
+      title={pluginData.title}
+      sidebar={
+        <>
+          <h4 className="font-heading text-highlight mb-8">
+            <Link href="/" className="text-highlight2">
+              &lt; Home
+            </Link>
+          </h4>
+          {usedDocs && (
+            <>
+              <h4 className="font-heading text-highlight">
+                <Link href={'/' + pluginData.key}>{pluginData.title}</Link>
+              </h4>
+              <div className="mb-8">
+                <DocPages plugin={plugin} />
+              </div>
+            </>
+          )}
+          <HeadingIndex headings={toc} />
+          <h4 className="font-heading text-highlight mt-8 mb-4">
+            Other Plugins
+          </h4>
+          <TableOfContents
+            pluginData={getSortedPluginData()}
+            className="max-h-screen overflow-y-auto"
+          />
+        </>
+      }
+    >
+      <div className="m-auto prose lg:prose-xl prose-invert px-8">
+        <div className="flex flex-row">
+          <div className="flex-grow">
+            <DownloadButton plugin={plugin} />
+            <ReactMarkdown
+              className="prose-headings:text-highlight"
+              components={renderers}
+              rehypePlugins={[rehypeRaw]}
+            >
+              {rawMarkdown}
+            </ReactMarkdown>
+            <DownloadButton plugin={plugin} />
           </div>
-        </div>
-        <div className="m-auto prose lg:prose-xl prose-invert px-8">
-          <div className="flex flex-row">
-            <div className="flex-grow">
-              <DownloadButton plugin={plugin} />
-              <ReactMarkdown
-                className="prose-headings:text-highlight"
-                components={renderers}
-                rehypePlugins={[rehypeRaw]}
-              >
-                {rawMarkdown}
-              </ReactMarkdown>
-              <DownloadButton plugin={plugin} />
-            </div>
-          </div>
-        </div>
-        <div className="max-w-[52rem] m-auto">
-          <Footer />
         </div>
       </div>
+    </PageContents>
+  )
+}
+
+/*
+
       <div className="nav-outer bg-tilebg top-0 right-0 min-w-[12rem] sm:min-w-[16rem] absolute sm:relative sm:block ml-0 shadow-2xl">
         <input
           type="checkbox"
@@ -199,31 +224,4 @@ export default async function Page({
             'nav-content bg-tilebg p-8 top-16 sm:top-0 fixed max-h-[calc(100vh)] max-w-[16rem] overflow-y-auto overflow-x-hidden'
           }
         >
-          <h4 className="font-heading text-highlight mb-8">
-            <Link href="/" className="text-highlight2">
-              &lt; Home
-            </Link>
-          </h4>
-          {usedDocs && (
-            <>
-              <h4 className="font-heading text-highlight">
-                <Link href={'/' + pluginData.key}>{pluginData.title}</Link>
-              </h4>
-              <div className="mb-8">
-                <DocPages plugin={plugin} />
-              </div>
-            </>
-          )}
-          <HeadingIndex headings={toc} />
-          <h4 className="font-heading text-highlight mt-8 mb-4">
-            Other Plugins
-          </h4>
-          <TableOfContents
-            pluginData={getSortedPluginData()}
-            className="max-h-screen overflow-y-auto"
-          />
-        </div>
-      </div>
-    </>
-  )
-}
+          */

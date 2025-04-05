@@ -67,3 +67,10 @@ body {
   color: var(--foreground);
   background: var(--background);
 }
+
+.monoSvg path {
+  @apply fill-lcdbg;
+}
+.monoSvg path.bignugget {
+  fill: url(#grad1);
+}
