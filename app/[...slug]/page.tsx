@@ -101,9 +101,6 @@ export default async function Page({
     h1: () => null,
     h2: addToTOC,
     h3: addToTOC,
-    h4: addToTOC,
-    h5: addToTOC,
-    h6: addToTOC,
     a: ({
       href,
       title,
