@@ -1,3 +1,11 @@
+- title: MIDI CC Bridge
+  category: MIDI Effects
+  key: m4l-MIDI-CC-Bridge
+  image: https://github.com/zsteinkamp/m4l-MIDI-CC-Bridge/raw/main/images/device.png
+  repo: https://github.com/zsteinkamp/m4l-MIDI-CC-Bridge
+  description: |
+    Allows you to use a control surface like Knobbler to send MIDI CC messages to outboard gear.
+
 - title: VariationOctave
   category: Utilities
   key: m4l-VariationOctave
