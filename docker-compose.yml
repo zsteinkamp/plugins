@@ -2,6 +2,7 @@ name: plugins_prod
 services:
   nginx:
     image: nginx:latest
+    restart: unless-stopped
     ports:
       - '3225:3225'
     volumes:
