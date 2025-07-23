@@ -1,3 +1,12 @@
+- title: Modulation Deviation
+  category: Modulators
+  key: m4l-Modulation-Deviation
+  image: https://github.com/zsteinkamp/m4l-Modulation-Deviation/raw/main/images/device.gif
+  repo: https://github.com/zsteinkamp/m4l-Modulation-Deviation
+  description: |
+    Modulate two parameters in opposite directions, with real time control over
+    deviation because sometimes you might want to do that.
+
 - title: MIDI CC Bridge
   category: MIDI Effects
   key: m4l-MIDI-CC-Bridge
