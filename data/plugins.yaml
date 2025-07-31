@@ -45,7 +45,7 @@
   image: https://github.com/zsteinkamp/m4l-PitchPath/raw/main/images/device.gif
   repo: https://github.com/zsteinkamp/m4l-PitchPath
   description: |
-    PitchPath is a visual note sequencer that lets you draw melodies. It works with Scale Awareness and can be toggled between relative and absolute note modes. Surprisingly useful!
+    PitchPath is a tool that lets you draw melodies disconnected from a rhythmic pattern. Send it a MIDI note, and wherever the Pitch Path is at that moment will affect the note pitch that is output. It works with Scale Awareness and can be toggled between relative and absolute note modes. Surprisingly useful!
 
 - title: Crisco Note Shortening
   category: MIDI Effects
