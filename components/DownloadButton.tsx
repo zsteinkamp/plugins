@@ -20,22 +20,25 @@ export default function DownloadButton({ plugin }: { plugin: string }) {
   }
 
   return (
-    <div className="flex">
+    <div className="grid max-w-96">
       <Link
-        className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md shadow-md"
+        className="p-2 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md shadow-md"
         href={releaseData.assets[0].browser_download_url}
       >
-        <div className="text-2xl font-bold text-background">
+        <div className="text-2xl font-bold text-white uppercase">
           Download Latest
         </div>
-        <div className="text-sd text-background">{pluginData.release.name}</div>
+        <div className="text-sm text-background">{pluginData.release.name}</div>
       </Link>
-      <Link
-        className="p-2 whitespace-nowrap text-background"
-        href={pluginData.release.html_url}
-      >
-        Published {releaseDate}
-      </Link>
+      <div className="flex text-sm p-2">
+        <div className="flex-grow">Published {releaseDate}</div>
+        <Link
+          className="whitespace-nowrap"
+          href={pluginData.repo + '/releases'}
+        >
+          View All Releases
+        </Link>
+      </div>
     </div>
   )
 }

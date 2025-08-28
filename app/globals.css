@@ -10,6 +10,7 @@
   --background: #2e2e2e;
   --highlight: #f2b066;
   --highlight2: #58c0d2;
+  --highlight2tr: #58c0d2cc;
 }
 
 h1,
@@ -43,6 +44,9 @@ h4 {
 }
 .prose a {
   @apply text-highlight2;
+}
+.prose a:hover {
+  @apply text-highlight;
 }
 
 img.markdown-image {

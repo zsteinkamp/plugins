@@ -17,12 +17,12 @@ export default function PageContents({
     <div className="flex m-auto">
       <div className="max-w-5xl p-8">
         <div
-          className="fixed top-0 left-0 w-full max-w-4xl"
+          className="fixed top-0 left-0 w-full border-yellow"
           style={{ zIndex: -1 }}
         >
           <Mono />
         </div>
-        <h1 className="text-5xl text-highlight font-heading mb-12 ml-[-2rem] mt-[-2rem] bg-lcdbg p-8 mr-[-2rem] sm:mr-[-4rem]">
+        <h1 className="text-5xl text-highlight font-heading mb-12 ml-[-2rem] mt-[-2rem] p-8 mr-[-2rem] sm:mr-[-4rem]">
           <Link href="/" className="flex gap-4">
             <Image
               width="60"
