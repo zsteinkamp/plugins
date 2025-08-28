@@ -25,13 +25,13 @@ export default function DownloadButton({ plugin }: { plugin: string }) {
         className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md shadow-md"
         href={releaseData.assets[0].browser_download_url}
       >
-        <div className="text-2xl font-bold text-foreground">
+        <div className="text-2xl font-bold text-background">
           Download Latest
         </div>
-        <div className="text-sd text-foreground">{pluginData.release.name}</div>
+        <div className="text-sd text-background">{pluginData.release.name}</div>
       </Link>
       <Link
-        className="p-2 whitespace-nowrap text-foreground"
+        className="p-2 whitespace-nowrap text-background"
         href={pluginData.release.html_url}
       >
         Published {releaseDate}
