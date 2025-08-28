@@ -37,10 +37,10 @@ export default function Page() {
             here.
           </p>
           <p>
-            Consider supporting my work on Patreon. If you find value in my
-            devices, or would like to arrange 1:1 Max for Live coaching time,{' '}
+            If you find value in my devices, please consider supporting my work
+            on{' '}
             <Link href="https://patreon.com/ZackSteinkamp?utm_medium=site&utm_source=plugins_about">
-              please visit Patreon
+              Patreon
             </Link>
             .
           </p>

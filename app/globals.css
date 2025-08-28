@@ -41,12 +41,8 @@ h4 {
   margin-bottom: 0;
   @apply text-highlight2;
 }
-
 .prose a {
-  text-decoration-color: #ffffff44;
-}
-.prose a:hover {
-  text-decoration-color: #ffffff;
+  @apply text-highlight2;
 }
 
 img.markdown-image {
