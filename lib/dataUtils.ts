@@ -10,6 +10,7 @@ export const categorySortOrder = [
   'Modulators',
   'Instruments',
   'Utilities',
+  'Racks',
 ]
 
 const getPluginData = () => {

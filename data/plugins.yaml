@@ -231,7 +231,7 @@
     This was my first Javascript-based M4L patch. It was a great learning experience to figure out how to code up both the logic and visualization in M4L's Javascript environment.
 
 - title: zs Send Duck Rack
-  category: Audio Effects
+  category: Racks
   key: zs-Send-Duck-Rack
   image: https://github.com/zsteinkamp/zs-Send-Duck-Rack/raw/main/images/device.png
   repo: https://github.com/zsteinkamp/zs-Send-Duck-Rack
@@ -239,7 +239,7 @@
     An audio effect rack that provides controls like an effects send, as well as a ducking feature for any effect.
 
 - title: zs Feedback Matrix
-  category: Audio Effects
+  category: Racks
   key: zs-Feedback-Matrix
   image: https://github.com/zsteinkamp/zs-Feedback-Matrix/raw/main/images/device.png
   repo: https://github.com/zsteinkamp/zs-Feedback-Matrix
