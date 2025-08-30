@@ -22,7 +22,7 @@ export default function DownloadButton({ plugin }: { plugin: string }) {
   return (
     <div className="grid max-w-96">
       <Link
-        className="p-2 no-underline bg-highlight2tr hover:bg-highlight rounded-md shadow-md border-t-2 border-t-white/20 border-b-2 border-b-black/20"
+        className="py-2 px-4 no-underline bg-highlight2tr hover:bg-highlight rounded-md shadow-md border-t-2 border-t-white/20 border-b-2 border-b-black/20"
         href={releaseData.assets[0].browser_download_url}
       >
         <div className="text-2xl font-bold text-white uppercase">
@@ -30,7 +30,7 @@ export default function DownloadButton({ plugin }: { plugin: string }) {
         </div>
         <div className="text-sm text-background">{pluginData.release.name}</div>
       </Link>
-      <div className="flex text-sm p-2">
+      <div className="flex text-sm px-4 py-2">
         <div className="flex-grow">Published {releaseDate}</div>
         <Link
           className="whitespace-nowrap"
