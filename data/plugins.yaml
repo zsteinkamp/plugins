@@ -1,3 +1,11 @@
+- title: ClearSends
+  category: Utilities
+  key: m4l-ClearSends
+  image: https://github.com/zsteinkamp/m4l-ClearSends/raw/main/images/device.gif
+  repo: https://github.com/zsteinkamp/m4l-ClearSends
+  description: |
+    Provides a button, that when clicked, changes all sends in all tracks to zero.
+
 - title: Modulation Deviation
   category: Modulators
   key: m4l-Modulation-Deviation
