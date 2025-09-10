@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const dynamic = 'force-dynamic'
 
@@ -21,6 +22,10 @@ export default function RootLayout({
       <body>
         <div className="flex min-h-screen">{children}</div>
       </body>
+      <GoogleAnalytics
+        gaId={'G-6TVGS1WVZ7'}
+        debugMode={process.env.NODE_ENV === 'development'}
+      />
     </html>
   )
 }
