@@ -30,10 +30,10 @@ export default function PluginList() {
             >
               {category}
             </h2>
-            <div className="mt-2">
+            <div className="mt-4">
               <Link
                 href={categoryZipPath(category)}
-                className="text-background bg-highlight2 hover:bg-highlight p-2 rounded shadow-md"
+                className="text-background bg-highlight2 hover:bg-highlight p-2 rounded shadow-md shadow-md border-t-2 border-t-white/20 border-b-2 border-b-black/20"
               >
                 Download .zip
               </Link>
