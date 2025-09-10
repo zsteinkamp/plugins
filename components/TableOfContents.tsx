@@ -2,7 +2,7 @@ import { HeadingType, PluginMeta } from '@/index'
 import Link from 'next/link'
 import { FC } from 'react'
 import createHeadingSlug from '@/lib/createHeadingSlug'
-import PatreonButton from './PatreonButton'
+import StripeButton from './StripeButton'
 
 export const dynamic = 'force-dynamic'
 
@@ -71,12 +71,7 @@ const TableOfContents: FC<ToCProps> = ({ pluginData, className = '' }) => {
       </div>
     )
   })
-  return (
-    <>
-      <PatreonButton />
-      {lines}
-    </>
-  )
+  return <>{lines}</>
 }
 
 export default TableOfContents

@@ -4,6 +4,7 @@ import TableOfContents from '@/components/TableOfContents'
 import { getSortedPluginData } from '@/lib/dataUtils'
 import { PluginMeta } from '@/index'
 import PageContents from '@/components/PageContents'
+import StripeButton from '@/components/StripeButton'
 
 export default function Page() {
   const pluginData: PluginMeta[] = getSortedPluginData()
@@ -11,10 +12,13 @@ export default function Page() {
     <PageContents
       title="About"
       sidebar={
-        <TableOfContents
-          pluginData={pluginData}
-          className="max-h-screen overflow-y-auto"
-        />
+        <>
+          <StripeButton className="mb-8" />
+          <TableOfContents
+            pluginData={pluginData}
+            className="max-h-screen overflow-y-auto"
+          />
+        </>
       }
     >
       <div className="lg:flex mb-16">
@@ -35,14 +39,6 @@ export default function Page() {
             </Link>{' '}
             for many videos and example performances on the devices you see
             here.
-          </p>
-          <p>
-            If you find value in my devices, please consider supporting my work
-            on{' '}
-            <Link href="https://patreon.com/ZackSteinkamp?utm_medium=site&utm_source=plugins_about">
-              Patreon
-            </Link>
-            .
           </p>
           <h2 className="text-highlight">About This Site</h2>
           <p>
@@ -120,6 +116,11 @@ export default function Page() {
             <Link href="https://steinkamp.us/">personal web site</Link> for more
             info on more stuff.
           </p>
+          <p>
+            If you find value in my work, then please consider a financial
+            contribution. I would love to be able to stay retired! :D
+          </p>
+          <StripeButton />
         </div>
       </div>
     </PageContents>

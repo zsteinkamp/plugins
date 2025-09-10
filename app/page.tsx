@@ -6,6 +6,7 @@ import TableOfContents from '@/components/TableOfContents'
 import { getSortedPluginData } from '@/lib/dataUtils'
 import { PluginMeta } from '@/index'
 import PageContents from '@/components/PageContents'
+import StripeButton from '@/components/StripeButton'
 
 export const dynamic = 'force-dynamic'
 
@@ -15,10 +16,13 @@ export default function Page() {
     <PageContents
       title="Zack's Ableton Live Devices / Plugins"
       sidebar={
-        <TableOfContents
-          pluginData={pluginData}
-          className="max-h-screen overflow-y-auto"
-        />
+        <>
+          <StripeButton className="mb-8" />
+          <TableOfContents
+            pluginData={pluginData}
+            className="max-h-screen overflow-y-auto"
+          />
+        </>
       }
     >
       <>
@@ -32,8 +36,16 @@ export default function Page() {
               for demos and tutorials centered around these devices.
             </div>
             <p>
-              You can download .zip bundles of each category, or visit each
-              device&apos;s project page to read more and download it there.
+              You can download .zip bundles of each category with a single
+              click, or visit each device&apos;s project page to read more and
+              download it there.
+            </p>
+            <p>
+              If you find value in my work, then please consider making a small{' '}
+              <Link href="https://buy.stripe.com/fZu9AU8AocAFeq12Embwk00">
+                financial contribution
+              </Link>
+              .
             </p>
           </div>
           <div>

@@ -22,7 +22,7 @@ export default function PageContents({
         >
           <Mono />
         </div>
-        <h1 className="text-5xl text-highlight font-heading mb-12 ml-[-2rem] mt-[-2rem] p-8 mr-[-2rem] sm:mr-[-4rem]">
+        <h1 className="text-5xl text-highlight font-heading mb-4 ml-[-2rem] mt-[-2rem] p-8 mr-[-2rem] sm:mr-[-4rem]">
           <Link href="/" className="flex gap-4">
             <Image
               width="60"
