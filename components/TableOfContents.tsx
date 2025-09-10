@@ -2,7 +2,6 @@ import { HeadingType, PluginMeta } from '@/index'
 import Link from 'next/link'
 import { FC } from 'react'
 import createHeadingSlug from '@/lib/createHeadingSlug'
-import StripeButton from './StripeButton'
 
 export const dynamic = 'force-dynamic'
 
