@@ -238,6 +238,14 @@
 
     This was my first Javascript-based M4L patch. It was a great learning experience to figure out how to code up both the logic and visualization in M4L's Javascript environment.
 
+- title: zs Delay Filter Roar Rack
+  category: Racks
+  key: zs-Delay-Filter-Roar-Rack
+  image: https://github.com/zsteinkamp/zs-Delay-Filter-Roar-Rack/raw/main/images/device.png
+  repo: https://github.com/zsteinkamp/zs-Delay-Filter-Roar-Rack
+  description: |
+    An audio effect rack that wraps the Delay, Auto Filter, and Roar devices.
+
 - title: zs Send Duck Rack
   category: Racks
   key: zs-Send-Duck-Rack
