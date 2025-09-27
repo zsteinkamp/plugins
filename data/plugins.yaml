@@ -1,3 +1,11 @@
+- title: CrossfaderNote
+  category: Utilities
+  key: m4l-CrossfaderNote
+  image: https://github.com/zsteinkamp/m4l-CrossfaderNote/raw/main/images/device.png
+  repo: https://github.com/zsteinkamp/m4l-CrossfaderNote
+  description: |
+    Allows you to control the position of the crossfader with a MIDI note off/on.
+
 - title: ClearSends
   category: Utilities
   key: m4l-ClearSends
