@@ -77,7 +77,7 @@
   image: https://github.com/zsteinkamp/m4l-MoireArp/raw/main/images/device.png
   repo: https://github.com/zsteinkamp/m4l-MoireArp
   description: |
-    An note generator inspired by moire patterns. Set a base time interval, number of note layers, and an interval increment and hold a note. The ultimate polyrhythm weapon.
+    A note generator inspired by moire patterns. Set a base time interval, number of note layers, and an interval increment and hold a note. The ultimate polyrhythm weapon.
 
 - title: ScratchBacker
   category: Instruments
