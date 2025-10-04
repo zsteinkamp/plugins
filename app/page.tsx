@@ -40,13 +40,6 @@ export default function Page() {
               click, or visit each device&apos;s project page to read more and
               download it there.
             </p>
-            <p>
-              If you find value in my work, then please consider making a small{' '}
-              <Link href="https://buy.stripe.com/fZu9AU8AocAFeq12Embwk00">
-                financial contribution
-              </Link>
-              .
-            </p>
           </div>
           <div>
             <img
