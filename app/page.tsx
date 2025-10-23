@@ -54,11 +54,11 @@ export default function Page() {
             Free Max for Live Workshop Sunday Oct 26 @ 11a PT
           </h3>
           <p className="my-8">
-            This Sunday October 26th at 11a-1p PT (8p-10p CEST), I'll be
+            This Sunday October 26th at 11a-1p PT (8p-10p CEST), I&apos;ll be
             chatting with the one and only @SideBrain about Max for Live
-            development, demo many of my open source M4L devices, and we'll have
-            a Knobbler Lifetime license giveaway. Register for the free workshop
-            here:{' '}
+            development, demo many of my open source M4L devices, and we&apos;ll
+            have a Knobbler Lifetime license giveaway. Register for the free
+            workshop here:{' '}
             <a className="text-highlight2" href="https://shorturl.at/90AUZ">
               https://shorturl.at/90AUZ
             </a>
