@@ -49,6 +49,22 @@ export default function Page() {
             />
           </div>
         </div>
+        <div className="p-16 border-white border-4 mb-16 bg-black">
+          <h3 className="text-highlight">
+            Free Max for Live Workshop Sunday Oct 26 @ 11a PT
+          </h3>
+          <p className="my-8">
+            This Sunday October 26th at 11a-1p PT (8p-10p CEST), I'll be
+            chatting with the one and only @SideBrain about Max for Live
+            development, demo many of my open source M4L devices, and we'll have
+            a Knobbler Lifetime license giveaway. Register for the free workshop
+            here:{' '}
+            <a className="text-highlight2" href="https://shorturl.at/90AUZ">
+              https://shorturl.at/90AUZ
+            </a>
+          </p>
+          <p>Bring your questions and ideas! I hope to see you there :)</p>
+        </div>
         <RecentPlugins num={4} />
         <PluginList />
       </>
