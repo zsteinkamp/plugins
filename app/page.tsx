@@ -7,6 +7,7 @@ import { getSortedPluginData } from '@/lib/dataUtils'
 import { PluginMeta } from '@/index'
 import PageContents from '@/components/PageContents'
 import StripeButton from '@/components/StripeButton'
+import KnobblerPromo from '@/components/KnobblerPromo'
 
 export const dynamic = 'force-dynamic'
 
@@ -17,11 +18,11 @@ export default function Page() {
       title="Zack's Ableton Live Devices / Plugins"
       sidebar={
         <>
-          <StripeButton className="mb-8" />
           <TableOfContents
             pluginData={pluginData}
             className="max-h-screen overflow-y-auto"
           />
+          <StripeButton className="mt-8" />
         </>
       }
     >
@@ -41,12 +42,8 @@ export default function Page() {
               download it there.
             </p>
           </div>
-          <div>
-            <img
-              src="/images/external-with-hand.jpg"
-              alt="Modulation Lerp in action"
-              className="not-prose min-w-32 max-w-64 pt-4 lg:pt-0 lg:pl-8 m-auto"
-            />
+          <div className="pt-4 lg:pt-0 lg:pl-8 m-auto">
+            <KnobblerPromo />
           </div>
         </div>
         <RecentPlugins num={4} />

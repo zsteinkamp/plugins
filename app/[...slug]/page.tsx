@@ -19,6 +19,7 @@ import TableOfContents from '@/components/TableOfContents'
 import { Metadata } from 'next'
 import PageContents from '@/components/PageContents'
 import StripeButton from '@/components/StripeButton'
+import KnobblerPromo from '@/components/KnobblerPromo'
 
 export const dynamic = 'force-dynamic'
 
@@ -149,7 +150,11 @@ export default async function Page({
       title={pluginData.title}
       sidebar={
         <>
-          <StripeButton className="mb-8" />
+          {plugin !== 'm4l-Knobbler4' ? (
+            <div>
+              <KnobblerPromo className="mb-8" />
+            </div>
+          ) : null}
           <h4 className="font-heading text-highlight mb-8">
             <Link href="/" className="text-highlight2">
               &lt; Home
