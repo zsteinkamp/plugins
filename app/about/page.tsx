@@ -40,27 +40,6 @@ export default function Page() {
             for many videos and example performances on the devices you see
             here.
           </p>
-          <h2 className="text-highlight">About This Site</h2>
-          <p>
-            I made this site to provide a simple and useful way of learning
-            about and downloading my software. I started out using GitHub for
-            this, but for non-nerds the user experience of finding and reading
-            the README.md content then finding a way to download the software
-            was overwhelming and daunting.
-          </p>
-          <p>
-            This site runs from a Debian Linux machine in my house, via
-            Cloudflare&apos;s CDN. You can have a look at the{' '}
-            <Link href="https://github.com/zsteinkamp/plugins">
-              source code here
-            </Link>
-            . It uses a .yaml file that specifies a list of GitHub repos that a
-            script harvests README.md and release information from.
-          </p>
-          <p>
-            So each repo is the source of truth not only for its source code
-            files, but for its documentation presented on this site.
-          </p>
           <h2 className="text-highlight">About Me - Why?</h2>
           <Image
             src="/images/about_photo.jpg"
@@ -117,8 +96,33 @@ export default function Page() {
             info on more stuff.
           </p>
           <p>
-            If you find value in my work, then please consider a financial
-            contribution. I would love to be able to stay retired! :D
+            If you find value in my work, then please consider a{' '}
+            <Link href="https://buy.stripe.com/fZu9AU8AocAFeq12Embwk00">
+              financial contribution
+            </Link>{' '}
+            or picking up the <Link href="/m4l-Knobbler4">Knobbler</Link> app. I
+            would love to be able to stay retired! :D
+          </p>
+          <h2 className="text-highlight">About This Site</h2>
+          <p>
+            I made this site to provide a simple and useful way of learning
+            about and downloading my software. I started out using GitHub for
+            this, but for non-nerds the user experience of finding and reading
+            the README.md content then finding a way to download the software
+            was overwhelming and daunting.
+          </p>
+          <p>
+            This site runs from a Debian Linux machine in AWS, via
+            Cloudflare&apos;s CDN. You can have a look at the{' '}
+            <Link href="https://github.com/zsteinkamp/plugins">
+              source code here
+            </Link>
+            . It uses a .yaml file that specifies a list of GitHub repos that a
+            script harvests README.md and release information from.
+          </p>
+          <p>
+            Each repo is the source of truth not only for its source code files,
+            but for its documentation presented on this site.
           </p>
           <StripeButton />
         </div>

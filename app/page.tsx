@@ -41,6 +41,7 @@ export default function Page() {
               click, or visit each device&apos;s project page to read more and
               download it there.
             </p>
+            <p>All the devices here are free and open source.</p>
           </div>
           <div className="pt-4 lg:pt-0 lg:pl-8 m-auto">
             <KnobblerPromo />
