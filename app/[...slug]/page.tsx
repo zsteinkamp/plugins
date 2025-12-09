@@ -7,7 +7,7 @@ import {
 import fs from 'node:fs'
 import fsp from 'node:fs/promises'
 import { notFound } from 'next/navigation'
-import Markdown, { Components, ExtraProps } from 'react-markdown'
+import Markdown, { Components } from 'react-markdown'
 import Link from 'next/link'
 import HeadingIndex from '@/components/HeadingIndex'
 import { HeadingType } from '@/index'
@@ -132,11 +132,10 @@ export default async function Page({
       )
     },
     img: (props) => {
-      let {
-        alt,
-        src,
-        title,
-      }: { alt?: string; src?: string | Blob; title?: string } = {
+      const { alt, title }: { alt?: string; title?: string } = {
+        ...props,
+      }
+      let { src }: { src?: string | Blob } = {
         ...props,
       }
       if (!src) {
