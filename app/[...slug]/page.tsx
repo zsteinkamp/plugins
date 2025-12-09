@@ -7,7 +7,7 @@ import {
 import fs from 'node:fs'
 import fsp from 'node:fs/promises'
 import { notFound } from 'next/navigation'
-import ReactMarkdown from 'react-markdown'
+import Markdown, { Components, ExtraProps } from 'react-markdown'
 import Link from 'next/link'
 import HeadingIndex from '@/components/HeadingIndex'
 import { HeadingType } from '@/index'
@@ -75,14 +75,17 @@ export default async function Page({
   }
 
   const toc: HeadingType[] = []
-  const addToTOC = ({
-    children,
-    ...props
-  }: {
-    children: ReactNode
-    node: HTMLElement
-  }) => {
-    const level = Number(props.node.tagName.match(/h(\d)/)?.slice(1))
+
+  // used by H2, H3
+  const addToTOC = (
+    tagName: string,
+    {
+      children,
+    }: {
+      children?: ReactNode
+    }
+  ) => {
+    const level = Number(tagName.match(/h(\d)/)?.slice(1))
     if (level && children) {
       const id = children
         .toString()
@@ -93,50 +96,53 @@ export default async function Page({
         key: id,
         title: children as string,
       })
-      return React.createElement(props.node.tagName, { id }, children)
+      return React.createElement(tagName, { id }, children)
     } else {
-      return React.createElement(props.node.tagName, props, children)
+      return React.createElement(tagName, {}, null)
     }
   }
 
-  const renderers = {
+  const renderers: Components = {
     h1: () => null,
-    h2: addToTOC,
-    h3: addToTOC,
+    h2: (props) => addToTOC('h2', props),
+    h3: (props) => addToTOC('h3', props),
     a: ({
       href,
       title,
       children,
     }: {
-      href: string
-      title: string
-      children: string
+      href?: string
+      title?: string
+      children?: ReactNode
     }) => {
       if (href && href.indexOf('http') !== 0) {
         href = '/' + plugin + '/' + href
       }
       return (
         <a href={href} title={title}>
-          {children}
+          {children || null}
         </a>
       )
     },
-    code: ({ children }: { children: string }) => {
-      return <code className="not-prose bg-lcdbg p-2 rounded">{children}</code>
+    code: ({ children }: { children?: ReactNode }) => {
+      return (
+        <code className="not-prose bg-lcdbg p-2 rounded">
+          {children || null}
+        </code>
+      )
     },
-    img: ({
-      alt,
-      src,
-      title,
-    }: {
-      alt?: string
-      src?: string
-      title?: string
-    }) => {
+    img: (props) => {
+      let {
+        alt,
+        src,
+        title,
+      }: { alt?: string; src?: string | Blob; title?: string } = {
+        ...props,
+      }
       if (!src) {
         return null
       }
-      if (src && src.indexOf('http') !== 0) {
+      if (src && src.toString().indexOf('http') !== 0) {
         src = '/cache/' + plugin + (usedDocs ? '/docs/' : '/') + src
       }
       return (
@@ -185,13 +191,13 @@ export default async function Page({
         <div className="flex flex-row">
           <div className="flex-grow">
             <DownloadButton plugin={plugin} />
-            <ReactMarkdown
+            <Markdown
               className="prose-headings:text-highlight"
               components={renderers}
               rehypePlugins={[rehypeRaw]}
             >
               {rawMarkdown}
-            </ReactMarkdown>
+            </Markdown>
             <DownloadButton plugin={plugin} />
             <div className="mt-8">
               <em>
