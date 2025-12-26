@@ -1,11 +1,7 @@
 import Link from 'next/link'
-import React, { HTMLAttributes } from 'react'
-import { getDataForPlugin, getReleases } from '@/lib/dataUtils'
-import en from 'javascript-time-ago/locale/en'
-import TimeAgo from 'javascript-time-ago'
+import Image from 'next/image'
+import React from 'react'
 import { PluginMeta } from '..'
-TimeAgo.addDefaultLocale(en)
-const timeAgo = new TimeAgo('en-US')
 
 export default function DiscordButton({
   pluginData,
@@ -23,7 +19,7 @@ export default function DiscordButton({
       <div className="grid max-w-96">
         <Link className="p" href={pluginData.discordUrl}>
           <div className="text-xl">
-            <img
+            <Image
               src="images/discord.svg"
               className="inline mr-2"
               width={30}

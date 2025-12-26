@@ -42,6 +42,13 @@ export default function Page() {
               download it there.
             </p>
             <p>All the devices here are free and open source.</p>
+            <p>
+              Visit the{' '}
+              <Link href="https://discord.gg/mwc2rnfr">
+                Zack&apos;s Plugins Discord
+              </Link>{' '}
+              to chat with me and others about these devices.
+            </p>
           </div>
           <div className="pt-4 lg:pt-0 lg:pl-8 m-auto">
             <KnobblerPromo />
