@@ -20,6 +20,7 @@ import { Metadata } from 'next'
 import PageContents from '@/components/PageContents'
 import StripeButton from '@/components/StripeButton'
 import KnobblerPromo from '@/components/KnobblerPromo'
+import DiscordButton from '@/components/DiscordButton'
 
 export const dynamic = 'force-dynamic'
 
@@ -145,7 +146,12 @@ export default async function Page({
         src = '/cache/' + plugin + (usedDocs ? '/docs/' : '/') + src
       }
       return (
-        <img className={'markdown-image'} alt={alt} src={src} title={title} />
+        <img
+          className={'markdown-image'}
+          alt={alt}
+          src={src.toString()}
+          title={title}
+        />
       )
     },
   }
@@ -190,6 +196,7 @@ export default async function Page({
         <div className="flex flex-row">
           <div className="flex-grow">
             <DownloadButton plugin={plugin} />
+            <DiscordButton className="" pluginData={pluginData} />
             <Markdown
               className="prose-headings:text-highlight"
               components={renderers}
@@ -197,6 +204,7 @@ export default async function Page({
             >
               {rawMarkdown}
             </Markdown>
+            <DiscordButton className="" pluginData={pluginData} />
             <DownloadButton plugin={plugin} />
             <div className="mt-8">
               <em>

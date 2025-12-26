@@ -9,6 +9,8 @@ export type PluginMeta = {
   catSlug?: string
   release?: any
   releaseDate?: Date
+  discordUrl?: string
+  discordChannel?: string
 }
 
 export type HeadingType = {
