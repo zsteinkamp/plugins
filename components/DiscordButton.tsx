@@ -20,7 +20,7 @@ export default function DiscordButton({
         <Link className="p" href={pluginData.discordUrl}>
           <div className="text-xl">
             <Image
-              src="images/discord.svg"
+              src="/images/discord.svg"
               className="inline mr-2"
               width={30}
               height={30}
