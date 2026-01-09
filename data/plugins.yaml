@@ -16,7 +16,7 @@
 
 - title: Modulation Deviation
   category: Modulators
-  discordUrl: https://discord.com/channels/1340693019552387072/1454212355322937477
+  discordUrl: https://discord.gg/DHjXa8qpu9
   discordChannel: modulators
   key: m4l-Modulation-Deviation
   image: https://github.com/zsteinkamp/m4l-Modulation-Deviation/raw/main/images/device.gif
@@ -91,7 +91,7 @@
 
 - title: Modulation Inertia
   category: Modulators
-  discordUrl: https://discord.com/channels/1340693019552387072/1454212355322937477
+  discordUrl: https://discord.gg/DHjXa8qpu9
   discordChannel: modulators
   key: m4l-Modulation-Inertia
   image: https://github.com/zsteinkamp/m4l-Modulation-Inertia/raw/main/images/device.gif
@@ -109,7 +109,7 @@
 
 - title: Knobbler4
   category: Knobbler
-  discordUrl: https://discord.com/channels/1340693019552387072/1433825749055569980
+  discordUrl: https://discord.gg/C5faZe9KXY
   discordChannel: knobbler
   key: m4l-Knobbler4
   image: https://github.com/zsteinkamp/m4l-Knobbler4/raw/main/docs/images/overall.jpg
@@ -119,7 +119,7 @@
 
 - title: SimulScrub
   category: Audio Effects
-  discordUrl: https://discord.com/channels/1340693019552387072/1433825781846507581
+  discordUrl: https://discord.gg/jdpgCyjp7m
   discordChannel: simulscrub
   key: m4l-SimulScrub
   image: https://github.com/zsteinkamp/m4l-SimulScrub/raw/main/images/device.gif
@@ -130,7 +130,7 @@
 
 - title: Chiastic Slide
   category: Audio Effects
-  discordUrl: https://discord.com/channels/1340693019552387072/1433825696869912686
+  discordUrl: https://discord.gg/ZZWkdphr3X
   discordChannel: chiastic-slide
   key: m4l-ChiasticSlide
   image: https://github.com/zsteinkamp/m4l-ChiasticSlide/raw/main/images/device.gif
@@ -140,7 +140,7 @@
 
 - title: TapPanZeit
   category: Audio Effects
-  discordUrl: https://discord.com/channels/1340693019552387072/1433828488909029427
+  discordUrl: https://discord.gg/Qjd9kN9Vjq
   discordChannel: tap-pan-zeit
   key: m4l-TapPanZeit
   image: https://github.com/zsteinkamp/m4l-TapPanZeit/raw/main/images/device.gif
@@ -150,7 +150,7 @@
 
 - title: Modulation Math
   category: Modulators
-  discordUrl: https://discord.com/channels/1340693019552387072/1454212355322937477
+  discordUrl: https://discord.gg/DHjXa8qpu9
   discordChannel: modulators
   key: m4l-Modulation-Math
   image: https://github.com/zsteinkamp/m4l-Modulation-Math/raw/main/images/device.gif
@@ -170,7 +170,7 @@
 
 - title: Modulation Lerp
   category: Modulators
-  discordUrl: https://discord.com/channels/1340693019552387072/1454212355322937477
+  discordUrl: https://discord.gg/DHjXa8qpu9
   discordChannel: modulators
   key: m4l-Modulation-Lerp
   image: https://github.com/zsteinkamp/m4l-Modulation-Lerp/raw/main/images/device.gif
@@ -180,7 +180,7 @@
 
 - title: Modulation Delay
   category: Modulators
-  discordUrl: https://discord.com/channels/1340693019552387072/1454212355322937477
+  discordUrl: https://discord.gg/DHjXa8qpu9
   discordChannel: modulators
   key: m4l-Modulation-Delay
   image: https://github.com/zsteinkamp/m4l-Modulation-Delay/raw/main/images/device.gif
@@ -190,7 +190,7 @@
 
 - title: Modulation Stepper
   category: Modulators
-  discordUrl: https://discord.com/channels/1340693019552387072/1454212355322937477
+  discordUrl: https://discord.gg/DHjXa8qpu9
   discordChannel: modulators
   key: m4l-Modulation-Stepper
   image: https://github.com/zsteinkamp/m4l-Modulation-Stepper/raw/main/images/device.gif
@@ -200,7 +200,7 @@
 
 - title: Correlation Modulation
   category: Modulators
-  discordUrl: https://discord.com/channels/1340693019552387072/1454212355322937477
+  discordUrl: https://discord.gg/DHjXa8qpu9
   discordChannel: modulators
   key: m4l-CorrelationModulation
   image: https://github.com/zsteinkamp/m4l-CorrelationModulation/raw/main/images/CorrelationModulation.gif
@@ -250,7 +250,7 @@
 
 - title: zs Faderboard3
   category: Instruments
-  discordUrl: https://discord.com/channels/1340693019552387072/1454212745036562432
+  discordUrl: https://discord.gg/AwGMMfh5dv
   discordChannel: faderboard3
   key: m4l-zs-Faderboard3
   image: https://github.com/zsteinkamp/m4l-zs-Faderboard3/raw/main/images/device.gif
