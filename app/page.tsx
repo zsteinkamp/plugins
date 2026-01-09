@@ -44,7 +44,7 @@ export default function Page() {
             <p>All the devices here are free and open source.</p>
             <p>
               Visit the{' '}
-              <Link href="https://discord.com/channels/1340693019552387072/1340693019552387075">
+              <Link href="https://discord.gg/C5faZe9KXY">
                 Zack&apos;s Plugins Discord
               </Link>{' '}
               to chat with me and others about these devices.
