@@ -99,14 +99,6 @@
   description: |
     This is a modulation utility that allows you to smooth out a modulation signal and map it to up to 8 other parameters, with independent control over rise and fall time.
 
-- title: Quantize MIDI
-  category: MIDI Effects
-  key: m4l-Quantize-MIDI
-  image: https://github.com/zsteinkamp/m4l-Quantize-MIDI/raw/main/images/device.gif
-  repo: https://github.com/zsteinkamp/m4l-Quantize-MIDI
-  description: |
-    This device allows you to variably quantize a stream of MIDI notes. Sweep from random to locked in to the song tempo, and everything in between. In the screen recording above, the "Amount" knob in the lower-left is controlling the degree of quantization.
-
 - title: Knobbler4
   category: Knobbler
   discordUrl: https://discord.gg/C5faZe9KXY
@@ -207,14 +199,6 @@
   repo: https://github.com/zsteinkamp/m4l-CorrelationModulation
   description: |
     Use a stereo signal's left/right phase correlation as a modulation source.
-
-- title: Chiastic Solo
-  category: Audio Effects
-  key: m4l-ChiasticSolo
-  image: https://github.com/zsteinkamp/m4l-ChiasticSolo/raw/main/images/device.gif
-  repo: https://github.com/zsteinkamp/m4l-ChiasticSolo
-  description: |
-    Gives you a knob to control which track or chain is soloed in a group or rack. It makes some workflows in mastering or creating albums easier by letting you map a hardware knob to track selection. Requires an options.txt workaround with Live 12.
 
 - title: Len Stepper
   category: MIDI Effects
