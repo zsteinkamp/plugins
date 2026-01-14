@@ -1,3 +1,11 @@
+- title: USB Scrubber
+  category: Utilities
+  key: m4l-USBScrubber
+  image: https://github.com/zsteinkamp/m4l-USBScrubber/raw/main/images/device.png
+  repo: https://github.com/zsteinkamp/m4l-USBScrubber
+  description: |
+    Use a USB knob to scrub the playpack position in Arrangement view.
+
 - title: CrossfaderNote
   category: Utilities
   key: m4l-CrossfaderNote
