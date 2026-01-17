@@ -312,3 +312,11 @@
   repo: https://github.com/zsteinkamp/m4l-WavScope
   description: |
     Visualize the audio waveform at that point in your audio chain. Can be useful if placed before and after an effect.
+
+- title: Chiastic Solo
+  category: Utilities
+  key: m4l-ChiasticSolo
+  image: https://github.com/zsteinkamp/m4l-ChiasticSolo/raw/main/images/device.gif
+  repo: https://github.com/zsteinkamp/m4l-ChiasticSolo
+  description: |
+    Gives you a knob to control which track or chain is soloed in a group or rack. It makes some workflows in mastering or creating albums easier by letting you map a hardware knob to track selection. Requires an options.txt workaround with Live 12.
