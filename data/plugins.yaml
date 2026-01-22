@@ -1,3 +1,11 @@
+- title: ChordFilter
+  category: Audio Effects
+  key: m4l-ChordFilter
+  image: https://github.com/zsteinkamp/m4l-ChordFilter/raw/main/images/device.gif
+  repo: https://github.com/zsteinkamp/m4l-ChordFilter
+  description: |
+    Play up to 10 filters with MIDI notes to reprocess sounds or build textural synths.
+
 - title: USB Scrubber
   category: Utilities
   key: m4l-USBScrubber
