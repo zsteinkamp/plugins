@@ -123,7 +123,7 @@
   image: https://github.com/zsteinkamp/m4l-Knobbler4/raw/main/docs/images/overall.jpg
   repo: https://github.com/zsteinkamp/m4l-Knobbler4
   description: |
-    This is a combination of Max For Live device and iPad / iPhone / Android app that provides a wireless, OSC-based, auto-labeling, auto-coloring, multitouch control surface for Ableton Live. Control the most important parameters in your Live Set with your fingers! Map a slider on your iPad easier than mapping a MIDI controller. Navigate your whole set faster than ever. Game changer.
+    Knobbler is an auto-labeling, auto-coloring, multitouch parameter and navigation control surface for Ableton Live and your iPad, iPhone, or Android device. Control the most important parameters in your Live Set in real time with your fingers. Navigate your whole set faster than ever to stay in the creative flow. A real game changer.
 
 - title: SimulScrub
   category: Audio Effects
