@@ -18,7 +18,7 @@ export default function DiscordButton({
     <div className={className}>
       <div className="grid max-w-96">
         <Link className="p" href={pluginData.discordUrl}>
-          <div className="text-xl">
+          <div className="text-xl text-nowrap">
             <Image
               src="/images/discord.svg"
               className="inline mr-2"
