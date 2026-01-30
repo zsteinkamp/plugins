@@ -21,6 +21,7 @@ import PageContents from '@/components/PageContents'
 import StripeButton from '@/components/StripeButton'
 import KnobblerPromo from '@/components/KnobblerPromo'
 import DiscordButton from '@/components/DiscordButton'
+import path from 'node:path'
 
 export const dynamic = 'force-dynamic'
 
@@ -117,7 +118,7 @@ export default async function Page({
       children?: ReactNode
     }) => {
       if (href && href.indexOf('http') !== 0) {
-        href = '/' + plugin + '/' + href
+        href = path.join('/', plugin, href.replace(/\.md$/, ''))
       }
       return (
         <a href={href} title={title}>

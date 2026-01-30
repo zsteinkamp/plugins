@@ -66,7 +66,7 @@ export default async function DocPages({ plugin }: DocPagesProps) {
       <div key={entry.fname}>
         <Link
           className="hover:text-highlight"
-          href={path.join('/', plugin, entry.fname)}
+          href={path.join('/', plugin, entry.fname.replace(/\.md$/, ''))}
         >
           {entry.title}
         </Link>
