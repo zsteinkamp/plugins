@@ -9,6 +9,8 @@ export default function Mono() {
       y="0px"
       viewBox="0 0 672 1024"
       enableBackground="new 0 0 672 1024"
+      preserveAspectRatio="xMinYMid meet"
+      style={{ height: '100vh' }}
     >
       <defs>
         <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">

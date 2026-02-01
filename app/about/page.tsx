@@ -4,7 +4,7 @@ import TableOfContents from '@/components/TableOfContents'
 import { getSortedPluginData } from '@/lib/dataUtils'
 import { PluginMeta } from '@/index'
 import PageContents from '@/components/PageContents'
-import StripeButton from '@/components/StripeButton'
+import KnobblerPromo from '@/components/KnobblerPromo'
 
 export default function Page() {
   const pluginData: PluginMeta[] = getSortedPluginData()
@@ -13,7 +13,7 @@ export default function Page() {
       title="About"
       sidebar={
         <>
-          <StripeButton className="mb-8" />
+          <KnobblerPromo className="mb-8" />
           <TableOfContents
             pluginData={pluginData}
             className="max-h-screen overflow-y-auto"
@@ -124,7 +124,7 @@ export default function Page() {
             Each repo is the source of truth not only for its source code files,
             but for its documentation presented on this site.
           </p>
-          <StripeButton />
+          <KnobblerPromo className="mx-auto w-1/2" />
         </div>
       </div>
     </PageContents>

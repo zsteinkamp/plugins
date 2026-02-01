@@ -14,13 +14,15 @@ export default function PageContents({
   children: ReactNode
 }) {
   return (
-    <div className="flex m-auto">
+    <div className="flex">
       <div className="max-w-5xl p-8">
         <div
-          className="fixed top-0 left-0 w-full border-yellow"
+          className="fixed top-0 left-0 w-full h-screen flex items-center justify-start"
           style={{ zIndex: -1 }}
         >
-          <Mono />
+          <div className="h-full flex items-center">
+            <Mono />
+          </div>
         </div>
         <h1 className="text-5xl text-highlight font-heading mb-4 ml-[-2rem] mt-[-2rem] p-8 mr-[-2rem] sm:mr-[-4rem]">
           <Link href="/" className="flex gap-4">

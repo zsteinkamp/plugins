@@ -18,7 +18,6 @@ import rehypeRaw from 'rehype-raw'
 import TableOfContents from '@/components/TableOfContents'
 import { Metadata } from 'next'
 import PageContents from '@/components/PageContents'
-import StripeButton from '@/components/StripeButton'
 import KnobblerPromo from '@/components/KnobblerPromo'
 import DiscordButton from '@/components/DiscordButton'
 import path from 'node:path'
@@ -208,12 +207,7 @@ export default async function Page({
             <DiscordButton className="" pluginData={pluginData} />
             <DownloadButton plugin={plugin} />
             <div className="mt-8">
-              <em>
-                If you enjoy using my free and open source devices, please
-                consider supporting future work with a financial contribution.
-                Thanks! :)
-              </em>
-              <StripeButton className="mt-8" />
+              <KnobblerPromo className="mt-8 w-1/2" />
             </div>
           </div>
         </div>
