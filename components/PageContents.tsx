@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Footer from './Footer'
-import Mono from './Mono'
+
 
 export default function PageContents({
   title,
@@ -16,14 +16,6 @@ export default function PageContents({
   return (
     <div className="flex">
       <div className="max-w-5xl p-8">
-        <div
-          className="fixed top-0 left-0 w-full h-screen flex items-center justify-start"
-          style={{ zIndex: -1 }}
-        >
-          <div className="h-full flex items-center">
-            <Mono />
-          </div>
-        </div>
         <h1 className="text-5xl text-highlight font-heading mb-4 ml-[-2rem] mt-[-2rem] p-8 mr-[-2rem] sm:mr-[-4rem]">
           <Link href="/" className="flex gap-4">
             <Image
