@@ -168,7 +168,7 @@ export default async function Page({
           ) : null}
           <h4 className="font-heading text-highlight mb-8">
             <Link href="/" className="text-highlight2">
-              &lt; Home
+              Home
             </Link>
           </h4>
           {usedDocs && (
