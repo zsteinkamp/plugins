@@ -1,3 +1,11 @@
+- title: NoteLimiter
+  category: MIDI Effects
+  key: m4l-NoteLimiter
+  image: https://github.com/zsteinkamp/m4l-NoteLimiter/raw/main/images/device.gif
+  repo: https://github.com/zsteinkamp/m4l-NoteLimiter
+  description: |
+    Put in your MIDI device chain to limit polyphony and/or enforce a minimum time between notes.
+
 - title: ChordFilter
   category: Audio Effects
   key: m4l-ChordFilter
