@@ -133,7 +133,7 @@ export default async function Page({
       )
     },
     img: (props) => {
-      const { alt, title }: { alt?: string; title?: string } = {
+      const { alt, title, width, height, style }: { alt?: string; title?: string; width?: string | number; height?: string | number; style?: React.CSSProperties } = {
         ...props,
       }
       let { src }: { src?: string | Blob } = {
@@ -151,6 +151,9 @@ export default async function Page({
           alt={alt}
           src={src.toString()}
           title={title}
+          width={width}
+          height={height}
+          style={style}
         />
       )
     },
