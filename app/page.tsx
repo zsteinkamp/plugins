@@ -6,7 +6,6 @@ import TableOfContents from '@/components/TableOfContents'
 import { getSortedPluginData } from '@/lib/dataUtils'
 import { PluginMeta } from '@/index'
 import PageContents from '@/components/PageContents'
-import StripeButton from '@/components/StripeButton'
 import KnobblerPromo from '@/components/KnobblerPromo'
 
 export const dynamic = 'force-dynamic'
@@ -22,7 +21,6 @@ export default function Page() {
             pluginData={pluginData}
             className="max-h-screen overflow-y-auto"
           />
-          <StripeButton className="mt-8" />
         </>
       }
     >
