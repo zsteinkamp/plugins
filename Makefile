@@ -22,6 +22,9 @@ sync: ## Sync local metadata with GitHub and build .zip files + docs
 docs: ## Updates plugin repos so that fresh docs happen
 	docker compose exec web npm run docs
 
+deploy: ## Deploy to AWS (pull and rebuild)
+	ssh aws "cd dev/plugins && git pull && make"
+
 devup: ## Build and run in development mode
 	cd dev && docker compose build && docker compose up -d --force-recreate && docker compose logs -f
 
