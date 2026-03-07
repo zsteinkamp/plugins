@@ -13,8 +13,8 @@ export default function PageContents({
   children: ReactNode
 }) {
   return (
-    <div className="flex">
-      <div className="max-w-5xl mx-auto p-8">
+    <div className="flex mx-auto max-w-[80rem]">
+      <div className="max-w-5xl p-8">
         <h1 className="text-5xl text-highlight font-heading mb-4 ml-[-2rem] mt-[-2rem] p-8 mr-[-2rem] sm:mr-[-4rem]">
           <Link href="/" className="flex gap-4">
             <Image
