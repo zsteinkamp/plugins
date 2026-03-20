@@ -1,0 +1,24 @@
+name: plugins_prod
+services:
+  nginx:
+    image: nginx:latest
+    restart: always
+    ports:
+      - '3225:3225'
+    volumes:
+      - cache:/cache
+      - zips:/zip
+      - ./nginx.conf:/etc/nginx/nginx.conf
+  web:
+    image: ghcr.io/zsteinkamp/plugins:latest
+    environment:
+      GH_TOKEN: ${GH_TOKEN}
+    ports:
+      - 3000
+    restart: always
+    volumes:
+      - cache:/cache
+      - zips:/zip
+volumes:
+  cache:
+  zips:
