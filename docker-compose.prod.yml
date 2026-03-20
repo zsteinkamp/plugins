@@ -6,15 +6,11 @@ services:
     ports:
       - '80:80'
       - '443:443'
-    environment:
-      SSL_DOMAIN: ${SSL_DOMAIN}
-    command: >
-      /bin/sh -c "envsubst '$$SSL_DOMAIN' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf && nginx -g 'daemon off;'"
     volumes:
       - cache:/cache
       - zips:/zip
-      - ./nginx.conf:/etc/nginx/nginx.conf.template:ro
-      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - /etc/ssl/cloudflare:/etc/ssl/cloudflare:ro
   web:
     image: ghcr.io/zsteinkamp/plugins:latest
     environment:
