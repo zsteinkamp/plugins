@@ -32,7 +32,7 @@ export default function PageContents({
           <Footer />
         </div>
       </div>
-      <div className="nav-outer sm:bg-tilebg sm:shadow-2xl sm:min-w-[16rem] sm:p-8">
+      <div className="nav-outer sm:bg-tilebg sm:shadow-2xl sm:min-w-[16rem] sm:p-8 sm:sticky sm:top-0 sm:self-start sm:max-h-screen sm:overflow-y-auto">
         <label
           htmlFor="nav-toggle"
           className="sm:hidden fixed top-0 right-0 z-50 p-4 cursor-pointer text-highlight2 font-heading text-4xl"
