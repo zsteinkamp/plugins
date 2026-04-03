@@ -26,6 +26,15 @@ docs: ## Updates plugin repos so that fresh docs happen
 	docker compose -f docker-compose.prod.yml exec web npm run docs
 
 deploy: ## Deploy to AWS (pull and restart)
+	@echo "Waiting for GitHub Actions build to complete..."
+	@while ! gh run watch --exit-status 2>/dev/null; do \
+		if gh run list --branch main --limit 1 --json status --jq '.[0].status' | grep -q completed; then \
+			echo "Latest run already completed."; \
+			break; \
+		fi; \
+		echo "No in-progress run yet, waiting..."; \
+		sleep 5; \
+	done
 	ssh lightsail "cd dev/plugins && git pull && make"
 
 devup: ## Build and run in development mode
