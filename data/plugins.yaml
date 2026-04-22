@@ -131,7 +131,10 @@
   image: https://github.com/zsteinkamp/m4l-Knobbler4/raw/main/docs/images/overall.jpg
   repo: https://github.com/zsteinkamp/m4l-Knobbler4
   description: |
-    Knobbler is an auto-labeling, auto-coloring, multitouch parameter and navigation control surface for Ableton Live and your iPad, iPhone, or Android device. Control the most important parameters in your Live Set in real time with your fingers. Navigate your whole set faster than ever to stay in the creative flow. A real game changer.
+    Knobbler bridges the gap between your fingertips and Ableton Live. Control any parameter, mix tracks, and launch
+    clips with responsive touch sliders and XY pads that mirror your Live set's colors and names in real time.
+    Build custom control layouts tailored to each project — your configurations save with the Live set, ready to go 
+    every time you open it.
 
 - title: SimulScrub
   category: Audio Effects
