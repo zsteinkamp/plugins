@@ -1,3 +1,11 @@
+- title: PlayBreak
+  category: MIDI Effects
+  key: m4l-PlayBreak
+  image: https://github.com/zsteinkamp/m4l-PlayBreak/raw/main/images/device.gif
+  repo: https://github.com/zsteinkamp/m4l-PlayBreak
+  description: |
+    Gives you a mappable button to send all-notes-off, sustain-off, and pause MIDI communication for some period of time.
+
 - title: NoteLimiter
   category: MIDI Effects
   key: m4l-NoteLimiter
