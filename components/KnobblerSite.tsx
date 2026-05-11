@@ -23,23 +23,23 @@ export default function KnobblerSite() {
         </Link>
         <div className="flex items-center gap-3 sm:gap-5">
           <Link
-            href={DOCS_HREF}
-            className="hidden sm:inline font-heading text-lg text-foreground/80 hover:text-highlight transition-colors"
-          >
-            Documentation →
-          </Link>
-          <Link
             href={downloadUrl}
             className="inline-flex flex-col items-center sm:flex-row sm:gap-3 px-4 sm:px-5 py-2 sm:py-3 bg-highlight2 text-lcdbg font-heading rounded-sm shadow-lg hover:bg-highlight transition-colors"
           >
             <span className="text-sm sm:text-lg tracking-wide uppercase whitespace-nowrap">
-              ↓ Download M4L Device
+              ↓ Download Latest
             </span>
             {releaseName && (
               <span className="text-[10px] sm:text-xs uppercase tracking-widest opacity-80 whitespace-nowrap">
                 {releaseName}
               </span>
             )}
+          </Link>
+          <Link
+            href={DOCS_HREF}
+            className="hidden sm:inline font-heading text-lg text-foreground/80 hover:text-highlight transition-colors"
+          >
+            Documentation →
           </Link>
         </div>
       </nav>
@@ -69,8 +69,9 @@ export default function KnobblerSite() {
             All in your hands.
           </h1>
           <p className="text-lg sm:text-2xl text-foreground/85 max-w-3xl mx-auto leading-relaxed mb-4">
-            A responsive, color-aware control surface for Ableton Live — running
-            on the iPad, iPhone, or Android device you already own.
+            An auto-labeling, auto-coloring, multitouch control surface for
+            Ableton Live — running on the iPad, iPhone, or Android device you
+            already own.
           </p>
           <p className="text-lg sm:text-2xl text-highlight max-w-3xl mx-auto leading-relaxed mb-4">
             Now with Push 3 Standalone support!
