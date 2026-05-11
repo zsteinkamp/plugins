@@ -79,7 +79,7 @@ export default function KnobblerPage() {
               Get it on iOS
             </Link>
             <Link
-              href="https://play.google.com/store/apps/details?id=us.steinkamp.knobblerflutter"
+              href="https://play.google.com/store/apps/details?id=com.anonymous.knobblernative"
               className="inline-flex items-center px-7 py-4 border border-highlight2 text-highlight2 font-heading text-xl tracking-wide rounded-sm hover:bg-highlight2 hover:text-lcdbg transition-colors"
             >
               Get it on Android
