@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Mono from '@/components/Mono'
 
 export const dynamic = 'force-dynamic'
 
@@ -20,6 +21,9 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/tek5ypq.css" />
       </head>
       <body>
+        <div className="bgFace" aria-hidden="true">
+          <Mono />
+        </div>
         <div className="flex min-h-screen">{children}</div>
       </body>
       <GoogleAnalytics
