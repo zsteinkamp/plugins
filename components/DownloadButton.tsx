@@ -46,12 +46,12 @@ export default function DownloadButton({ plugin }: { plugin: string }) {
           <span className="font-heading text-2xl tracking-wide uppercase leading-none text-white">
             Download Latest
           </span>
-          <span className="font-heading text-xs uppercase tracking-[0.25em] text-black mt-2">
+          <span className="text-sm text-black mt-1.5">
             {pluginData.release.name}
           </span>
         </span>
       </Link>
-      <div className="flex text-xs font-heading uppercase tracking-[0.25em] text-foreground/55 px-1 pt-3">
+      <div className="flex text-sm text-foreground/55 px-1 pt-3">
         <div className="flex-grow">Published {releaseDate}</div>
         <Link
           className="whitespace-nowrap hover:text-highlight2 transition-colors"
