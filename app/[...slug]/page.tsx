@@ -1,5 +1,6 @@
 import {
   getDataForPlugin,
+  getDocMeta,
   getDocsPath,
   getReadmePath,
   getSortedPluginData,
@@ -29,14 +30,23 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string[] }>
 }): Promise<Metadata> {
-  const plugin = (await params).slug[0]
+  const slug = (await params).slug
+  const plugin = slug[0]
   const pluginData = getDataForPlugin(plugin)
   if (pluginData) {
-    return {
+    const docsUri = slug.slice(1).join('/')
+    const meta = getDocMeta(plugin, docsUri, {
       title: pluginData.title,
       description: pluginData.description,
+      image: pluginData.image,
+    })
+    return {
+      title: meta.title,
+      description: meta.description,
       openGraph: {
-        images: pluginData.image,
+        title: meta.title,
+        description: meta.description,
+        images: meta.image,
       },
     }
   }

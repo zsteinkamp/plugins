@@ -13,6 +13,12 @@ export type PluginMeta = {
   discordChannel?: string
 }
 
+export type DocMeta = {
+  title: string
+  description: string
+  image: string
+}
+
 export type HeadingType = {
   key: string
   href?: string

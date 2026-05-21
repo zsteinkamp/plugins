@@ -1,6 +1,6 @@
 import yaml from 'js-yaml'
 import fs from 'fs'
-import { PluginMeta } from '@/index'
+import { DocMeta, PluginMeta } from '@/index'
 import path from 'path'
 
 export const categorySortOrder = [
@@ -78,6 +78,99 @@ export const getDocsPath = (deviceKey: string, docsUri: string) => {
   const cleanUri = docsUri.replace(/\.md$/, '')
   const finalUri = cleanUri ? `${cleanUri}.md` : 'index.md'
   return cachePath(path.join(deviceKey, 'docs', finalUri))
+}
+
+// Pull YAML frontmatter (--- ... ---) off the top of a markdown string,
+// returning the parsed data and the remaining body.
+const parseFrontmatter = (raw: string) => {
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/)
+  if (!match) {
+    return { data: {} as Record<string, unknown>, body: raw }
+  }
+  let data: Record<string, unknown> = {}
+  try {
+    data = (yaml.load(match[1]) as Record<string, unknown>) || {}
+  } catch {
+    data = {}
+  }
+  return { data, body: raw.slice(match[0].length) }
+}
+
+// First markdown H1 or H2 (`# Title` / `## Title`), used as a title fallback.
+// Doc pages hide the H1 when rendering, so many use an H2 as their heading.
+const firstHeading = (body: string) =>
+  body.match(/^#{1,2}\s+(.+?)\s*#*\s*$/m)?.[1]
+
+// First markdown image target (`![alt](src)`), used as an image fallback.
+const firstImage = (body: string) =>
+  body.match(/!\[[^\]]*\]\(\s*<?([^)>\s]+)/)?.[1]
+
+// First real paragraph of prose, used as a description fallback. Skips
+// headings, images, code fences, blockquotes, and HTML, then strips inline
+// markdown so the result reads as plain text.
+const firstParagraph = (body: string) => {
+  const lines = body.split(/\r?\n/)
+  let inFence = false
+  for (const raw of lines) {
+    const line = raw.trim()
+    if (line.startsWith('```')) {
+      inFence = !inFence
+      continue
+    }
+    if (inFence || !line) continue
+    if (/^(#|!\[|>|<|\||-{3,}|\*|_|\d+\.)/.test(line)) continue
+    return line
+      .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1') // links/images -> text
+      .replace(/[*_`~]/g, '') // emphasis/code markers
+      .trim()
+      .slice(0, 200)
+  }
+  return undefined
+}
+
+// Resolve a doc image reference to a URL suitable for og:image. Absolute URLs
+// pass through; relative paths are rewritten to the served /cache location.
+const resolveDocImage = (src: string, deviceKey: string, isDocs: boolean) => {
+  if (/^https?:\/\//.test(src)) {
+    return src
+  }
+  const clean = src.replace(/^\.?\//, '')
+  return `/cache/${deviceKey}${isDocs ? '/docs/' : '/'}${clean}`
+}
+
+// Build Open Graph metadata for a specific doc/README page. Prefers YAML
+// frontmatter, then auto-derives from the markdown (first H1, paragraph,
+// image), and finally falls back to the plugin-level values.
+export const getDocMeta = (
+  deviceKey: string,
+  docsUri: string,
+  fallback: DocMeta
+): DocMeta => {
+  const docsPath = getDocsPath(deviceKey, docsUri)
+  let filePath: string | null = null
+  let isDocs = false
+  if (docsUri && fs.existsSync(docsPath)) {
+    filePath = docsPath
+    isDocs = true
+  } else if (fs.existsSync(getReadmePath(deviceKey))) {
+    filePath = getReadmePath(deviceKey)
+  }
+  if (!filePath) {
+    return fallback
+  }
+
+  const { data, body } = parseFrontmatter(fs.readFileSync(filePath, 'utf8'))
+  const title = (data.title as string) || firstHeading(body) || fallback.title
+  const description =
+    (data.description as string) ||
+    firstParagraph(body) ||
+    fallback.description
+  const rawImage = (data.image as string) || firstImage(body)
+  const image = rawImage
+    ? resolveDocImage(rawImage, deviceKey, isDocs)
+    : fallback.image
+
+  return { title, description, image }
 }
 
 export const getRecentPlugins = (num: number) => {

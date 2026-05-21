@@ -6,6 +6,9 @@ import Mono from '@/components/Mono'
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
+  // Relative og:image paths (e.g. /cache/...) are resolved against this origin.
+  // Override via SITE_URL when the deployed domain differs.
+  metadataBase: new URL(process.env.SITE_URL || 'https://plugins.steinkamp.us'),
   title: "Zack's Plugins",
   description: 'Plugins / Devices for Ableton Live by Zack Steinkamp',
 }
