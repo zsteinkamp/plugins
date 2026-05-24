@@ -61,7 +61,7 @@ const PluginTile: FC<TileProps> = ({
           >
             {plugin.title}
           </h3>
-          <div className="mt-3 flex items-center gap-3 text-xs font-heading uppercase tracking-[0.25em] text-foreground/55">
+          <div className="mt-3 flex items-center gap-3 text-sm text-foreground/55">
             <span className="text-highlight2 truncate">
               {plugin.release.name}
             </span>
