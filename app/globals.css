@@ -53,6 +53,13 @@ h4 {
   @apply text-highlight;
 }
 
+/* Remove the auto-generated curly quote marks the typography plugin
+   adds around blockquote paragraphs. */
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+  content: none;
+}
+
 img.markdown-image {
   @apply max-h-[25em];
 }
