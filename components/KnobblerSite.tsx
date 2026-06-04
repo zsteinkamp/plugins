@@ -316,8 +316,8 @@ export default function KnobblerSite() {
           <div className="mt-12 space-y-2 text-xs sm:text-sm text-foreground/55 font-heading uppercase tracking-widest">
             <p>Mac &amp; Windows · iOS &amp; Android · Phones &amp; Tablets</p>
             <p>
-              Requires Live 12 Suite, Push 3 Standalone, or Live 12 Standard +
-              Max for Live Add-On.
+              Requires Live 12.4+ (Suite, or Standard + Max for Live Add-On), or
+              a Push 3 Standalone.
             </p>
           </div>
         </div>
