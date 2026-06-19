@@ -24,7 +24,7 @@ export default function KnobblerSite() {
         <div className="flex items-center gap-3 sm:gap-5">
           <Link
             href={downloadUrl}
-            className="inline-flex flex-col items-center sm:flex-row sm:gap-3 px-4 sm:px-5 py-2 sm:py-3 bg-highlight2 text-lcdbg font-heading rounded-sm shadow-lg hover:bg-highlight transition-colors"
+            className="inline-flex flex-col items-center sm:flex-row sm:gap-3 px-4 sm:px-5 py-2 sm:py-3 bg-highlight2 text-lcdbg font-heading rounded-sm shadow-lg border-2 border-white hover:bg-highlight transition-colors"
           >
             <span className="text-sm sm:text-lg tracking-wide uppercase whitespace-nowrap">
               ↓ Download Latest
