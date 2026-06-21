@@ -14,7 +14,7 @@ export default function KnobblerSite() {
   return (
     <div className="w-full bg-background text-foreground overflow-x-hidden">
       {/* Top nav */}
-      <nav className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between gap-4 px-4 py-4 sm:px-10 sm:py-5">
+      <nav className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between gap-4 bg-black/80 px-4 py-4 sm:px-10 sm:py-5">
         <Link
           href="/"
           className="font-heading text-lg sm:text-2xl text-highlight hover:text-highlight2 transition-colors"
@@ -229,7 +229,7 @@ export default function KnobblerSite() {
           <div className="relative aspect-video w-full bg-lcdbg rounded-md overflow-hidden shadow-2xl ring-1 ring-bghighlight">
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/m3h8QtVeWb8?rel=0"
+              src="https://www.youtube.com/embed/zRUngy4AaFM?rel=0"
               title="Knobbler — Setup &amp; Feature Walkthrough"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
@@ -245,10 +245,10 @@ export default function KnobblerSite() {
               5-min Setup →
             </Link>
             <Link
-              href="https://www.youtube.com/watch?v=m3h8QtVeWb8"
+              href="https://www.youtube.com/watch?v=zRUngy4AaFM"
               className="hover:text-highlight transition-colors"
             >
-              15-min Walkthrough →
+              20-min Walkthrough →
             </Link>
             <Link
               href="https://www.youtube.com/@zsteinkamp"
