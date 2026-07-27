@@ -1,39 +1,38 @@
-import { getSortedPluginData } from "@/lib/dataUtils";
-import { PluginMeta } from "@/types";
-import type { Metadata } from "next";
-import "./globals.css";
-import TableOfContents from "@/components/TableOfContents";
+import type { Metadata } from 'next'
+import './globals.css'
+import { GoogleAnalytics } from '@next/third-parties/google'
+import Mono from '@/components/Mono'
 
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
+  // Relative og:image paths (e.g. /cache/...) are resolved against this origin.
+  // Override via SITE_URL when the deployed domain differs.
+  metadataBase: new URL(process.env.SITE_URL || 'https://plugins.steinkamp.us'),
   title: "Zack's Plugins",
-  description: "Plugins / Devices for Ableton Live by Zack Steinkamp",
-};
+  description: 'Plugins / Devices for Ableton Live by Zack Steinkamp',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-  const pluginData: PluginMeta[] = getSortedPluginData()
   return (
-    <html lang='en' className='scroll-pt-6'>
+    <html lang="en" className="scroll-pt-6">
       <head>
-        <link rel='stylesheet' href='https://use.typekit.net/tek5ypq.css' />
+        <link rel="stylesheet" href="https://use.typekit.net/tek5ypq.css" />
       </head>
       <body>
-        <div className='flex min-h-screen'>
-          <div className='flex-1 max-w-5xl p-8'>
-            {children}
-          </div>
-          <div className='hidden sm:block min-w-[16rem] ml-0 bg-tilebg p-8 shadow-2xl'>
-            <div className='fixed max-h-[calc(100vh-4rem)] overflow-y-auto'>
-              <TableOfContents pluginData={pluginData} className='max-h-screen overflow-y-auto' />
-            </div>
-          </div>
+        <div className="bgFace" aria-hidden="true">
+          <Mono />
         </div>
-      </body >
-    </html >
-  );
+        <div className="flex min-h-screen">{children}</div>
+      </body>
+      <GoogleAnalytics
+        gaId={'G-6TVGS1WVZ7'}
+        debugMode={process.env.NODE_ENV === 'development'}
+      />
+    </html>
+  )
 }

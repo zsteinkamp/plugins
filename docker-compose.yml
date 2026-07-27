@@ -1,12 +1,23 @@
 name: plugins_prod
 services:
+  nginx:
+    image: nginx:latest
+    restart: always
+    ports:
+      - '3225:3225'
+    volumes:
+      - cache:/cache
+      - zips:/zip
+      - ./nginx.conf:/etc/nginx/nginx.conf
   web:
     build:
       context: .
       target: prod
+    environment:
+      GH_TOKEN: ${GH_TOKEN}
     ports:
-      - '3225:3000'
-    restart: unless-stopped
+      - 3000
+    restart: always
     volumes:
       - cache:/cache
       - zips:/zip
