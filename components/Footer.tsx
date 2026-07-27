@@ -9,7 +9,7 @@ const Footer: FC<object> = ({}) => {
         <Link className="" href="https://steinkamp.us/">
           Zack Steinkamp
         </Link>{' '}
-        (<Link href="mailto:zack@steinkamp.us">email</Link>)
+        (<Link href="mailto://zack@steinkamp.us">email</Link>)
       </div>
       <div className="text-sm">
         <Link className="pr-8" href="/privacy">

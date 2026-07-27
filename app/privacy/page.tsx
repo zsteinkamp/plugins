@@ -8,7 +8,7 @@ export default async function Page() {
   return (
     <div className="prose lg:prose-2xl prose-invert grow mx-auto">
       <div className="mb-12">
-        <Link href="/">&lt; Home</Link>
+        <Link href="/">Home</Link>
       </div>
       <ReactMarkdown className="prose-headings:text-highlight">
         {rawMarkdown}

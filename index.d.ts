@@ -9,6 +9,14 @@ export type PluginMeta = {
   catSlug?: string
   release?: any
   releaseDate?: Date
+  discordUrl?: string
+  discordChannel?: string
+}
+
+export type DocMeta = {
+  title: string
+  description: string
+  image: string
 }
 
 export type HeadingType = {

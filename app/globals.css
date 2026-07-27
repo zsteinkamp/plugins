@@ -10,6 +10,7 @@
   --background: #2e2e2e;
   --highlight: #f2b066;
   --highlight2: #58c0d2;
+  --highlight2tr: #58c0d2cc;
 }
 
 h1,
@@ -33,6 +34,10 @@ h4 {
   @apply text-2xl;
 }
 
+.prose h2 {
+  @apply mt-0 text-5xl;
+}
+
 .prose h3 {
   @apply text-4xl;
 }
@@ -41,19 +46,86 @@ h4 {
   margin-bottom: 0;
   @apply text-highlight2;
 }
-
 .prose a {
-  text-decoration-color: #ffffff44;
+  @apply text-highlight2;
 }
 .prose a:hover {
-  text-decoration-color: #ffffff;
+  @apply text-highlight;
+}
+
+/* Remove the auto-generated curly quote marks the typography plugin
+   adds around blockquote paragraphs. */
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+  content: none;
 }
 
 img.markdown-image {
   @apply max-h-[25em];
 }
 
+@media screen and (max-width: 640px) {
+  .nav-outer input ~ .nav-content {
+    clear: both;
+    display: none;
+  }
+  .nav-outer input:checked ~ .nav-content {
+    display: block;
+  }
+}
+
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: #000000;
+  background-image:
+    radial-gradient(
+      ellipse 80% 60% at 50% 30%,
+      rgba(255, 255, 255, 0.03) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 120% 100% at 50% 50%,
+      #1a1a1a 0%,
+      #0d0d0d 45%,
+      #050505 80%,
+      #000000 100%
+    );
+  background-attachment: fixed;
+  position: relative;
+}
+
+.bgFace {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.bgFace svg {
+  height: 130vh !important;
+  width: auto;
+  max-width: none;
+  transform: translateX(8vw);
+  opacity: 0.05;
+}
+
+.bgFace .monoSvg path,
+.bgFace .monoSvg path.bignugget {
+  fill: #000000;
+}
+
+body > *:not(.bgFace) {
+  position: relative;
+  z-index: 1;
+}
+
+.monoSvg path {
+  @apply fill-lcdbg;
+}
+.monoSvg path.bignugget {
+  fill: url(#grad1);
 }

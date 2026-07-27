@@ -20,20 +20,46 @@ export default function DownloadButton({ plugin }: { plugin: string }) {
   }
 
   return (
-    <div className="flex">
+    <div className="not-prose grid max-w-md my-6">
       <Link
-        className="p-2 mr-8 no-underline bg-highlight2 hover:bg-highlight text-background rounded-md shadow-md"
+        className="group relative inline-flex items-stretch px-3 py-3 bg-highlight2 !text-white rounded-md shadow-xl ring-1 ring-black/20 border-t border-white/25 border-b-2 border-b-black/30 hover:shadow-[0_20px_50px_-10px_rgba(88,192,210,0.6)] hover:bg-highlight hover:-translate-y-0.5 active:translate-y-0 active:shadow-md transition-all duration-200 no-underline overflow-hidden"
         href={releaseData.assets[0].browser_download_url}
       >
-        <div className="text-2xl font-bold">Download Latest</div>
-        <div className="text-sm">{pluginData.release.name}</div>
+        <span className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.25),transparent_70%)] pointer-events-none" />
+        <span className="relative flex items-center justify-center w-14 mr-4 bg-black/25 rounded-md ring-1 ring-black/30 shadow-[inset_0_1px_0_rgba(0,0,0,0.4),inset_0_-1px_0_rgba(255,255,255,0.05)]">
+          <svg
+            className="w-7 h-7 text-white transition-transform duration-300 group-hover:translate-y-0.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.25"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 4v11" />
+            <path d="M6 11l6 6 6-6" />
+            <path d="M5 20h14" />
+          </svg>
+        </span>
+        <span className="relative flex flex-col justify-center pr-4 py-1">
+          <span className="font-heading text-2xl tracking-wide uppercase leading-none text-white">
+            Download Latest
+          </span>
+          <span className="text-sm text-black mt-1.5">
+            {pluginData.release.name}
+          </span>
+        </span>
       </Link>
-      <Link
-        className="p-2 whitespace-nowrap"
-        href={pluginData.release.html_url}
-      >
-        Published {releaseDate}
-      </Link>
+      <div className="flex text-sm text-foreground/55 px-1 pt-3">
+        <div className="flex-grow">Published {releaseDate}</div>
+        <Link
+          className="whitespace-nowrap hover:text-highlight2 transition-colors"
+          href={pluginData.repo + '/releases'}
+        >
+          All Releases →
+        </Link>
+      </div>
     </div>
   )
 }
