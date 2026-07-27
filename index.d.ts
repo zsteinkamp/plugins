@@ -3,12 +3,20 @@ export type PluginMeta = {
   key: string
   category: string
   image: string
-  link: string
+  repo: string
   description: string
   slug?: string
   catSlug?: string
   release?: any
   releaseDate?: Date
+  discordUrl?: string
+  discordChannel?: string
+}
+
+export type DocMeta = {
+  title: string
+  description: string
+  image: string
 }
 
 export type HeadingType = {
