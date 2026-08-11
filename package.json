@@ -15,7 +15,7 @@
     "@octokit/rest": "^21.0.2",
     "archiver": "^7.0.1",
     "javascript-time-ago": "^2.5.11",
-    "js-yaml": "^4.3.0",
+    "js-yaml": "^4.3.1",
     "next": "^16.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
