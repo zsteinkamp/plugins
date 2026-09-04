@@ -77,12 +77,11 @@ export default function KnobblerSite() {
             Now with Push 3 Standalone support!
           </p>
           <p className="text-base sm:text-xl text-foreground/75 max-w-3xl mx-auto leading-relaxed mb-12">
-            Full-screen <span className="text-highlight2">mixer</span> with
-            volume, pan, mute/solo, sends, and live meters. A
-            <span className="text-highlight2"> session-view clip grid</span> for
-            launching scenes. And{' '}
-            <span className="text-highlight2">32 assignable faders</span> with
-            X-Y pads on every parameter you can map.
+            Five views, a tap apart. <strong>Knobbler</strong> puts 32
+            assignable faders and X-Y pads on any parameter you can map.{' '}
+            <strong>Bluhand</strong> grabs every knob on the selected device.{' '}
+            <strong>Mixer</strong> covers the whole set, <strong>Clips</strong>{' '}
+            launches it, and <strong>Session</strong> gives you both at once.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
@@ -154,16 +153,20 @@ export default function KnobblerSite() {
         </div>
       </section>
 
-      {/* Mixer + Clips showcase */}
+      {/* Five views showcase */}
       <section className="relative py-24 sm:py-32 px-6 sm:px-10 bg-tilebg/40">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <p className="font-heading uppercase tracking-[0.4em] text-highlight2 text-xs sm:text-sm mb-4">
-              Two views, one app
+              Five views, one app
             </p>
             <h2 className="font-heading text-4xl sm:text-6xl text-highlight">
-              Mix the room. Launch the set.
+              Map it. Mix it. Launch it.
             </h2>
+            <p className="mt-6 text-base sm:text-lg text-foreground/75 max-w-2xl mx-auto">
+              Every view is a single tap away — and all of them are auto-labeled
+              and auto-colored from your Live set.
+            </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-8 sm:gap-10">
             <figure className="group">
@@ -178,11 +181,12 @@ export default function KnobblerSite() {
               </div>
               <figcaption className="mt-5 text-center">
                 <h3 className="font-heading text-2xl sm:text-3xl text-highlight2 mb-2">
-                  Full-screen mixer
+                  Mixer
                 </h3>
                 <p className="text-sm sm:text-base text-foreground/75">
-                  Volume, pan, mute, solo, sends, and live meters across every
-                  track — colors and labels straight from your set.
+                  Full-screen multi-track mixer with volume, pan, mute, solo,
+                  sends, and live output meters. Swipe out a channel strip for
+                  the selected track.
                 </p>
               </figcaption>
             </figure>
@@ -198,14 +202,46 @@ export default function KnobblerSite() {
               </div>
               <figcaption className="mt-5 text-center">
                 <h3 className="font-heading text-2xl sm:text-3xl text-highlight2 mb-2">
-                  Session-view clips
+                  Clips
                 </h3>
                 <p className="text-sm sm:text-base text-foreground/75">
-                  Launch clips and scenes from a responsive grid that mirrors
-                  your Live session in real time.
+                  Launch, record, recolor, and delete clips and scenes from a
+                  grid that mirrors your Live session — with real-time playing
+                  clip progress.
                 </p>
               </figcaption>
             </figure>
+          </div>
+          <div className="mt-8 sm:mt-10 grid sm:grid-cols-3 gap-6 sm:gap-8">
+            <div className="h-full p-6 bg-lcdbg/60 rounded-md ring-1 ring-bghighlight">
+              <h3 className="font-heading text-xl sm:text-2xl text-highlight2 mb-2">
+                Knobbler
+              </h3>
+              <p className="text-sm sm:text-base text-foreground/75">
+                32 assignable faders and X-Y pads. Touch any parameter in Live
+                to map it to the next free slider — no menu diving, no manual
+                labeling.
+              </p>
+            </div>
+            <div className="h-full p-6 bg-lcdbg/60 rounded-md ring-1 ring-bghighlight">
+              <h3 className="font-heading text-xl sm:text-2xl text-highlight2 mb-2">
+                Bluhand
+              </h3>
+              <p className="text-sm sm:text-base text-foreground/75">
+                Every parameter of the currently selected device, instantly,
+                with proper units (dB, ms, %). Double-tap any slider to snap
+                back to default.
+              </p>
+            </div>
+            <div className="h-full p-6 bg-lcdbg/60 rounded-md ring-1 ring-bghighlight">
+              <h3 className="font-heading text-xl sm:text-2xl text-highlight2 mb-2">
+                Session
+              </h3>
+              <p className="text-sm sm:text-base text-foreground/75">
+                Clips and mixer together on one screen — launch a scene and ride
+                the levels without ever switching views.
+              </p>
+            </div>
           </div>
         </div>
       </section>
