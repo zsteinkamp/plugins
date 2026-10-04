@@ -85,7 +85,7 @@ export default function KnobblerSite() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="https://apps.apple.com/app/id6443613387"
+              href="https://apps.apple.com/app/knobbler/id6740183923"
               className="inline-flex items-center px-7 py-4 bg-highlight text-lcdbg font-heading text-xl tracking-wide rounded-sm hover:bg-highlight2 transition-colors"
             >
               Get it on iOS
