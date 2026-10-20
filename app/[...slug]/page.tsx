@@ -102,6 +102,7 @@ export default async function Page({
         .toString()
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
       toc.push({
         level,
         key: id,
@@ -126,7 +127,9 @@ export default async function Page({
       title?: string
       children?: ReactNode
     }) => {
-      if (href && href.indexOf('http') !== 0) {
+      // in-page anchors stay as-is; joining them onto the plugin root would
+      // send them to the plugin's index page
+      if (href && href.indexOf('http') !== 0 && href[0] !== '#') {
         href = path.join('/', plugin, href.replace(/\.md$/, ''))
       }
       return (
