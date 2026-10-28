@@ -16,6 +16,7 @@ import React, { ReactNode } from 'react'
 import DocPages from '@/components/DocPages'
 import DownloadButton from '@/components/DownloadButton'
 import rehypeRaw from 'rehype-raw'
+import remarkGfm from 'remark-gfm'
 import TableOfContents from '@/components/TableOfContents'
 import { Metadata } from 'next'
 import PageContents from '@/components/PageContents'
@@ -216,6 +217,7 @@ export default async function Page({
             <Markdown
               className="prose-headings:text-highlight"
               components={renderers}
+              remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
             >
               {rawMarkdown}
