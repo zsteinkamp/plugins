@@ -176,7 +176,7 @@ export default function KnobblerSite() {
             </p>
             <p className="text-sm sm:text-base text-foreground/65">
               Launch a scene up top and ride the mixer below, or keep two pages
-              of knobs on screen at the same time.
+              of faders, buttons, and X-Y pads on screen at the same time.
             </p>
           </div>
           <div className="order-1 lg:order-2 flex justify-center">
