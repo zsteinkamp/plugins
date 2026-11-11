@@ -302,7 +302,7 @@ export default function KnobblerSite() {
               variations on the page, and sharpens scene feedback.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="h-full p-6 bg-lcdbg/60 rounded-md ring-1 ring-bghighlight">
               <h3 className="font-heading text-xl sm:text-2xl text-highlight2 mb-2">
                 Button sliders
@@ -321,16 +321,6 @@ export default function KnobblerSite() {
                 Drop a rack&apos;s macro variations onto a Knobbler slot and
                 recall them straight from the page, like scene buttons for your
                 sound.
-              </p>
-            </div>
-            <div className="h-full p-6 bg-lcdbg/60 rounded-md ring-1 ring-bghighlight">
-              <h3 className="font-heading text-xl sm:text-2xl text-highlight2 mb-2">
-                Scene &amp; stop feedback
-              </h3>
-              <p className="text-sm sm:text-base text-foreground/75">
-                Scene buttons blink while they wait for the bar, and Stop All
-                blinks while everything winds down — the same quantized feedback
-                Live gives a single clip.
               </p>
             </div>
             <div className="h-full p-6 bg-lcdbg/60 rounded-md ring-1 ring-bghighlight">
