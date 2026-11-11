@@ -19,7 +19,7 @@ export default function KnobblerSite() {
           href="/"
           className="font-heading text-lg sm:text-2xl text-highlight hover:text-highlight2 transition-colors"
         >
-          ← Zack&apos;s Plugins
+          ← <span className="hidden sm:inline">Zack&apos;s </span>Plugins
         </Link>
         <div className="flex items-center gap-3 sm:gap-5">
           <Link
@@ -37,9 +37,10 @@ export default function KnobblerSite() {
           </Link>
           <Link
             href={DOCS_HREF}
-            className="hidden sm:inline font-heading text-lg text-foreground/80 hover:text-highlight transition-colors"
+            className="inline-flex items-center px-3 sm:px-5 py-2 sm:py-3 border border-highlight2/60 text-highlight2 font-heading text-sm sm:text-lg tracking-wide uppercase rounded-sm hover:bg-highlight2 hover:text-lcdbg transition-colors whitespace-nowrap"
           >
-            Documentation →
+            <span className="sm:hidden">Docs →</span>
+            <span className="hidden sm:inline">Documentation →</span>
           </Link>
         </div>
       </nav>
@@ -74,14 +75,15 @@ export default function KnobblerSite() {
             already own.
           </p>
           <p className="text-lg sm:text-2xl text-highlight max-w-3xl mx-auto leading-relaxed mb-4">
-            Now with Push 3 Standalone support!
+            Now with Split view, button sliders, and macro variations!
           </p>
           <p className="text-base sm:text-xl text-foreground/75 max-w-3xl mx-auto leading-relaxed mb-12">
             Five views, a tap apart. <strong>Knobbler</strong> puts 32
-            assignable faders and X-Y pads on any parameter you can map.{' '}
-            <strong>Bluhand</strong> grabs every knob on the selected device.{' '}
-            <strong>Mixer</strong> covers the whole set, <strong>Clips</strong>{' '}
-            launches it, and <strong>Session</strong> gives you both at once.
+            assignable faders, buttons and X-Y pads on any parameter you can
+            map. <strong>Bluhand</strong> grabs every knob on the selected
+            device. <strong>Mixer</strong> covers the whole set,{' '}
+            <strong>Clips</strong> launches it, and the new{' '}
+            <strong>Split</strong> view puts any two of them on screen at once.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
@@ -235,13 +237,82 @@ export default function KnobblerSite() {
             </div>
             <div className="h-full p-6 bg-lcdbg/60 rounded-md ring-1 ring-bghighlight">
               <h3 className="font-heading text-xl sm:text-2xl text-highlight2 mb-2">
-                Session
+                Split
               </h3>
               <p className="text-sm sm:text-base text-foreground/75">
-                Clips and mixer together on one screen — launch a scene and ride
-                the levels without ever switching views.
+                Put any two views — Mixer, Clips, Knobbler or Bluhand — on screen
+                at once, top and bottom. Launch a scene and ride the levels
+                without switching.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What's new */}
+      <section className="relative py-24 sm:py-32 px-6 sm:px-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 px-3 py-1 mb-6 bg-highlight/15 border border-highlight/40 rounded-full text-highlight font-heading uppercase tracking-widest text-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-highlight animate-pulse" />
+              New
+            </span>
+            <h2 className="font-heading text-4xl sm:text-6xl text-highlight">
+              Buttons, variations &amp; more.
+            </h2>
+            <p className="mt-6 text-base sm:text-lg text-foreground/75 max-w-2xl mx-auto">
+              The latest Knobbler turns slots into buttons, puts rack variations
+              on the page, and adds the configurable Split view.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="h-full p-6 bg-lcdbg/60 rounded-md ring-1 ring-bghighlight">
+              <h3 className="font-heading text-xl sm:text-2xl text-highlight2 mb-2">
+                Button sliders
+              </h3>
+              <p className="text-sm sm:text-base text-foreground/75">
+                Turn any slot into a Momentary or Toggle button that jumps
+                between two values you set — defaulting to the parameter&apos;s
+                full range.
+              </p>
+            </div>
+            <div className="h-full p-6 bg-lcdbg/60 rounded-md ring-1 ring-bghighlight">
+              <h3 className="font-heading text-xl sm:text-2xl text-highlight2 mb-2">
+                Macro variations
+              </h3>
+              <p className="text-sm sm:text-base text-foreground/75">
+                Drop a rack&apos;s macro variations onto a Knobbler slot and
+                recall them straight from the page, like scene buttons for your
+                sound.
+              </p>
+            </div>
+            <div className="h-full p-6 bg-lcdbg/60 rounded-md ring-1 ring-bghighlight">
+              <h3 className="font-heading text-xl sm:text-2xl text-highlight2 mb-2">
+                Scene &amp; stop feedback
+              </h3>
+              <p className="text-sm sm:text-base text-foreground/75">
+                Scene buttons blink while they wait for the bar, and Stop All
+                blinks while everything winds down — the same quantized feedback
+                Live gives a single clip.
+              </p>
+            </div>
+            <div className="h-full p-6 bg-lcdbg/60 rounded-md ring-1 ring-bghighlight">
+              <h3 className="font-heading text-xl sm:text-2xl text-highlight2 mb-2">
+                Named pages &amp; Layout
+              </h3>
+              <p className="text-sm sm:text-base text-foreground/75">
+                Name your Knobbler pages — up to 16 per set — and drag any
+                fader, button or X-Y pad anywhere with Layout mode.
+              </p>
+            </div>
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/m4l-Knobbler4/timeline"
+              className="font-heading text-base sm:text-lg text-highlight2 hover:text-highlight underline underline-offset-4 decoration-highlight2/40 hover:decoration-highlight tracking-wide"
+            >
+              See the full release timeline →
+            </Link>
           </div>
         </div>
       </section>
