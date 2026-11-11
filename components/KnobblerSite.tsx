@@ -78,9 +78,9 @@ export default function KnobblerSite() {
             Now with Split view, button sliders, and macro variations!
           </p>
           <p className="text-base sm:text-xl text-foreground/75 max-w-3xl mx-auto leading-relaxed mb-12">
-            Five views, a tap apart. <strong>Knobbler</strong> puts 32
-            assignable faders, buttons and X-Y pads on any parameter you can
-            map. <strong>Bluhand</strong> grabs every knob on the selected
+            Five views, a tap apart. <strong>Knobbler</strong> puts assignable
+            faders, buttons and X-Y pads on any parameter you can map, across as
+            many named pages as you need. <strong>Bluhand</strong> grabs every knob on the selected
             device. <strong>Mixer</strong> covers the whole set,{' '}
             <strong>Clips</strong> launches it, and the new{' '}
             <strong>Split</strong> view puts any two of them on screen at once.
@@ -155,6 +155,44 @@ export default function KnobblerSite() {
         </div>
       </section>
 
+      {/* Split view spotlight */}
+      <section className="relative py-24 sm:py-32 px-6 sm:px-10">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="order-2 lg:order-1">
+            <span className="inline-flex items-center gap-2 px-3 py-1 mb-6 bg-highlight/15 border border-highlight/40 rounded-full text-highlight font-heading uppercase tracking-widest text-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-highlight animate-pulse" />
+              New
+            </span>
+            <h2 className="font-heading text-4xl sm:text-6xl text-highlight mb-6">
+              Two views at once,
+              <br />
+              your way.
+            </h2>
+            <p className="text-base sm:text-xl text-foreground/85 leading-relaxed mb-4">
+              The new <strong>Split</strong> view stacks any two app pages, one
+              above the other — Mixer over Clips, Knobbler over Bluhand, whatever
+              your set calls for. Tap the bar on either pane to change what it
+              shows.
+            </p>
+            <p className="text-sm sm:text-base text-foreground/65">
+              Launch a scene up top and ride the mixer below, or keep two pages
+              of knobs on screen at the same time.
+            </p>
+          </div>
+          <div className="order-1 lg:order-2 flex justify-center">
+            <div className="relative w-full max-w-sm aspect-[3/4] rounded-md overflow-hidden ring-1 ring-bghighlight shadow-2xl">
+              <Image
+                src="/images/knobbler/split.jpg"
+                alt="Knobbler Split view showing two app pages stacked on one screen"
+                fill
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Five views showcase */}
       <section className="relative py-24 sm:py-32 px-6 sm:px-10 bg-tilebg/40">
         <div className="max-w-6xl mx-auto">
@@ -220,9 +258,9 @@ export default function KnobblerSite() {
                 Knobbler
               </h3>
               <p className="text-sm sm:text-base text-foreground/75">
-                32 assignable faders and X-Y pads. Touch any parameter in Live
-                to map it to the next free slider — no menu diving, no manual
-                labeling.
+                Assignable faders, buttons and X-Y pads across as many named
+                pages as you need. Touch any parameter in Live to map it to the
+                next free slider — no menu diving, no manual labeling.
               </p>
             </div>
             <div className="h-full p-6 bg-lcdbg/60 rounded-md ring-1 ring-bghighlight">
@@ -253,16 +291,15 @@ export default function KnobblerSite() {
       <section className="relative py-24 sm:py-32 px-6 sm:px-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 px-3 py-1 mb-6 bg-highlight/15 border border-highlight/40 rounded-full text-highlight font-heading uppercase tracking-widest text-xs">
-              <span className="h-1.5 w-1.5 rounded-full bg-highlight animate-pulse" />
-              New
-            </span>
+            <p className="font-heading uppercase tracking-[0.4em] text-highlight2 text-xs sm:text-sm mb-4">
+              More in this release
+            </p>
             <h2 className="font-heading text-4xl sm:text-6xl text-highlight">
               Buttons, variations &amp; more.
             </h2>
             <p className="mt-6 text-base sm:text-lg text-foreground/75 max-w-2xl mx-auto">
-              The latest Knobbler turns slots into buttons, puts rack variations
-              on the page, and adds the configurable Split view.
+              The latest Knobbler also turns slots into buttons, puts rack
+              variations on the page, and sharpens scene feedback.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
