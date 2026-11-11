@@ -194,8 +194,7 @@ export default function ReleaseTimeline({ data }: { data: TimelineData }) {
               <span className="rtl-pver">{panel.release.version}</span>
               <span className="rtl-pdate">{fmtDate(panel.release.date)}</span>
             </div>
-            {panel.release.side === 'device' &&
-              panel.release.title &&
+            {panel.release.title &&
               panel.release.title !== panel.release.version && (
                 <h3 className="rtl-h3">{panel.release.title}</h3>
               )}
@@ -250,9 +249,9 @@ function Card({
   dot: string
   trigger: (r: Release) => React.HTMLAttributes<HTMLDivElement>
 }) {
-  const peek =
-    r.side === 'app' ? (r.notes[0] ? r.notes[0].text : '') : firstSentence(r.notes[0] || '')
-  const ttl = r.side === 'device' && r.title && r.title !== r.version ? r.title : ''
+  const peekSrc = r.side === 'app' ? (r.notes[0] ? r.notes[0].text : '') : r.notes[0] || ''
+  const peek = firstSentence(peekSrc)
+  const ttl = r.title && r.title !== r.version ? r.title : ''
   const more =
     r.side === 'app'
       ? r.notes.length + ' note' + (r.notes.length !== 1 ? 's' : '') + ' ›'
